@@ -17,9 +17,11 @@ npm run dev
 
 ## الحفظ ولوحة الفريق
 
-يتطلب النشر العام إعداد مشروع Supabase منفصل، تطبيق ملفات `supabase/migrations` ونشر `invitation-admin` و`invitation-public`. أضف مستخدم الفريق في Supabase Auth ثم اربط `auth.users.id` يدويًا في `public.team_members`. لا يُستخدم مشروع Supabase الحالي `room.chat`.
+الخلفية مربوطة بمشروع Supabase مستقل باسم Mawada (`jverodiizjvbqrvshdnb`)؛ طُبّق المخطط ونُشرت الدالتان `invitation-admin` و`invitation-public`، والتسجيل العام معطّل. لا يُستخدم مشروع Supabase الحالي `room.chat`.
 
-لتفعيل الموقع بعد إعداد Supabase أضف أسرار GitHub Actions:
+أضيفت أسرار الربط إلى GitHub Actions وأعيد تشغيل نشر Pages. لإتاحة المحرر لأعضاء الفريق، أنشئ مستخدمًا من لوحة Supabase Auth ثم اربط `auth.users.id` يدويًا في `public.team_members` باستخدام الاستعلام الموضح في `docs/supabase-setup.md`. لا تفتح التسجيل العام.
+
+أسماء أسرار GitHub Actions المستخدمة:
 
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_PUBLISHABLE_KEY`
