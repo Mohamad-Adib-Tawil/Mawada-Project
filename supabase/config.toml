@@ -7,7 +7,7 @@ extra_search_path = ["public", "extensions"]
 max_rows = 1000
 
 [functions.invitation-admin]
-verify_jwt = false
+verify_jwt = true
 
 [functions.invitation-public]
 verify_jwt = false

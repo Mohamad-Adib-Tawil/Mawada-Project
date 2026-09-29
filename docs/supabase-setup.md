@@ -6,7 +6,7 @@
 
 1. أنشئ المشروع بعد اعتماد المؤسسة والتكلفة، واختر منطقة أوروبية قريبة عند إنشاء المشروع.
 2. طبّق `supabase/migrations/20260929160226_initial_mawada_invitation_tables.sql` عبر Supabase SQL Editor أو `supabase db push`.
-3. انشر الدالتين `invitation-admin` و`invitation-public` من مجلد `supabase/functions/`. ضبط `verify_jwt=false` مقصود لأن كل دالة تتحقق من JWT/المفتاح العام، ودالة الإدارة تتحقق أيضًا من عضوية الفريق. لا تنشرها قبل مراجعة ذلك.
+3. انشر الدالتين `invitation-admin` و`invitation-public` من مجلد `supabase/functions/`. تحتفظ `invitation-admin` بتحقق المنصة من JWT (`verify_jwt=true`) وتتحقق داخلها من عضوية الفريق أيضًا. تُعطّل `invitation-public` تحقق JWT الخاص بالمنصة لأنها تستقبل المفتاح العام وتتحقق منه داخل الدالة عبر `withSupabase({ auth: 'publishable' })`.
 4. أنشئ مستخدم الفريق من لوحة Auth دون إتاحة التسجيل العام. أضف UUID الخاص به إلى `public.team_members`:
 
    ```sql
