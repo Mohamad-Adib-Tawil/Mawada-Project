@@ -66,35 +66,31 @@ a:hover .arrow-mark { transform: translate(2px,-2px); }
 .menu-toggle { display: none; }
 
 /* Home hero */
-.hero-section { position: relative; overflow: hidden; min-height: 670px; background: radial-gradient(ellipse at 78% 35%, #fff0f4 0, rgba(255,240,244,0) 39%), linear-gradient(115deg, #fffaf6 22%, #fff7f5 100%); }
-.hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 7%; min-height: 645px; padding-block: 72px 92px; }
-.hero-copy { position: relative; z-index: 2; padding-block: 8px; }
+.hero-section { position: relative; overflow: hidden; min-height: 760px; background: radial-gradient(ellipse at 50% 26%, #fff0f4 0, rgba(255,240,244,0) 42%), linear-gradient(115deg, #fffaf6 22%, #fff7f5 100%); }
+.hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 28px; min-height: 735px; padding-block: 53px 0; text-align: center; }
+.hero-copy { position: relative; z-index: 2; display: grid; justify-items: center; padding-block: 8px; }
 .hero-eyebrow { padding: 9px 15px; border: 1px solid #f8d8e2; border-radius: 999px; background: rgba(255,255,255,.7); }
 .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 5px rgba(32,185,176,.11); }
-.hero-copy h1 { margin: 25px 0 18px; font-family: 'Reem Kufi', sans-serif; font-size: clamp(48px, 6.2vw, 76px); line-height: 1.33; letter-spacing: -.04em; font-weight: 700; }
+.hero-copy h1 { max-width: 900px; margin: 20px 0 12px; font-family: 'Reem Kufi', sans-serif; font-size: clamp(46px, 5.7vw, 70px); line-height: 1.3; letter-spacing: -.04em; font-weight: 700; }
 .hero-copy h1 span { display: block; }
 .hero-copy h1 span:last-child { color: var(--pink); }
-.hero-copy > p { max-width: 580px; margin: 0; color: #716b7a; font-size: 20px; line-height: 1.95; }
-.hero-actions { display: flex; gap: 14px; margin-top: 29px; }
+.hero-copy > p { max-width: 700px; margin: 0; color: #716b7a; font-size: 18px; line-height: 1.8; }
+.hero-actions { display: flex; justify-content: center; gap: 14px; margin-top: 24px; }
 .hero-actions .button { min-height: 56px; padding-inline: 25px; }
-.hero-note { display: flex; align-items: center; gap: 9px; margin-top: 24px; color: var(--muted); font-size: 15px; }
+.hero-note { display: flex; align-items: center; gap: 9px; margin-top: 14px; color: var(--muted); font-size: 15px; }
 .hero-note strong { color: var(--pink-dark); }
 .hero-sparkle { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; background: #fff0d9; color: #d99b3f; }
-.hero-art { position: relative; display: grid; min-height: 500px; place-items: center; }
-.invite-mock-card { position: relative; width: min(76%, 350px); height: 480px; padding: 9px; border-radius: 180px 180px 28px 28px; background: #fff; box-shadow: 0 30px 75px rgba(95,58,73,.18); transform: rotate(2.5deg); }
-.mock-card-image { position: absolute; inset: 9px; overflow: hidden; border-radius: 175px 175px 23px 23px; background: #f9eee7; }
-.mock-card-image::after { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(34,25,31,.04) 10%, rgba(43,24,40,.6) 100%); content: ''; }
-.mock-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; filter: saturate(.78); }
-.mock-card-frame { position: absolute; z-index: 1; inset: 22px; border: 1px solid rgba(255,255,255,.65); border-radius: 166px 166px 16px 16px; }
-.mock-card-content { position: absolute; z-index: 2; inset: auto 22px 40px; display: grid; justify-items: center; gap: 10px; color: #fff; text-align: center; text-shadow: 0 2px 10px rgba(28,20,24,.45); }
-.mock-card-content > span:first-child { font-family: 'Amiri',serif; font-size: 15px; }
-.mock-card-content strong { font-family: 'Aref Ruqaa',serif; font-size: 31px; }
-.mock-card-content small { font-size: 14px; }
-.mock-ornament { color: #ffdfae; font-size: 28px; }
-.mock-card-button { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; padding: 8px 15px; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; background: rgba(255,255,255,.18); font-size: 13px; }
-.mock-floating-chip { position: absolute; z-index: 3; top: 78px; right: -37px; display: flex; align-items: center; gap: 7px; padding: 10px 15px; border: 1px solid #f0e5e5; border-radius: 999px; background: #fff; color: #5b5261; box-shadow: 0 8px 20px rgba(62,38,55,.1); font-size: 13px; font-weight: 700; transform: rotate(-3deg); }
-.chip-heart { color: var(--pink); font-size: 21px; }
-.hero-flower { position: absolute; z-index: 1; display: grid; width: 70px; height: 70px; place-items: center; border: 1px solid #f5d9e1; border-radius: 50%; background: #fff7f6; color: #e989a8; font-size: 42px; box-shadow: 0 12px 24px rgba(125,77,91,.08); }
+.hero-art { position: relative; display: flex; width: min(100%, 900px); height: 340px; align-items: flex-end; justify-content: center; gap: 24px; margin-inline: auto; }
+.hero-template-frame { position: relative; z-index: 1; display: block; width: min(22vw, 218px); height: 305px; overflow: hidden; border: 7px solid #fff; border-bottom-width: 11px; border-radius: 31px; background: #f9eee7; box-shadow: 0 24px 52px rgba(95,58,73,.18); transition: transform .24s ease, box-shadow .24s ease; }
+.hero-template-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 24%; }
+.hero-template-frame:hover { z-index: 4; box-shadow: 0 30px 60px rgba(95,58,73,.25); }
+.hero-template-frame-1 { height: 278px; transform: rotate(-7deg) translateY(8px); }
+.hero-template-frame-1:hover { transform: rotate(-3deg) translateY(-6px); }
+.hero-template-frame-2 { z-index: 2; height: 340px; }
+.hero-template-frame-2:hover { transform: translateY(-6px); }
+.hero-template-frame-3 { height: 278px; transform: rotate(7deg) translateY(8px); }
+.hero-template-frame-3:hover { transform: rotate(3deg) translateY(-6px); }
+.hero-flower { position: absolute; z-index: 3; display: grid; width: 70px; height: 70px; place-items: center; border: 1px solid #f5d9e1; border-radius: 50%; background: #fff7f6; color: #e989a8; font-size: 42px; box-shadow: 0 12px 24px rgba(125,77,91,.08); }
 .flower-a { top: 12%; left: 9%; animation: floaty 6s ease-in-out infinite; }
 .flower-b { right: 2%; bottom: 12%; width: 54px; height: 54px; font-size: 33px; animation: floaty 7s ease-in-out infinite reverse; }
 .hero-decoration { position: absolute; color: #e9a2b4; }
@@ -385,7 +381,7 @@ a:hover .arrow-mark { transform: translate(2px,-2px); }
   .main-nav a { padding: 12px 9px; }
   .main-nav .team-link { margin: 4px 0 0; text-align: center; }
   .hero-section { min-height: 0; }
-  .hero-inner { grid-template-columns: 1fr; gap: 18px; min-height: auto; padding-block: 55px 70px; }
+  .hero-inner { gap: 10px; min-height: auto; padding-block: 45px 47px; }
   .hero-copy { text-align: center; }
   .hero-eyebrow { font-size: 13px; }
   .hero-copy h1 { margin: 17px 0 10px; font-size: clamp(40px,11vw,56px); line-height: 1.28; }
@@ -393,13 +389,10 @@ a:hover .arrow-mark { transform: translate(2px,-2px); }
   .hero-actions { justify-content: center; gap: 9px; margin-top: 21px; }
   .hero-actions .button { min-height: 49px; padding-inline: 16px; font-size: 14px; }
   .hero-note { justify-content: center; margin-top: 14px; font-size: 13px; }
-  .hero-art { min-height: 365px; margin: -5px 0 4px; }
-  .invite-mock-card { width: 238px; height: 350px; padding: 7px; border-radius: 126px 126px 23px 23px; }
-  .mock-card-image { inset: 7px; border-radius: 120px 120px 18px 18px; }
-  .mock-card-frame { inset: 16px; border-radius: 111px 111px 12px 12px; }
-  .mock-card-content { inset: auto 17px 26px; gap: 6px; }
-  .mock-card-content strong { font-size: 25px; }.mock-card-content small { font-size: 12px; }
-  .mock-floating-chip { top: 48px; right: -33px; padding: 8px 12px; font-size: 11px; }
+  .hero-art { width: 100%; height: 280px; min-height: 280px; margin: 0; gap: clamp(5px,1.5vw,10px); }
+  .hero-template-frame { flex: 0 0 min(34vw,218px); height: 220px; border-width: 5px 5px 9px; border-radius: 25px; }
+  .hero-template-frame-1, .hero-template-frame-3 { height: 195px; }
+  .hero-template-frame-2 { height: 250px; }
   .hero-flower { width: 50px; height: 50px; font-size: 30px; }.flower-a { top: 8%; left: 2%; }.flower-b { right: 2%; bottom: 7%; width: 45px; height: 45px; font-size: 27px; }
   .deco-star { top: 8%; right: 6%; font-size: 33px; }.deco-dot { bottom: 7%; left: 5%; font-size: 45px; }
   .hero-scroll { display: none; }

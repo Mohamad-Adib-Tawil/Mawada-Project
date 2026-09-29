@@ -28,21 +28,17 @@ export function HomePage() {
             </div>
             <div className="hero-note"><span className="hero-sparkle" aria-hidden="true">✳</span><span>خدمة واحدة — <strong>{siteConfig.price.display}</strong></span></div>
           </div>
-          <div className="hero-art" aria-label="معاينة دعوة إلكترونية">
+          <div className="hero-art" aria-label="معاينة من القوالب المتاحة">
+            {featured.slice(0, 3).map((template, index) => <a
+              className={`hero-template-frame hero-template-frame-${index + 1}`}
+              key={template.id}
+              href={appPath(template.localPreview)}
+              aria-label={`عاين قالب ${template.name}`}
+            >
+              <img src={publicAsset(template.hero)} alt={`مشهد من قالب ${template.name}`} />
+            </a>)}
             <div className="hero-flower flower-a" aria-hidden="true">✿</div>
             <div className="hero-flower flower-b" aria-hidden="true">✾</div>
-            <div className="invite-mock-card">
-              <div className="mock-card-image"><img src={publicAsset('/assets/templates/garden-hero.jpg')} alt="مشهد من قالب دعوة الحديقة" /></div>
-              <div className="mock-card-frame" aria-hidden="true" />
-              <div className="mock-card-content">
-                <span>بسم الله الرحمن الرحيم</span>
-                <div className="mock-ornament" aria-hidden="true">❧</div>
-                <strong>فرحتكم تبدأ بدعوة</strong>
-                <small>تصميم يليق بمناسبتكم</small>
-                <span className="mock-card-button">افتحوا الدعوة <span aria-hidden="true">↗</span></span>
-              </div>
-              <span className="mock-floating-chip"><span className="chip-heart">♡</span> دعوة رقمية</span>
-            </div>
             <span className="hero-decoration deco-star" aria-hidden="true">✧</span>
             <span className="hero-decoration deco-dot" aria-hidden="true">•</span>
           </div>
