@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding Invitation//Qasr//AR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wedding-mohamad-razan-qasr@example.invalid
+DTSTAMP:20260928T000000Z
+DTSTART;TZID=Asia/Damascus:20270507T180000
+DTEND;TZID=Asia/Damascus:20270507T220000
+SUMMARY:دعوة زفاف محمد أديب طويل ورزان بطايحي
+LOCATION:قصر الروض — حدائق القصر — الرياض
+DESCRIPTION:دعوة زفاف محمد أديب طويل ورزان بطايحي
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,33 @@
+// Edit all invitation content, links, and asset paths in this file.
+window.INVITATION = {
+  occasion: "عيد ميلاد",
+  celebrant: "تيم",
+  age: 7,
+  host: "عائلة الربيعي",
+  date: "2026-09-20T17:00:00+03:00",
+  dateText: "يوم الأحد، ٢٠ أيلول ٢٠٢٦",
+  timeText: "الساعة الخامسة عصراً",
+  invitationText: "بكل فرحٍ وسعادة، يسرّنا دعوتكم لمشاركتنا الاحتفال بعيد الميلاد. حضوركم يكمّل بهجتنا!",
+  venueName: "قاعة الفرح للمناسبات",
+  venueAddress: "بغداد — المنصور",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Baghdad",
+  program: [
+    { time: "٥:٠٠ عصراً", title: "استقبال الضيوف" },
+    { time: "٦:٠٠ مساءً", title: "قصّ الكيكة" },
+    { time: "٦:٣٠ مساءً", title: "الألعاب والفقرات" },
+    { time: "٧:٣٠ مساءً", title: "العشاء" },
+  ],
+  notes: ["نتشرّف بحضوركم في وقتها", "أحضروا فرحتكم وابتسامتكم", "هديّة حضوركم تكفينا"],
+  closingNote: "بوجودكم تكتمل الفرحة",
+  contactLabel: "للتأكيد والاستفسار والتهنئة عبر واتساب",
+  whatsapp: "https://wa.me/963992688759",
+  musicVideoId: "glRTRNZ7oMg",
+  shareImage: "assets/share.jpg",
+  wishes: [
+    { name: "دانية", message: "كل عام وأنت بألف خير 🎂 وعقبال ١٠٠ سنة" },
+    { name: "يوسف", message: "عيد ميلاد سعيد! الله يخليك لأهلك وأحبابك" },
+    { name: "ريم", message: "سنة جديدة كلها نجاح وفرح إن شاء الله 🎈" },
+    { name: "شهد", message: "كل عام وأنت الأحلى، يومك مميز مثلك 🥳" },
+    { name: "علي", message: "مبروك، وأحلى الأمنيات بالصحة والسعادة" },
+  ],
+};

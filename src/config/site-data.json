@@ -1,0 +1,522 @@
+{
+  "brand": "مودة",
+  "title": "دعوات مودة الإلكترونية",
+  "tagline": "لكل فرحة حكاية… ابدؤوها بدعوة تشبهكم",
+  "whatsappUrl": "https://wa.me/963992688759",
+  "whatsappMessage": "مرحبًا، أرغب بطلب خدمة دعوة إلكترونية من مودة.",
+  "price": {
+    "amount": 5,
+    "display": "٥ دولار",
+    "description": "خدمة واحدة لتجهيز دعوة إلكترونية مخصصة من أحد القوالب المتاحة."
+  },
+  "assets": {
+    "templates": "/assets/templates/",
+    "invitationBase": "/templates/",
+    "editorPoster": "/assets/editor-preview.svg"
+  },
+  "navigation": [
+    {
+      "label": "الرئيسية",
+      "href": "/"
+    },
+    {
+      "label": "القوالب",
+      "href": "/templates/"
+    },
+    {
+      "label": "كيف نعمل",
+      "href": "/#how-it-works"
+    },
+    {
+      "label": "الأسعار",
+      "href": "/#pricing"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "label": "كل القوالب"
+    },
+    {
+      "id": "wedding",
+      "label": "زفاف"
+    },
+    {
+      "id": "engagement",
+      "label": "خطوبة"
+    },
+    {
+      "id": "birthday",
+      "label": "عيد ميلاد"
+    },
+    {
+      "id": "newborn",
+      "label": "مولود جديد"
+    },
+    {
+      "id": "graduation",
+      "label": "تخرج"
+    },
+    {
+      "id": "event",
+      "label": "مناسبة"
+    }
+  ],
+  "templates": [
+    {
+      "id": "clouds",
+      "name": "سحاب",
+      "category": "newborn",
+      "description": "سحاب ناعم يحمل البشارة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/clouds.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/clouds/",
+      "localPreview": "/templates/clouds/index.html",
+      "cover": "/assets/templates/clouds-cover.jpg",
+      "hero": "/assets/templates/clouds-hero.jpg",
+      "sourcePath": "baby born templets/clouds"
+    },
+    {
+      "id": "moon",
+      "name": "قمر",
+      "category": "newborn",
+      "description": "قمر ونجوم تهدهد بشارتكم.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/moon.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/moon/",
+      "localPreview": "/templates/moon/index.html",
+      "cover": "/assets/templates/moon-cover.jpg",
+      "hero": "/assets/templates/moon-hero.jpg",
+      "sourcePath": "baby born templets/moon"
+    },
+    {
+      "id": "qabda",
+      "name": "قِبضة",
+      "category": "newborn",
+      "description": "مشهد يد طفل ينفتح على البشارة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/qabda.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/qabda/",
+      "localPreview": "/templates/qabda/index.html",
+      "cover": "/assets/templates/qabda-cover.jpg",
+      "hero": "/assets/templates/qabda-hero.jpg",
+      "sourcePath": "baby born templets/qabda"
+    },
+    {
+      "id": "balloons",
+      "name": "بالونات",
+      "category": "birthday",
+      "description": "بالونات ملونة تطير بالفرح.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/balloons.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/balloons/",
+      "localPreview": "/templates/balloons/index.html",
+      "cover": "/assets/templates/balloons-cover.jpg",
+      "hero": "/assets/templates/balloons-hero.jpg",
+      "sourcePath": "birthday/balloons"
+    },
+    {
+      "id": "cake",
+      "name": "الكيكة",
+      "category": "birthday",
+      "description": "كيكة وشموع تُضاء بلمسة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/cake.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/cake/",
+      "localPreview": "/templates/cake/index.html",
+      "cover": "/assets/templates/cake-cover.jpg",
+      "hero": "/assets/templates/cake-hero.jpg",
+      "sourcePath": "birthday/cake"
+    },
+    {
+      "id": "confetti",
+      "name": "احتفال",
+      "category": "birthday",
+      "description": "انفجار كونفيتي يفتتح الاحتفال.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/confetti.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/confetti/",
+      "localPreview": "/templates/confetti/index.html",
+      "cover": "/assets/templates/confetti-cover.jpg",
+      "hero": "/assets/templates/confetti-hero.jpg",
+      "sourcePath": "birthday/confetti"
+    },
+    {
+      "id": "neon",
+      "name": "نيون",
+      "category": "birthday",
+      "description": "اسم صاحبة العيد يتوهّج نيوناً.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/neon.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/neon/",
+      "localPreview": "/templates/neon/index.html",
+      "cover": "/assets/templates/neon-cover.jpg",
+      "hero": "/assets/templates/neon-hero.jpg",
+      "sourcePath": "birthday/neon"
+    },
+    {
+      "id": "teddy",
+      "name": "دباديب",
+      "category": "birthday",
+      "description": "دباديب لطيفة تحتفل مع طفلكم.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/teddy.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/teddy/",
+      "localPreview": "/templates/teddy/index.html",
+      "cover": "/assets/templates/teddy-cover.jpg",
+      "hero": "/assets/templates/teddy-hero.jpg",
+      "sourcePath": "birthday/teddy"
+    },
+    {
+      "id": "wedding",
+      "name": "قالب زفاف",
+      "category": "wedding",
+      "description": "تصميم زفاف كلاسيكي من المصدر المحلي.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding.git",
+      "referenceUrl": "",
+      "localPreview": "/templates/wedding/index.html",
+      "cover": "/assets/templates/classic-cover.jpg",
+      "hero": "/assets/templates/classic-hero.jpg",
+      "sourcePath": "weddings Templets/Wedding"
+    },
+    {
+      "id": "simple-invide-merrage",
+      "name": "دعوة زفاف بسيطة",
+      "category": "wedding",
+      "description": "دعوة زفاف بسيطة من المصدر المحلي.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/simple-invide-merrage.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/simple-invide-merrage/",
+      "localPreview": "/templates/simple-invide-merrage/index.html",
+      "cover": "/assets/templates/letter-cover.jpg",
+      "hero": "/assets/templates/letter-hero.jpg",
+      "sourcePath": "weddings Templets/simple invide merrage"
+    },
+    {
+      "id": "wedding-temp-2",
+      "name": "ثريّا",
+      "category": "wedding",
+      "description": "باب داكن ينفتح على قاعة مضاءة بالثريّات.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-2.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-2/",
+      "localPreview": "/templates/wedding-temp-2/index.html",
+      "cover": "/assets/templates/thurayya-cover.jpg",
+      "hero": "/assets/templates/thurayya-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp 2"
+    },
+    {
+      "id": "wedding-temp-ethereal",
+      "name": "Ethereal",
+      "category": "wedding",
+      "description": "تصميم زفاف هادئ من المصدر المحلي.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-Ethereal.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-Ethereal/",
+      "localPreview": "/templates/wedding-temp-ethereal/index.html",
+      "cover": "/assets/templates/glam-cover.jpg",
+      "hero": "/assets/templates/glam-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp Ethereal"
+    },
+    {
+      "id": "wedding-temp-bab",
+      "name": "باب الفرح",
+      "category": "wedding",
+      "description": "باب خشبي تلفّه أزهار بنفسجية.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-bab.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-bab/",
+      "localPreview": "/templates/wedding-temp-bab/index.html",
+      "cover": "/assets/templates/bab-cover.jpg",
+      "hero": "/assets/templates/bab-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp bab"
+    },
+    {
+      "id": "wedding-temp-disney",
+      "name": "ديزني",
+      "category": "engagement",
+      "description": "بوابة سحرية تنفتح على قصر حالم.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-disney.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-disney/",
+      "localPreview": "/templates/wedding-temp-disney/index.html",
+      "cover": "/assets/templates/disney-cover.jpg",
+      "hero": "/assets/templates/disney-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp disney"
+    },
+    {
+      "id": "wedding-temp-dove",
+      "name": "الحمام",
+      "category": "wedding",
+      "description": "حمام أبيض يحلّق ببشارة فرحكم.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-dove.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-dove/",
+      "localPreview": "/templates/wedding-temp-dove/index.html",
+      "cover": "/assets/templates/doves-cover.jpg",
+      "hero": "/assets/templates/doves-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp dove"
+    },
+    {
+      "id": "wedding-temp-garden",
+      "name": "الحديقة",
+      "category": "wedding",
+      "description": "إكليل أزهار وخضرة ناعمة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-garden.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-garden/",
+      "localPreview": "/templates/wedding-temp-garden/index.html",
+      "cover": "/assets/templates/garden-cover.jpg",
+      "hero": "/assets/templates/garden-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp garden"
+    },
+    {
+      "id": "wedding-temp-laylat-hana",
+      "name": "ليلة الحنّة",
+      "category": "wedding",
+      "description": "ستارة نبيذية تنفتح على لوحة كريمية بالورد والذهب.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-laylat-hana.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-laylat-hana/",
+      "localPreview": "/templates/wedding-temp-laylat-hana/index.html",
+      "cover": "/assets/templates/laylat-henna-cover.jpg",
+      "hero": "/assets/templates/laylat-henna-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp laylat hana"
+    },
+    {
+      "id": "wedding-temp-qasr",
+      "name": "قَصر",
+      "category": "wedding",
+      "description": "جدار ورد أبيض ينشقّ عن مشهد قصر.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-qasr.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-qasr/",
+      "localPreview": "/templates/wedding-temp-qasr/index.html",
+      "cover": "/assets/templates/qasr-cover.jpg",
+      "hero": "/assets/templates/qasr-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp laylat hana/wedding temp qasr"
+    },
+    {
+      "id": "wedding-temp-letter",
+      "name": "رسالة",
+      "category": "wedding",
+      "description": "رسالة حب تخرج من مظروفها.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-letter.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-letter/",
+      "localPreview": "/templates/wedding-temp-letter/index.html",
+      "cover": "/assets/templates/letter-cover.jpg",
+      "hero": "/assets/templates/letter-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp letter"
+    },
+    {
+      "id": "wedding-temp-reverie",
+      "name": "حُلم وردي",
+      "category": "wedding",
+      "description": "مظروف وردي يفتح على بحيرة بجع.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-reverie.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-reverie/",
+      "localPreview": "/templates/wedding-temp-reverie/index.html",
+      "cover": "/assets/templates/reverie-cover.jpg",
+      "hero": "/assets/templates/reverie-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp reverie"
+    },
+    {
+      "id": "wedding-temp-ring",
+      "name": "الخاتم",
+      "category": "engagement",
+      "description": "صندوق خاتم مخملي ينفتح بلمسة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-ring.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-ring/",
+      "localPreview": "/templates/wedding-temp-ring/index.html",
+      "cover": "/assets/templates/ring-cover.jpg",
+      "hero": "/assets/templates/ring-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp ring"
+    },
+    {
+      "id": "wedding-temp-rozana",
+      "name": "روزنة",
+      "category": "wedding",
+      "description": "بطاقة ورقية تكشف حديقة عرس.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-rozana.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-rozana/",
+      "localPreview": "/templates/wedding-temp-rozana/index.html",
+      "cover": "/assets/templates/rozana-cover.jpg",
+      "hero": "/assets/templates/rozana-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp rozana"
+    },
+    {
+      "id": "wedding-temp-starlit",
+      "name": "تحت النجوم",
+      "category": "wedding",
+      "description": "سماء ليل تتلألأ بالنجوم.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-starlit.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-starlit/",
+      "localPreview": "/templates/wedding-temp-starlit/index.html",
+      "cover": "/assets/templates/starlit-cover.jpg",
+      "hero": "/assets/templates/starlit-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp starlit"
+    },
+    {
+      "id": "wedding-temp-dovess",
+      "name": "حمام أبيض",
+      "category": "wedding",
+      "description": "مشهد حمام أبيض من القالب المحلي.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-dovess.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-dovess/",
+      "localPreview": "/templates/wedding-temp-dovess/index.html",
+      "cover": "/assets/templates/swans-cover.jpg",
+      "hero": "/assets/templates/swans-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp starlit/wedding temp dovess"
+    },
+    {
+      "id": "wedding-temp-swans",
+      "name": "بحيرة البجع",
+      "category": "wedding",
+      "description": "ظرف زيتوني يفتح على لوحة بجعتَي البحيرة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-swans.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-swans/",
+      "localPreview": "/templates/wedding-temp-swans/index.html",
+      "cover": "/assets/templates/swans-cover.jpg",
+      "hero": "/assets/templates/swans-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp swans"
+    },
+    {
+      "id": "wedding-temp-blush",
+      "name": "وردة",
+      "category": "wedding",
+      "description": "مظروف وردي بفيونكة حرير.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-blush.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-blush/",
+      "localPreview": "/templates/wedding-temp-blush/index.html",
+      "cover": "/assets/templates/blush-cover.jpg",
+      "hero": "/assets/templates/blush-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp swans/wedding temp blush"
+    },
+    {
+      "id": "wedding-temp-surprise",
+      "name": "المفاجأة",
+      "category": "wedding",
+      "description": "قصة تفاعلية تنفتح بلمسة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-surprise.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-surprise/",
+      "localPreview": "/templates/wedding-temp-surprise/index.html",
+      "cover": "/assets/templates/surprise-cover.jpg",
+      "hero": "/assets/templates/surprise-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp swans/wedding temp blush/wedding temp surprise"
+    },
+    {
+      "id": "wedding-temp-royal",
+      "name": "الملكي",
+      "category": "wedding",
+      "description": "ستارة مسرح ملكية تنفتح على الدعوة.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-royal.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-royal/d/demo-royal/",
+      "localPreview": "/templates/wedding-temp-royal/d/demo-royal/index.html",
+      "cover": "/assets/templates/royal-cover.jpg",
+      "hero": "/assets/templates/royal-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp swans/wedding temp blush/wedding temp surprise/wedding temp royal"
+    },
+    {
+      "id": "wedding-temp-bahira",
+      "name": "بحيرة",
+      "category": "wedding",
+      "description": "بوابة بيضاء يلفّها الورد.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-bahira.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-bahira/",
+      "localPreview": "/templates/wedding-temp-bahira/index.html",
+      "cover": "/assets/templates/bahira-cover.jpg",
+      "hero": "/assets/templates/bahira-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp swans/wedding temp blush/wedding temp surprise/wedding temp royal/wedding temp bahira"
+    },
+    {
+      "id": "wedding-temp-storybook",
+      "name": "كتاب الحكاية",
+      "category": "wedding",
+      "description": "كتاب حكايات مذهّب يُفتح على مشهد حالم.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-storybook.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-storybook/",
+      "localPreview": "/templates/wedding-temp-storybook/index.html",
+      "cover": "/assets/templates/storybook-cover.jpg",
+      "hero": "/assets/templates/storybook-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp swans/wedding temp blush/wedding temp surprise/wedding temp royal/wedding temp bahira/wedding temp storybook"
+    },
+    {
+      "id": "wedding-temp-vangogh",
+      "name": "ليلة النجوم",
+      "category": "wedding",
+      "description": "لوحة فان كوخ تنبض بالدوامات والنجوم.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-vangogh.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-vangogh/",
+      "localPreview": "/templates/wedding-temp-vangogh/index.html",
+      "cover": "/assets/templates/vangogh-cover.jpg",
+      "hero": "/assets/templates/vangogh-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp vangogh"
+    },
+    {
+      "id": "wedding-temp-ivory-palace",
+      "name": "قصر العاج",
+      "category": "wedding",
+      "description": "ظرف عاجي يفتح على قوس منقوش.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-ivory-palace.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-ivory-palace/",
+      "localPreview": "/templates/wedding-temp-ivory-palace/index.html",
+      "cover": "/assets/templates/ivory-palace-cover.jpg",
+      "hero": "/assets/templates/ivory-palace-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp vangogh/wedding temp ivory-palace"
+    },
+    {
+      "id": "wedding-temp-rosegold",
+      "name": "وردي ذهبي",
+      "category": "wedding",
+      "description": "دعوة وردية ذهبية بختم شمع.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-rosegold.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-rosegold/",
+      "localPreview": "/templates/wedding-temp-rosegold/index.html",
+      "cover": "/assets/templates/rosegold-cover.jpg",
+      "hero": "/assets/templates/rosegold-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp vangogh/wedding temp ivory-palace/wedding temp rosegold"
+    },
+    {
+      "id": "wedding-temp-wisal",
+      "name": "وِصال",
+      "category": "wedding",
+      "description": "يدان تلتقيان في ممر يغمره ضوء ذهبي.",
+      "sourceRepo": "https://github.com/Mohamad-Adib-Tawil/wedding-temp-wisal.git",
+      "referenceUrl": "https://mohamad-adib-tawil.github.io/wedding-temp-wisal/",
+      "localPreview": "/templates/wedding-temp-wisal/index.html",
+      "cover": "/assets/templates/wisal-cover.jpg",
+      "hero": "/assets/templates/wisal-hero.jpg",
+      "sourcePath": "weddings Templets/wedding temp wisal"
+    }
+  ],
+  "copy": {
+    "heroEyebrow": "دعوات رقمية لكل مناسبة",
+    "heroTitle": "دعوة إلكترونية\nتخطف الأنظار",
+    "heroDescription": "اختاروا قالبًا يليق بفرحتكم، ودعوا فريق مودة يجهّز الدعوة بأسمائكم وتفاصيل مناسبتكم.",
+    "templatesHeading": "اختاروا قالبكم",
+    "templatesDescription": "تعرّفوا على التصاميم المتاحة لمناسباتكم المختلفة.",
+    "howHeading": "كيف نعمل؟",
+    "howDescription": "ثلاث خطوات بسيطة لتصل دعوتكم إلى ضيوفكم.",
+    "editorHeading": "دعوتكم بأسمائكم",
+    "editorDescription": "يعمل فريق مودة على تعديل الأسماء والتاريخ والتفاصيل في القالب المختار، ثم يشارككم رابط الدعوة لمراجعته.",
+    "priceHeading": "خدمة واحدة واضحة",
+    "pricingDisclosure": "يتم تنسيق الطلب والدفع عبر واتساب. لا يتم الدفع من داخل هذا الموقع.",
+    "faqHeading": "أسئلة شائعة",
+    "faqs": [
+      {
+        "question": "كيف أطلب الدعوة؟",
+        "answer": "اختاروا قالبًا ثم تواصلوا معنا عبر واتساب. ينسّق فريق مودة معكم بيانات الدعوة المطلوبة."
+      },
+      {
+        "question": "هل يمكن تعديل الدعوة بعد تجهيزها؟",
+        "answer": "تواصلوا مع فريق مودة عبر واتساب لطلب التعديلات."
+      },
+      {
+        "question": "كيف تصل الدعوة إلى الضيوف؟",
+        "answer": "نشارككم رابطًا مخصصًا للدعوة بعد تجهيزها."
+      }
+    ]
+  },
+  "newbornContent": {
+    "prayers": [
+      {
+        "text": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+        "source": "الفرقان: ٧٤",
+        "url": "https://quran.com/ar/25/74"
+      },
+      {
+        "text": "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ",
+        "source": "إبراهيم: ٤٠",
+        "url": "https://quran.com/ar/14/40"
+      }
+    ],
+    "hadith": {
+      "text": "وُلِدَ لِي غُلَامٌ، فَأَتَيْتُ بِهِ النَّبِيَّ ﷺ فَسَمَّاهُ إِبْرَاهِيمَ، فَحَنَّكَهُ بِتَمْرَةٍ، وَدَعَا لَهُ بِالْبَرَكَةِ وَدَفَعَهُ إِلَيَّ، وَكَانَ أَكْبَرَ وَلَدِ أَبِي مُوسَى.",
+      "source": "صحيح البخاري، كتاب العقيقة، حديث ٥٤٦٧؛ عن أبي موسى رضي الله عنه.",
+      "url": "https://sunnah.com/bukhari:5467"
+    }
+  }
+}

@@ -1,0 +1,295 @@
+/* ============================================================
+   قالب doves — سماء فجر + حمام أبيض يطير
+   ============================================================ */
+
+:root {
+  --sky-1: #c3d2ec;   /* أعلى السماء */
+  --sky-2: #dcd8ec;
+  --sky-3: #f3e4da;   /* قرب الأفق دافئ */
+  --cream: #fffaf2;
+  --gold:  #c3a05f;
+  --gold-2:#dcc086;
+  --gold-dp:#a07b39;
+  --ink:   #4b5168;   /* أزرق رمادي عميق */
+  --ink-sf:#7c8198;
+  --rose:  #d79aa1;
+  --line:  rgba(195, 160, 95, 0.34);
+
+  --font-grand:  "Aref Ruqaa", serif;
+  --font-title:  "El Messiri", sans-serif;
+  --font-script: "Amiri", serif;
+  --font-body:   "Tajawal", system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--sky-3);
+  line-height: 1.9;
+  overflow-x: hidden;
+}
+
+/* ====================== السماء ====================== */
+.sky {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 45%, var(--sky-3) 100%);
+}
+.sun {
+  position: absolute; top: 14%; left: 50%; transform: translateX(-50%);
+  width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,248,235,0.9), rgba(255,248,235,0) 65%);
+}
+.cloud {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.85), rgba(255,255,255,0) 70%);
+  filter: blur(6px); opacity: 0.7;
+}
+.cloud--1 { width: 260px; height: 110px; top: 22%; left: -10%; animation: drift 38s linear infinite; }
+.cloud--2 { width: 200px; height: 90px; top: 52%; left: 60%; animation: drift 52s linear infinite; }
+.cloud--3 { width: 320px; height: 120px; top: 74%; left: 10%; animation: drift 64s linear infinite; }
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(40vw); } }
+
+/* ====================== الحمام ====================== */
+.flock { position: fixed; inset: 0; z-index: 40; pointer-events: none; overflow: hidden; }
+.dove {
+  position: absolute; width: 82px; will-change: transform;
+  filter: drop-shadow(0 12px 14px rgba(80,90,120,0.18));
+}
+.dove svg { width: 100%; height: auto; display: block; }
+.dove__body { fill: #ffffff; }
+.dove__beak { fill: var(--gold-2); }
+.dove__wing { fill: #f2f5fb; transform-box: fill-box; transform-origin: 12% 88%; animation: flap 0.42s ease-in-out infinite; }
+@keyframes flap {
+  0%,100% { transform: rotate(-2deg); }
+  50% { transform: rotate(-46deg); }
+}
+
+/* طيران عند الفتح: للأعلى مع انجراف جانبي */
+.dove--fly { animation: fly 3s ease-in forwards; }
+@keyframes fly {
+  0% { transform: translate(0,0) rotate(var(--rot,-8deg)) scale(var(--sc,1)); opacity: 0; }
+  8% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(var(--dx,0), -118vh) rotate(var(--rot,-8deg)) scale(var(--sc,1)); opacity: 0; }
+}
+/* حمام ينساب بهدوء في الخلفية */
+.dove--glide { animation: glide var(--gd,26s) linear infinite; opacity: 0.9; }
+@keyframes glide {
+  0% { transform: translate3d(22vw, 0, 0) scale(var(--sc,1)); opacity: 0; }
+  8% { opacity: 0.9; }
+  88% { opacity: 0.9; }
+  100% { transform: translate3d(calc(-150vw - 420px), 2vh, 0) scale(var(--sc,1)); opacity: 0; }
+}
+
+/* ====================== حمامة واقعية (sprite شفاف من فيديو) ====================== */
+.rbird {
+  aspect-ratio: 420 / 318;
+  background: url("assets/bird.webp") left center / 2300% 100% no-repeat;
+  /* شريط ٢٣ إطاراً منتظم الحركة (WebP، أُعيد أخذ عيّناته لإزالة الإطارات المكرّرة التي
+     كانت تجعل الرفرفة «تسرع وتبطئ»). للمواضع النسبية: steps(N-1)=22 كي يقع كل خطوة على
+     حدود إطار كامل (لا نصف حمامة مقصوصة) */
+  animation: rbird-flap 1.05s steps(22) infinite;
+  will-change: background-position;
+}
+@keyframes rbird-flap { from { background-position-x: 0%; } to { background-position-x: 100%; } }
+.dove .rbird { width: 100%; }
+.dove--glide .rbird { transform: scaleX(-1); }   /* ينساب لليسار → يواجه اليسار */
+
+/* ====================== الافتتاح ====================== */
+.cover {
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px;
+  background: linear-gradient(180deg, var(--sky-1), var(--sky-3));
+  transition: opacity 1s ease 0.4s, visibility 1s ease 0.4s;
+  overflow: hidden;
+}
+.cover.is-open { opacity: 0; visibility: hidden; pointer-events: none; }
+.cover__center { position: relative; z-index: 2; transition: opacity 0.5s ease, transform 0.6s ease; }
+
+/* صورة خلفية اختيارية بحواف متلاشية (تندمج مع خلفية القالب) */
+.bg-photo {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity .9s ease; pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 80% 74% at 50% 42%, #000 48%, transparent 100%);
+          mask-image: radial-gradient(ellipse 80% 74% at 50% 42%, #000 48%, transparent 100%);
+}
+.bg-photo.is-shown { opacity: .62; }
+.cover.is-open .cover__center { opacity: 0; transform: translateY(-14px); }
+
+.cover-birds {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden;
+  opacity: 0.96; transition: opacity 0.45s ease;
+}
+.cover.is-open .cover-birds { opacity: 0; }
+.cover-bird {
+  position: absolute; left: 100vw; width: clamp(190px, 42vw, 360px);
+  filter: drop-shadow(0 16px 18px rgba(72,82,118,0.2));
+  opacity: 0.92;
+}
+.cover-bird--one {
+  top: 12%;
+  animation: rbird-flap 1.05s steps(22) infinite, cover-bird-cross 10s linear infinite;
+}
+.cover-bird--two {
+  top: 34%; left: 108vw; width: clamp(135px, 30vw, 240px); opacity: 0.74;
+  animation: rbird-flap 1.05s steps(22) infinite -0.36s, cover-bird-cross 12.5s linear infinite 2.1s;
+}
+.cover-bird--three {
+  top: 58%; left: 116vw; width: clamp(110px, 24vw, 190px); opacity: 0.58;
+  animation: rbird-flap 1.05s steps(22) infinite -0.72s, cover-bird-cross 15s linear infinite 5.2s;
+}
+@keyframes cover-bird-cross {
+  0% { transform: translate3d(18vw, 0, 0) scaleX(-1); opacity: 0; }
+  7% { opacity: 0.92; }
+  52% { transform: translate3d(-72vw, -4vh, 0) scaleX(-1); }
+  90% { opacity: 0.92; }
+  100% { transform: translate3d(calc(-152vw - 420px), 4vh, 0) scaleX(-1); opacity: 0; }
+}
+
+.emblem { position: relative; width: clamp(130px, 36vw, 170px); aspect-ratio: 1; margin: 0 auto 18px; display: grid; place-items: center; }
+.emblem__ring { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--gold); }
+.emblem__ring circle { fill: none; stroke: var(--gold); stroke-width: 1.6; }
+.emblem__ring .thin { opacity: 0.5; stroke-dasharray: 3 6; }
+.emblem__dove { width: 80%; aspect-ratio: 480 / 572; background: url("assets/emblem-dove.png") center / contain no-repeat; filter: drop-shadow(0 9px 14px rgba(70,82,120,0.32)); animation: hover 3.4s ease-in-out infinite; }
+.emblem__dove .dove__wing { transform-box: fill-box; transform-origin: 12% 88%; animation: flap 1.8s ease-in-out infinite; }
+@keyframes hover { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+.cover__label { font-family: var(--font-title); letter-spacing: normal; color: var(--gold-dp); font-size: 16px; }
+.cover__mono { font-family: var(--font-grand); font-size: clamp(30px, 9vw, 52px); color: var(--ink); line-height: 1.25; margin: 4px 0 18px; padding: 0 14px; }
+.cover__btn {
+  font-family: var(--font-title); font-weight: 600; font-size: 16px; color: #fff;
+  background: linear-gradient(180deg, #aeb9d6, #8f9cc0); border: none; border-radius: 999px;
+  padding: 14px 38px; cursor: pointer; letter-spacing: normal;
+  box-shadow: 0 12px 28px rgba(120,135,180,0.4); transition: transform 0.25s ease, filter 0.25s ease;
+}
+.cover__btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.cover__hint { color: var(--ink-sf); font-size: 13px; margin-top: 15px; letter-spacing: normal; }
+
+/* ====================== المحتوى ====================== */
+.invite { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+.section { position: relative; text-align: center; padding: clamp(46px, 9vw, 84px) clamp(18px, 6vw, 40px); }
+.section + .section::before { content: "❖"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); color: var(--gold); font-size: 13px; opacity: 0.6; }
+.section__title { font-family: var(--font-title); font-weight: 600; font-size: clamp(22px, 5.6vw, 32px); color: var(--gold-dp); margin-bottom: 18px; letter-spacing: normal; }
+.orn { color: var(--gold); font-size: 24px; display: inline-block; }
+
+.gdivider { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 4px auto 22px; max-width: 280px; color: var(--gold); }
+.gdivider i { height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--gold), transparent); transform: scaleX(0); transition: transform 1s ease; }
+.reveal.is-visible .gdivider i { transform: scaleX(1); }
+.gdivider span { font-size: 15px; }
+
+/* الواجهة */
+.hero { min-height: 100svh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.stage-bg { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; }
+.hero__inner { position: relative; z-index: 1; padding: 30px; }
+.bismillah { font-family: var(--font-script); color: var(--gold-dp); font-size: clamp(18px, 4.6vw, 24px); margin: 12px 0 14px; }
+.kicker { font-family: var(--font-title); color: var(--ink-sf); letter-spacing: normal; font-size: 15px; margin-bottom: 8px; }
+.couple { font-family: var(--font-grand); font-weight: 700; line-height: 1.38; font-size: clamp(42px, 13vw, 78px); margin: 6px 0 16px; color: var(--ink); }
+.couple__name { display: block; }
+.couple__amp { display: block; color: var(--gold); font-size: 0.5em; margin: 2px 0; }
+/* صورة العرسان داخل الواجهة */
+.hero-photo { display: none; width: clamp(120px, 34vw, 180px); aspect-ratio: 1; margin: 4px auto 18px; }
+.hero-photo.is-shown { display: block; animation: heroPhotoIn 0.9s cubic-bezier(.2,.7,.2,1) both; }
+.hero-photo img {
+  width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 1px var(--gold-2), 0 14px 34px rgba(120,135,180,0.32);
+}
+@keyframes heroPhotoIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+
+.hero__date { font-family: var(--font-title); color: var(--gold-dp); font-size: clamp(15px, 4.2vw, 20px); }
+.scroll-cue { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; margin-top: 30px; color: var(--gold-dp); text-shadow: 0 1px 8px rgba(0,0,0,0.45); }
+.scroll-cue__text { font-family: var(--font-title); font-weight: 600; font-size: 0.88rem; letter-spacing: normal; }
+.scroll-cue__arrow { display: block; font-size: 1.2rem; line-height: 1; animation: bob 1.8s ease-in-out infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0); opacity: 0.85; } 50% { transform: translateY(7px); opacity: 1; } }
+
+/* نصوص */
+.verse__text { font-family: var(--font-script); font-size: clamp(19px, 5vw, 26px); color: var(--gold-dp); line-height: 2; max-width: 30ch; margin: 0 auto; }
+.invitation__text { font-size: clamp(15px, 4vw, 17px); color: var(--ink); line-height: 2.1; max-width: 42ch; margin: 0 auto; }
+
+/* العائلتان */
+.families { display: flex; align-items: center; justify-content: center; gap: clamp(12px, 5vw, 30px); flex-wrap: wrap; }
+.family { flex: 1; min-width: 130px; }
+.family__label { display: block; color: var(--ink-sf); font-size: 13px; letter-spacing: normal; margin-bottom: 6px; }
+.family__names { font-family: var(--font-grand); color: var(--ink); font-size: clamp(16px, 4.4vw, 21px); }
+.families__heart { color: var(--rose); font-size: 22px; animation: beat 1.8s ease-in-out infinite; }
+/* بالشاشات الضيقة (≤358px، و360 على حافة أقل من 1px) تلتفّ الفقرة: القلب يشارك
+   العائلة الأولى صفّها فيدفعها ~18px عن المنتصف — سطر مستقل يعيد الصفوف للمركز */
+@media (max-width: 366px) {
+  .families .families__heart { flex-basis: 100%; }
+}
+@keyframes beat { 0%,100% { transform: scale(1); } 14% { transform: scale(1.22); } 28% { transform: scale(1); } 42% { transform: scale(1.16); } }
+
+/* العدّاد */
+.countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(8px, 2vw, 14px); max-width: 440px; margin: 26px auto 0; }
+.cd__cell { border: 1px solid var(--line); border-radius: 14px; padding: 16px 4px; background: rgba(255,255,255,0.55); backdrop-filter: blur(3px); box-shadow: 0 8px 20px rgba(120,135,180,0.12); }
+.cd__num { display: block; font-family: var(--font-grand); font-size: clamp(28px, 8vw, 44px); color: var(--gold-dp); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.cd__num.flip { animation: flip 0.5s ease; }
+@keyframes flip { 0% { transform: rotateX(0); } 50% { transform: rotateX(90deg); opacity: 0.3; } 100% { transform: rotateX(0); } }
+.cd__lbl { display: block; color: var(--ink-sf); font-size: 12px; margin-top: 3px; }
+.when__arrived { font-family: var(--font-grand); color: var(--gold-dp); font-size: clamp(24px, 6vw, 34px); margin-top: 22px; }
+
+/* البرنامج */
+.timeline { list-style: none; max-width: 360px; margin: 6px auto 0; text-align: start; }
+.timeline__item { position: relative; display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 12px; padding: 13px 0; padding-inline: 18px 0; border-inline-start: 1px solid var(--line); margin-inline-start: 6px; }
+.timeline__dot { position: absolute; inset-inline-start: -6px; top: 18px; width: 11px; height: 11px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 3px var(--sky-3); }
+.timeline__time { font-family: var(--font-grand); color: var(--gold-dp); font-size: 15px; min-width: 86px; }
+.timeline__title { color: var(--ink); font-size: 15px; }
+
+/* القاعة */
+.venue__photo { height: 180px; margin: 0 auto 18px; max-width: 400px; border-radius: 16px; border: 1px solid var(--line); background: radial-gradient(circle at 50% 35%, #eef1f8, #e3e8f2); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 36px rgba(120,135,180,0.2); }
+.venue__photo .venue__pin { color: var(--gold-dp); font-size: 30px; opacity: 0.6; }
+.venue.has-photo .venue__pin { display: none; }
+.when__date { font-family: var(--font-grand); font-size: clamp(20px, 5.5vw, 28px); color: var(--ink); }
+.when__time { color: var(--ink-sf); margin-top: 2px; font-size: 15px; margin-bottom: 4px; }
+.venue__name { font-family: var(--font-grand); font-size: clamp(22px, 6vw, 32px); color: var(--ink); }
+.venue__addr { color: var(--ink-sf); margin-top: 4px; font-size: 15px; }
+.venue__btn { display: inline-flex; align-items: center; gap: 9px; margin-top: 22px; font-family: var(--font-title); font-weight: 600; font-size: 15px; color: #fff; background: linear-gradient(180deg, #aeb9d6, #8f9cc0); border-radius: 999px; padding: 13px 30px; text-decoration: none; box-shadow: 0 10px 24px rgba(120,135,180,0.32); transition: transform 0.25s ease; }
+.venue__btn:hover { transform: translateY(-2px); }
+
+/* ملاحظات */
+.notes__list { list-style: none; max-width: 400px; margin: 4px auto 0; text-align: start; }
+.notes__item { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; color: var(--ink); font-size: 15px; line-height: 1.7; }
+.notes__mark { color: var(--gold); font-size: 13px; margin-top: 4px; flex-shrink: 0; }
+
+/* خاتمة */
+.closing__note { font-family: var(--font-script); font-size: clamp(20px, 5vw, 28px); color: var(--ink); margin-bottom: 8px; }
+.closing__hashtag { color: var(--gold-dp); font-weight: 700; font-size: 15px; letter-spacing: normal; margin-bottom: 18px; }
+.contact { margin: 0 auto 16px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 14px; max-width: 280px; background: rgba(255,255,255,0.55); }
+.contact__label { display: block; color: var(--ink-sf); font-size: 13px; margin-bottom: 4px; }
+.contact__link { color: var(--gold-dp); font-weight: 700; font-size: 17px; text-decoration: none; }
+.contact__link:hover { text-decoration: underline; }
+.closing__families { color: var(--ink-sf); font-size: 15px; margin-bottom: 6px; }
+.closing__thanks { font-family: var(--font-script); color: var(--rose); font-size: 17px; margin-bottom: 14px; }
+.closing__dove { width: 110px; margin: 0 auto; }
+.closing__dove .dove__body { fill: #fff; } .closing__dove .dove__beak { fill: var(--gold-2); } .closing__dove .dove__wing { fill: #eef2f9; }
+
+/* Keep the floating music control clear of the fixed WhatsApp action bar. */
+#da3wa-music { bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important; }
+
+/* ====================== ظهور ====================== */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s ease, transform 1s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-up { opacity: 0; transform: translateY(26px); }
+.hero.play .reveal-up { animation: up 0.9s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero.play .orn { animation-delay: 0.05s; }
+.hero.play .bismillah { animation-delay: 0.2s; }
+.hero.play .kicker { animation-delay: 0.35s; }
+.hero.play #groomName { animation-delay: 0.5s; }
+.hero.play .couple__amp { animation-delay: 0.65s; }
+.hero.play #brideName { animation-delay: 0.78s; }
+.hero.play .hero__date { animation-delay: 0.95s; }
+.hero.play .scroll-cue { animation-delay: 1.15s; }
+@keyframes up { to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, .reveal { transition: none !important; animation: none !important; }
+  .reveal, .reveal-up { opacity: 1 !important; transform: none !important; }
+  .hero-photo.is-shown { opacity: 1 !important; transform: none !important; }
+}
+
+/* أسطر Enter في حقل «الدعاء/العبارة» تُعرض كما كتبها الزبون (بسملة فوق والآية تحتها) */
+.verse__text { white-space: pre-line; }

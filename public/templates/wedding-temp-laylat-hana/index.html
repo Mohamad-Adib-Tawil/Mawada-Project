@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <script src="./mawada-adapter.js?v=3"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>دعوة ليلة الحنّة محمد أديب طويل و رزان بطايحي</title>
+  <meta name="description" content="دعوة إلى ليلة الحنّة — محمد أديب طويل و رزان بطايحي">
+  <meta property="og:title" content="دعوة ليلة الحنّة محمد أديب طويل و رزان بطايحي">
+  <meta property="og:description" content="بكل الحب ندعوكم لمشاركتنا ليلة من أجمل ليالي العمر">
+  <meta property="og:image" content="images/share.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="images/share.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=El+Messiri:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/intro-poster.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .calendar-card,
+    .rsvp-card { max-width: 440px; margin-inline: auto; background: #fff4df; border: 1px solid rgba(181,122,42,.4); border-radius: 24px 8px 24px 8px; box-shadow: 0 24px 60px rgba(120,90,70,.18); }
+    .calendar-card { overflow: hidden; text-align: center; }
+    .calendar-card__top { padding: 13px 10px 11px; color: #fff6df; background: linear-gradient(135deg,#8f1322,#b57a2a); font-weight: 800; font-size: 16px; }
+    .calendar-card__body { padding: 14px 10px 18px; }
+    .calendar-card__weekday { color: #8c654d; font-weight: 700; }
+    .calendar-card__day { color: #8f1322; font: 700 62px/1.15 "Aref Ruqaa",serif; }
+    .calendar-card__time { margin-top: 8px; color: #4a271d; font-weight: 700; font-size: 14px; }
+    .calendar-card__actions { display: flex; gap: 7px; justify-content: center; flex-wrap: wrap; padding: 12px; border-top: 1px dashed rgba(181,122,42,.4); }
+    .calendar-card__actions button { border: 1.5px solid #8f1322; color: #8f1322; background: transparent; font: 700 12.5px "Tajawal",sans-serif; border-radius: 999px; padding: 7px 13px; cursor: pointer; }
+    .rsvp-card { padding: 26px 22px; text-align: center; }
+    .rsvp-card h2 { margin-bottom: 4px; color: #4a271d; font: 700 26px "Aref Ruqaa",serif; }
+    .rsvp-card__ornament { color: #8f1322; letter-spacing: .4em; }
+    .rsvp-card__sub { margin: 0 0 18px; color: #8c654d; font-size: 14px; }
+    .rsvp-card label { display: block; margin: 12px 0 5px; color: #4a271d; text-align: start; font-weight: 700; font-size: 13px; }
+    .rsvp-card input, .rsvp-card textarea { width: 100%; box-sizing: border-box; padding: 11px 14px; border: 1.5px solid rgba(181,122,42,.4); border-radius: 12px; background: #fffaf0; color: #4a271d; font: 15px "Tajawal",sans-serif; }
+    .rsvp-card textarea { min-height: 84px; resize: vertical; }
+    .rsvp-attendance { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 6px; }
+    .rsvp-attendance button { padding: 11px 6px; border: 1.5px solid rgba(181,122,42,.4); border-radius: 12px; background: #fffaf0; color: #4a271d; font: 700 15px "Tajawal",sans-serif; cursor: pointer; }
+    .rsvp-attendance button[aria-pressed="true"] { border-color: #8f1322; background: #8f1322; color: #fff6df; }
+    .rsvp-stepper { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 6px; }
+    .rsvp-stepper button { width: 38px; height: 38px; border: 1.5px solid rgba(181,122,42,.4); border-radius: 50%; background: #fffaf0; color: #4a271d; font-size: 20px; cursor: pointer; }
+    .rsvp-stepper output { min-width: 28px; color: #4a271d; font-size: 20px; font-weight: 800; }
+    .rsvp-submit { width: 100%; margin-top: 20px; padding: 13px; border: 0; border-radius: 999px; background: #8f1322; color: #fff6df; font: 700 16px "Tajawal",sans-serif; cursor: pointer; box-shadow: 0 12px 26px -12px #8f1322e6; }
+    .rsvp-status { min-height: 24px; margin-top: 10px; color: #8f1322; font-size: 13px; }
+    .rsvp-success { padding: 12px 8px 4px; color: #4a271d; }
+    .rsvp-success strong { display: block; color: #8f1322; font: 700 24px "Aref Ruqaa",serif; }
+    .wishes { max-width: 460px; margin: 30px auto 0; }
+    .wishes h3 { display: inline-block; margin-bottom: 16px; padding: 7px 22px; border: 1px solid rgba(181,122,42,.4); border-radius: 999px; background: #fff4df; color: #4a271d; font: 700 21px "Aref Ruqaa",serif; }
+    .wish-list { display: grid; gap: 10px; text-align: start; }
+    .wish { display: flex; gap: 11px; align-items: flex-start; padding: 13px 15px; border: 1px solid rgba(181,122,42,.4); border-radius: 16px; background: #fff4df; box-shadow: 0 8px 24px rgba(120,90,70,.08); }
+    .wish__avatar { flex: 0 0 auto; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; color: #fff; font: 19px "Aref Ruqaa",serif; }
+    .wish__name { color: #4a271d; font-weight: 700; font-size: 14px; }
+    .wish__message { color: #8c654d; font-size: 14px; line-height: 1.7; }
+    #music-toggle { position: fixed; inset-inline-start: 16px; bottom: 16px; z-index: 60; width: 50px; height: 50px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255,255,255,.92); box-shadow: 0 8px 22px rgba(0,0,0,.22); font-size: 22px; cursor: pointer; }
+    #music-player { position: fixed; inset-inline-start: -9999px; bottom: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    #order-bar { position: fixed; right: 0; bottom: 0; left: 0; z-index: 55; display: flex; align-items: center; gap: 8px; padding: 9px 12px calc(9px + env(safe-area-inset-bottom,0px)); border-top: 1px solid #f0e6da; background: rgba(255,255,255,.95); backdrop-filter: blur(10px); transform: translateY(110%); animation: orderBarIn .5s ease 2.2s forwards; font-family: "Tajawal",sans-serif; }
+    @keyframes orderBarIn { to { transform: translateY(0); } }
+    #order-bar .order-bar__copy { flex: 1; min-width: 0; color: #2a2140; font-size: .82rem; font-weight: 700; line-height: 1.4; }
+    #order-bar small { display: block; color: #6e6780; font-size: .72rem; font-weight: 400; }
+    #order-bar .order-bar__note { color: #0d8578; font-weight: 700; font-size: .68rem; }
+    #order-bar .order-bar__order { flex-shrink: 0; padding: 10px 16px; border-radius: 999px; background: #ff4d7d; color: #fff; text-decoration: none; font-size: .88rem; font-weight: 800; white-space: nowrap; box-shadow: 0 8px 18px -8px rgba(255,77,125,.9); }
+    #order-bar .order-bar__wa { flex-shrink: 0; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #25d366; color: #fff; text-decoration: none; font-size: 21px; }
+    #order-bar .order-bar__close { flex-shrink: 0; width: 34px; height: 34px; border: 0; border-radius: 50%; background: transparent; color: #9a92a8; font-size: 20px; cursor: pointer; }
+    @media (prefers-reduced-motion: reduce) { #order-bar { transform: none; animation: none; } }
+  </style>
+</head>
+<body class="locked">
+  <div class="paper-glow" aria-hidden="true"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <div class="gate" id="gate" role="dialog" aria-label="افتتاح الدعوة" aria-modal="true">
+    <video class="gate__video" id="intro-video" muted playsinline webkit-playsinline preload="auto" poster="images/intro-poster.jpg">
+      <source src="media/intro-soft-v2.mp4" type="video/mp4">
+    </video>
+    <div class="gate__shade" id="gate-shade" aria-hidden="true"></div>
+    <div class="gate__start">
+      <span class="gate__orn" aria-hidden="true">✦</span>
+      <p class="gate__eyebrow">دعوة إلى ليلة الحنّة</p>
+      <p class="gate__names" id="gate-names">—</p>
+      <button class="gate__button" id="open-button" type="button"><span id="open-label">افتحوا الستارة</span></button>
+      <p class="gate__hint">اضغطوا لتبدأ الحكاية</p>
+    </div>
+    <div class="gate__reveal" id="gate-reveal" aria-hidden="true">
+      <p>ليلة الحنّة</p>
+      <strong id="gate-reveal-names">—</strong>
+      <span id="gate-reveal-date">—</span>
+    </div>
+  </div>
+
+  <main class="invite" id="invite" aria-hidden="true">
+    <header class="hero" id="hero">
+      <picture class="hero__picture" aria-hidden="true"><img src="images/hero.webp" alt=""></picture>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__copy">
+        <p class="bismillah">بسم الله الرحمن الرحيم</p>
+        <p class="hero__kicker">ليلة الحنّة</p>
+        <span class="diamond" aria-hidden="true">◆</span>
+        <h1 class="hero__names" id="hero-names">—</h1>
+        <p class="hero__sub" id="hero-sub">—</p>
+        <p class="hero__date" id="hero-date">—</p>
+        <p class="hero__time" id="hero-time">—</p>
+      </div>
+      <a class="scroll-cue" href="#invitation" aria-label="متابعة الدعوة"><span>مرّروا للأسفل</span><b aria-hidden="true">↓</b></a>
+    </header>
+
+    <section class="section verse creveal" id="invitation">
+      <div class="ornament" aria-hidden="true"><i></i><span>❦</span><i></i></div>
+      <p class="verse__text" id="verse-text">—</p>
+    </section>
+
+    <section class="section creveal">
+      <div class="invitation-card">
+        <span class="card-corner card-corner--a" aria-hidden="true">❧</span>
+        <span class="card-corner card-corner--b" aria-hidden="true">❧</span>
+        <p class="section__eyebrow">بكل الحب</p>
+        <h2 class="section__title">دعوة ليلة الحنّة</h2>
+        <p class="invitation__text" id="invitation-text">—</p>
+      </div>
+    </section>
+
+    <section class="hands creveal" aria-label="لحظة تشابك الأيدي">
+      <div class="hands__halo" aria-hidden="true"></div>
+      <div class="hands__copy"><p>ومن هنا</p><h2>تبدأ الحكاية</h2><span>يدٌ بيد، وقلبٌ إلى قلب</span></div>
+      <img class="hands__couple" src="images/couple.webp" alt="عروسان يمسكان أيدي بعضهما" loading="lazy" decoding="async">
+    </section>
+
+    <section class="section families creveal">
+      <h2 class="section__title">بفرحة الأهل</h2>
+      <div class="families__card">
+        <div class="family"><span class="family__label">والدا العريس</span><p id="groom-parents">—</p></div>
+        <div class="family"><span class="family__label">والدا العروس</span><p id="bride-parents">—</p></div>
+      </div>
+    </section>
+
+    <section class="section countdown-section creveal">
+      <p class="section__eyebrow">موعدنا يقترب</p>
+      <h2 class="section__title">تبقّى على فرحتنا</h2>
+      <div class="countdown" id="countdown" role="timer" aria-label="الوقت المتبقي للحفل">
+        <div><strong id="countdown-days">٠٠</strong><span>يوم</span></div>
+        <div><strong id="countdown-hours">٠٠</strong><span>ساعة</span></div>
+        <div><strong id="countdown-minutes">٠٠</strong><span>دقيقة</span></div>
+        <div><strong id="countdown-seconds">٠٠</strong><span>ثانية</span></div>
+      </div>
+      <p class="countdown__arrived" id="countdown-arrived" hidden>الليلة ليلتنا ✨</p>
+    </section>
+
+    <section class="section creveal">
+      <div class="details-card">
+        <p class="section__eyebrow">تفاصيل الليلة</p>
+        <h2 class="section__title">الموعد والمكان</h2>
+        <div class="detail-row"><span class="detail-row__icon" aria-hidden="true">◇</span><div><strong id="detail-date">—</strong><small id="detail-time">—</small></div></div>
+        <div class="detail-row"><span class="detail-row__icon" aria-hidden="true">⌖</span><div><strong id="venue-name">—</strong><small id="venue-address">—</small></div></div>
+        <a class="map-button" id="map-button" href="#" target="_blank" rel="noopener">افتحوا الموقع على الخريطة</a>
+      </div>
+    </section>
+
+    <section class="section program creveal" id="program-section">
+      <p class="section__eyebrow">ترتيب الأمسية</p><h2 class="section__title">برنامج ليلة الحنّة</h2><div class="timeline" id="program-list"></div>
+    </section>
+
+    <section class="section notes creveal" id="notes-section">
+      <p class="section__eyebrow">لضيوفنا الأحبّة</p><h2 class="section__title">تنويهات</h2><ul class="notes__list" id="notes-list"></ul>
+    </section>
+
+    <section class="section creveal" id="calendar-section">
+      <p class="section__eyebrow">احفظ الموعد 🌹</p>
+      <h2 class="section__title">لا تنسوا ليلتنا</h2>
+      <div class="calendar-card">
+        <div class="calendar-card__top" id="calendar-month">كانون الأول ٢٠٢٦</div>
+        <div class="calendar-card__body"><div class="calendar-card__weekday" id="calendar-weekday">الجمعة</div><div class="calendar-card__day" id="calendar-day">18</div><div class="calendar-card__time" id="calendar-time">الساعة السابعة مساءً</div></div>
+        <div class="calendar-card__actions"><button id="google-calendar" type="button">تقويم جوجل</button><button id="apple-calendar" type="button">تقويم آيفون</button></div>
+      </div>
+    </section>
+
+    <section class="section creveal" id="rsvp-section">
+      <div class="rsvp-card" id="rsvp-card">
+        <div id="rsvp-form-view">
+          <div class="rsvp-card__ornament" aria-hidden="true">🌹</div>
+          <h2 id="rsvp-title">تأكيد الحضور</h2><p class="rsvp-card__sub" id="rsvp-subtitle">يسعدنا تأكيد حضوركم</p>
+          <form id="rsvp-form">
+            <label for="guest-name">الاسم الكريم</label><input id="guest-name" name="guestName" required maxlength="80" placeholder="اسمك" autocomplete="name">
+            <label>هل ستحضر؟</label><div class="rsvp-attendance" id="rsvp-attendance"><button type="button" data-value="yes" aria-pressed="true">نعم</button><button type="button" data-value="no" aria-pressed="false">لا</button><button type="button" data-value="maybe" aria-pressed="false">ربما</button></div>
+            <label for="companions">عدد المرافقين (عدا حضورك — ٠ إن كنت وحدك)</label><div class="rsvp-stepper"><button type="button" id="companions-minus" aria-label="إنقاص المرافقين">−</button><output id="companions-value" for="companions-minus companions-plus">0</output><button type="button" id="companions-plus" aria-label="زيادة المرافقين">+</button></div>
+            <label for="guest-message">كلمة للعروسين 💌</label><textarea id="guest-message" name="message" maxlength="240" placeholder="اكتبوا تهنئتكم"></textarea>
+            <button class="rsvp-submit" type="submit">إرسال التأكيد</button><p class="rsvp-status" id="rsvp-status" role="status"></p>
+          </form>
+        </div>
+        <div class="rsvp-success" id="rsvp-success" hidden></div>
+      </div>
+      <div class="wishes"><h3>كلمات المهنّئين 🌹</h3><div class="wish-list" id="wish-list"></div></div>
+    </section>
+
+    <footer class="closing creveal">
+      <div class="closing__roses" aria-hidden="true">✦ ❦ ✦</div>
+      <p class="closing__note" id="closing-note">بحضوركم تكتمل ليلة فرحنا</p>
+      <p class="closing__families" id="closing-families"></p>
+      <p class="closing__hashtag" id="closing-hashtag"></p>
+      <div class="contact"><span id="contact-label">للاستفسار والتأكيد</span><a id="contact-link" href="#">تواصلوا معنا عبر واتساب</a></div>
+    </footer>
+  </main>
+
+  <div id="music-player" aria-hidden="true"></div>
+  <button id="music-toggle" type="button" aria-label="الموسيقى" title="تشغيل الموسيقى">🎵</button>
+
+  <div id="order-bar" dir="rtl">
+    <div class="order-bar__copy" id="order-copy">أعجبك قالب «ليلة الحنّة»؟<small>اطلبه الآن وعدّله بنفسك فوراً بعد الطلب</small><small class="order-bar__note">للعرض فقط — يختفي بعد الطلب</small></div>
+    <a class="order-bar__order" id="order-link" href="https://wa.me/+963992688759" target="_blank" rel="noopener">اطلبه 🎉</a>
+    <a class="order-bar__wa" id="order-wa" href="https://wa.me/+963992688759" target="_blank" rel="noopener" aria-label="اطلب عبر واتساب">⌕</a>
+    <button class="order-bar__close" type="button" aria-label="إغلاق">×</button>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

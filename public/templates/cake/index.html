@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <script src="./mawada-adapter.js?v=3"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff6f1">
+  <meta name="description" content="دعوة عيد ميلاد" id="pageDescription">
+  <meta property="og:title" content="دعوة عيد ميلاد" id="ogTitle">
+  <meta property="og:description" content="دعوة عيد ميلاد" id="ogDescription">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/share.jpg" id="ogImage">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="assets/share.jpg" id="twitterImage">
+  <title>دعوة عيد ميلاد</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="site.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <!-- ============ شاشة الدخول: الكيكة والشموع ============ -->
+  <div class="cover" id="cover">
+    <div class="bg-photo" id="coverBg" aria-hidden="true"></div>
+    <div class="cover__sprinkles" id="coverSprinkles" aria-hidden="true"></div>
+    <div class="cover__inner">
+      <div class="cover__cake" aria-hidden="true">
+        <!-- كيكة طبقات بشموع — SVG مرسومة يدوياً -->
+        <svg class="cakeSvg" viewBox="0 0 240 240" role="img" aria-label="كيكة عيد ميلاد">
+          <defs>
+            <linearGradient id="creamA" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff5ef"></stop><stop offset="1" stop-color="#ffe0ea"></stop>
+            </linearGradient>
+            <linearGradient id="creamB" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffe9f1"></stop><stop offset="1" stop-color="#ffc9db"></stop>
+            </linearGradient>
+            <linearGradient id="creamC" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff1e6"></stop><stop offset="1" stop-color="#ffd9c2"></stop>
+            </linearGradient>
+            <radialGradient id="flameG" cx="50%" cy="35%" r="65%">
+              <stop offset="0" stop-color="#fff7c2"></stop>
+              <stop offset="0.45" stop-color="#ffd24d"></stop>
+              <stop offset="1" stop-color="#ff8a2b"></stop>
+            </radialGradient>
+            <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="rgba(255,205,120,0.85)"></stop>
+              <stop offset="1" stop-color="rgba(255,205,120,0)"></stop>
+            </radialGradient>
+          </defs>
+
+          <!-- توهّج دافئ يتفتّح عند الإشعال -->
+          <circle class="cakeGlow" cx="120" cy="70" r="78" fill="url(#glowG)"></circle>
+
+          <!-- الطبق -->
+          <ellipse cx="120" cy="214" rx="92" ry="12" fill="#f3b9cf" opacity="0.7"></ellipse>
+          <ellipse cx="120" cy="210" rx="84" ry="10" fill="#ffffff"></ellipse>
+
+          <!-- الطبقة السفلى -->
+          <rect x="44" y="158" width="152" height="52" rx="14" fill="url(#creamC)" stroke="#f6b9a0" stroke-width="1.5"></rect>
+          <!-- تنقيط (sprinkles) -->
+          <g stroke-width="3" stroke-linecap="round">
+            <line x1="64" y1="176" x2="68" y2="182" stroke="#ff5d8f"></line>
+            <line x1="92" y1="172" x2="96" y2="178" stroke="#4cc4d6"></line>
+            <line x1="120" y1="178" x2="124" y2="184" stroke="#ffb22e"></line>
+            <line x1="150" y1="172" x2="154" y2="178" stroke="#8a6cff"></line>
+            <line x1="176" y1="178" x2="180" y2="184" stroke="#ff5d8f"></line>
+          </g>
+
+          <!-- الطبقة الوسطى -->
+          <rect x="58" y="112" width="124" height="48" rx="13" fill="url(#creamB)" stroke="#f3a9c5" stroke-width="1.5"></rect>
+          <g stroke-width="3" stroke-linecap="round">
+            <line x1="78" y1="130" x2="82" y2="136" stroke="#ffb22e"></line>
+            <line x1="106" y1="126" x2="110" y2="132" stroke="#4cc4d6"></line>
+            <line x1="134" y1="132" x2="138" y2="138" stroke="#8a6cff"></line>
+            <line x1="160" y1="126" x2="164" y2="132" stroke="#ff5d8f"></line>
+          </g>
+
+          <!-- كريمة متموّجة (icing drip) أعلى الوسطى -->
+          <path d="M58 116 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 L182 112 L58 112 Z" fill="url(#creamA)"></path>
+
+          <!-- الطبقة العليا -->
+          <rect x="74" y="74" width="92" height="44" rx="12" fill="url(#creamA)" stroke="#f3c0a8" stroke-width="1.5"></rect>
+          <g stroke-width="3" stroke-linecap="round">
+            <line x1="92" y1="92" x2="96" y2="98" stroke="#ff5d8f"></line>
+            <line x1="120" y1="88" x2="124" y2="94" stroke="#4cc4d6"></line>
+            <line x1="146" y1="94" x2="150" y2="100" stroke="#ffb22e"></line>
+          </g>
+
+          <!-- الشموع: 3 شموع، اللهب يُضاء واحداً تلو الآخر -->
+          <g class="candle" data-i="0">
+            <rect x="93" y="46" width="7" height="30" rx="3" fill="#ff8fb1"></rect>
+            <rect x="93" y="46" width="7" height="30" rx="3" fill="url(#stripe)" opacity="0"></rect>
+            <line x1="96.5" y1="40" x2="96.5" y2="46" stroke="#7a5a4a" stroke-width="1.6"></line>
+            <g class="flameWrap" transform="translate(96.5 40)">
+              <circle class="flameGlow" r="11" fill="url(#glowG)"></circle>
+              <path class="flame" d="M0 -16 C 6 -8 6 -2 0 4 C -6 -2 -6 -8 0 -16 Z" fill="url(#flameG)"></path>
+            </g>
+            <g class="puff" transform="translate(96.5 40)"></g>
+          </g>
+
+          <g class="candle" data-i="1">
+            <rect x="116.5" y="40" width="7" height="36" rx="3" fill="#9fd6e6"></rect>
+            <line x1="120" y1="34" x2="120" y2="40" stroke="#7a5a4a" stroke-width="1.6"></line>
+            <g class="flameWrap" transform="translate(120 34)">
+              <circle class="flameGlow" r="11" fill="url(#glowG)"></circle>
+              <path class="flame" d="M0 -16 C 6 -8 6 -2 0 4 C -6 -2 -6 -8 0 -16 Z" fill="url(#flameG)"></path>
+            </g>
+            <g class="puff" transform="translate(120 34)"></g>
+          </g>
+
+          <g class="candle" data-i="2">
+            <rect x="140" y="46" width="7" height="30" rx="3" fill="#ffd28a"></rect>
+            <line x1="143.5" y1="40" x2="143.5" y2="46" stroke="#7a5a4a" stroke-width="1.6"></line>
+            <g class="flameWrap" transform="translate(143.5 40)">
+              <circle class="flameGlow" r="11" fill="url(#glowG)"></circle>
+              <path class="flame" d="M0 -16 C 6 -8 6 -2 0 4 C -6 -2 -6 -8 0 -16 Z" fill="url(#flameG)"></path>
+            </g>
+            <g class="puff" transform="translate(143.5 40)"></g>
+          </g>
+        </svg>
+      </div>
+      <div class="cover__center">
+        <p class="cover__label" id="coverLabel">دعوة عيد ميلاد</p>
+        <div class="cover__mono" id="coverMono">عيد ميلاد سعيد</div>
+        <button class="cover__btn" id="openBtn" type="button">أشعِل الشموع 🎂</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ المحتوى ============ -->
+  <main class="invite" id="invite" aria-hidden="true">
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+    <!-- الترويسة -->
+    <header class="section hero reveal">
+      <div class="bg-photo" id="heroBg" aria-hidden="true"></div>
+      <span class="balloon balloon--a" aria-hidden="true"></span>
+      <span class="balloon balloon--b" aria-hidden="true"></span>
+      <p class="hero__kicker" id="heroKicker">حفل عيد ميلاد</p>
+      <div class="hero-photo" id="heroPhoto"><img id="heroPhotoImg" alt=""></div>
+      <h1 class="celebrant" id="celebrantName">الاسم</h1>
+      <div class="agewrap" id="ageWrap" hidden="">
+        <span class="age__cake" aria-hidden="true">🎂</span>
+        <span class="age__num" id="ageNum">٠</span>
+        <span class="age__txt">سنة</span>
+      </div>
+      <p class="hero__greet" id="heroGreet">—</p>
+      <p class="hero__date" id="heroDate">—</p>
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-text">مرّر للأسفل</span>
+        <span class="hero__scroll-arrow">↓</span>
+      </div>
+    </header>
+
+    <!-- العدّاد -->
+    <section class="section when reveal">
+      <h2 class="section__title">يبدأ الحفل بعد</h2>
+      <div class="countdown" id="countdown" role="timer" aria-label="الوقت المتبقّي">
+        <div class="cd__cell"><span class="cd__num" id="cdDays">٠٠</span><span class="cd__lbl">يوم</span></div>
+        <div class="cd__cell"><span class="cd__num" id="cdHours">٠٠</span><span class="cd__lbl">ساعة</span></div>
+        <div class="cd__cell"><span class="cd__num" id="cdMins">٠٠</span><span class="cd__lbl">دقيقة</span></div>
+        <div class="cd__cell"><span class="cd__num" id="cdSecs">٠٠</span><span class="cd__lbl">ثانية</span></div>
+      </div>
+      <p class="when__arrived" id="cdArrived" hidden="">—</p>
+    </section>
+
+    <!-- نص الدعوة -->
+    <section class="section invitation reveal">
+      <h2 class="section__title">بطاقة دعوة</h2>
+      <p class="invitation__text" id="invitationText">—</p>
+    </section>
+
+    <!-- برنامج الحفل -->
+    <section class="section program reveal">
+      <h2 class="section__title">برنامج الحفل</h2>
+      <ul class="timeline" id="timeline"></ul>
+    </section>
+
+    <!-- ملاحظات -->
+    <section class="section notes reveal">
+      <h2 class="section__title">ملاحظات</h2>
+      <ul class="notes__list" id="notesList"></ul>
+    </section>
+
+    <!-- القاعة -->
+    <section class="section venue reveal">
+      <h2 class="section__title">مكان الحفل</h2>
+      <div class="venue__art" aria-hidden="true">
+        <svg viewBox="0 0 200 120">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M20 110 L20 60 L100 24 L180 60 L180 110"></path>
+            <path d="M40 110 L40 70 M70 110 L70 70 M130 110 L130 70 M160 110 L160 70"></path>
+            <path d="M88 110 L88 84 L112 84 L112 110"></path>
+            <path d="M14 110 L186 110" stroke-width="3"></path>
+            <circle cx="100" cy="50" r="6"></circle>
+          </g>
+        </svg>
+      </div>
+      <p class="when__date" id="venueDate">—</p>
+      <p class="when__time" id="venueTime">—</p>
+      <div class="venue__photo" id="venuePhoto" aria-hidden="true"></div>
+      <p class="venue__name" id="venueName">—</p>
+      <p class="venue__addr" id="venueAddr">—</p>
+      <a class="venue__btn" id="mapBtn" href="#" target="_blank" rel="noopener">
+        <span aria-hidden="true">⚲</span> الموقع على الخريطة
+      </a>
+    </section>
+
+    <!-- الخاتمة -->
+    <footer class="section closing reveal">
+      <div class="divider" aria-hidden="true"><span></span>🎈<span></span></div>
+      <p class="closing__note" id="closingNote">—</p>
+      <p class="closing__hashtag" id="closingHashtag">—</p>
+      <div class="contact" id="contactBox">
+        <span class="contact__label">للاستفسار والتأكيد</span>
+        <a class="contact__link" id="contactLink" href="#">—</a>
+      </div>
+      <p class="closing__host" id="closingHost">—</p>
+      <span class="cherry" aria-hidden="true">🍰</span>
+    </footer>
+<section class="section calendar reveal" id="calendarSection">
+  <h2 class="section__title">احفظ الموعد 🎂</h2>
+  <div class="cal-card"><div class="cal-top" id="calMonth">أيلول ٢٠٢٦</div><div class="cal-body">
+    <div class="cal-weekday" id="calWeekday">الأحد</div><div class="cal-day" id="calDay">٢٠</div><div class="cal-time" id="calTime">الساعة الخامسة عصراً</div>
+  </div><div class="cal-foot"><p>📲 أضِف الموعد إلى تقويمك</p><a class="pill-link" id="calendarLink" target="_blank" rel="noopener">تقويم جوجل</a></div></div>
+</section>
+<section class="section rsvp reveal" id="rsvpSection">
+  <div class="rsvp-card"><div class="rsvp-orn" aria-hidden="true">🎂</div><h2 class="section__title">تأكيد الحضور</h2><p>يسعدنا تأكيد حضوركم</p>
+  <form id="rsvpForm"><label for="guestName">الاسم الكريم</label><input id="guestName" name="name" maxlength="80" required placeholder="اسمك">
+  <fieldset><legend>هل ستحضر؟</legend><div class="attendance" id="attendance"><button type="button" class="selected" data-answer="نعم">نعم</button><button type="button" data-answer="لا">لا</button><button type="button" data-answer="ربما">ربما</button></div></fieldset>
+  <label for="companions">عدد المرافقين (عدا حضورك)</label><div class="step"><button type="button" id="minus" aria-label="تقليل العدد">−</button><output id="companionCount">٠</output><button type="button" id="plus" aria-label="زيادة العدد">+</button></div>
+  <label for="greeting">كلمة لصاحب العيد 🎂</label><textarea id="greeting" rows="2" maxlength="300" placeholder="اكتب تهنئتك..."></textarea>
+  <button class="send" type="submit">متابعة عبر واتساب</button><p class="rsvp-note">ستُفتح رسالة واتساب لمراجعتها وإرسالها بنفسك.</p></form></div>
+  <div class="wishes"><h3>كلمات المهنّئين 🎂</h3><div id="wishList"></div></div>
+</section>
+<button id="musicButton" class="music-button" type="button" aria-label="تشغيل الموسيقى" aria-pressed="false">🎵</button>
+<div id="musicPlayer" class="music-player" aria-hidden="true"></div>
+<script src="script.js" defer></script>
+</body></html>

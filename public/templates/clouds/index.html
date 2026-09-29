@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <script src="./mawada-adapter.js?v=3"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dceeff">
+  <title>بشارة مولود جديد</title>
+  <meta name="description" content="بشارة مولود جديد">
+  <meta property="og:title" content="بشارة مولود جديد">
+  <meta property="og:description" content="بشارة مولود جديد">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohamad-adib-tawil.github.io/clouds/">
+  <meta property="og:image" content="https://mohamad-adib-tawil.github.io/clouds/assets/share.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mohamad-adib-tawil.github.io/clouds/assets/share.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .english-name{font-size:14px;color:var(--ink-sf);direction:ltr;margin-top:2px}
+    .parents-line{margin-top:10px;color:var(--ink-sf);font-size:15px}
+    .birth-date{color:var(--ink-sf);font-size:14px;margin-top:2px}
+    .prayers__list{max-width:640px;margin:8px auto 0;display:grid;gap:14px}
+    .prayer-card,.hadith-card{padding:22px 20px;border:2px solid #fff;border-radius:22px;background:linear-gradient(180deg,#fff,var(--accent-sf));box-shadow:0 8px 22px rgba(63,143,209,.12)}
+    .prayer-card p,.hadith-card blockquote{font-size:clamp(17px,4.5vw,21px);line-height:2.1;color:var(--ink);margin:0}
+    .prayer-card a,.hadith-card a{display:inline-block;color:var(--accent-dp);font-weight:700;text-decoration:none;margin-top:8px}
+    .hadith-card{max-width:640px;margin:8px auto 0}
+    .hadith-card .source{font-size:13px;color:var(--ink-sf);line-height:1.8;margin-top:12px}
+    .calendar-card{max-width:440px;margin:8px auto 0;padding:22px;background:#fff;border:2px solid #fff;border-radius:22px;box-shadow:0 8px 22px rgba(63,143,209,.12)}
+    .calendar-card__date{font-family:var(--font-display);font-size:22px;color:var(--ink);margin:0}
+    .calendar-card__time{color:var(--ink-sf);margin:4px 0 16px}
+    .calendar-card__actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+    .calendar-card__actions a{padding:10px 18px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none}
+    .calendar-card__actions a:focus-visible,.venue__btn:focus-visible,.cover__btn:focus-visible{outline:3px solid #275f93;outline-offset:3px}
+    .rsvp-card{max-width:440px;margin:8px auto 0;padding:24px 20px;background:#fff;border:2px solid #fff;border-radius:24px;box-shadow:0 8px 22px rgba(63,143,209,.12);text-align:start}
+    .rsvp-card .section__title{text-align:center;margin-bottom:2px}
+    .rsvp__sub{text-align:center;color:var(--ink-sf);margin-bottom:16px}
+    .rsvp-card label,.rsvp__attendance legend{display:block;font-weight:700;color:var(--ink);margin:12px 0 5px}
+    .rsvp-card input,.rsvp-card textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:12px;font:inherit;color:var(--ink);background:#fbfdff}
+    .rsvp__attendance{border:0;padding:0;margin-top:12px}
+    .rsvp__pills{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .rsvp__pills button,.rsvp__step button{border:1px solid var(--line);border-radius:12px;background:#fbfdff;color:var(--ink);font:inherit;font-weight:700;padding:9px;cursor:pointer}
+    .rsvp__pills button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .rsvp__step{display:flex;align-items:center;justify-content:center;gap:16px}
+    .rsvp__step button{width:40px;height:40px;border-radius:50%;font-size:20px;padding:0}
+    .rsvp__step output{min-width:30px;text-align:center;font-weight:800}
+    .rsvp__send{width:100%;margin-top:18px;padding:12px;border:0;border-radius:999px;background:var(--accent-dp);color:#fff;font:inherit;font-weight:800;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="cover" id="cover">
+    <div class="bg-photo" id="coverBg" aria-hidden="true"></div>
+    <div class="cover__sky" id="coverSky" aria-hidden="true"></div>
+    <div class="cover__inner">
+      <div class="cover__scene" aria-hidden="true">
+        <!-- مشهد سماوي مرسوم يدوياً: شمس، غيوم، بالون هواء، لقلق يحمل صرّة -->
+        <svg class="skySvg" viewBox="0 0 280 300" role="img" aria-label="بالون هواء ولقلق في سماء صافية">
+          <defs>
+            <radialGradient id="sunG" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#fff6d6"></stop>
+              <stop offset="0.6" stop-color="#ffe9a8"></stop>
+              <stop offset="1" stop-color="#ffd877"></stop>
+            </radialGradient>
+            <linearGradient id="balloonTop" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#bfe3ff"></stop>
+              <stop offset="1" stop-color="#8cc6f6"></stop>
+            </linearGradient>
+            <linearGradient id="balloonMid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff3f6"></stop>
+              <stop offset="1" stop-color="#ffd9e4"></stop>
+            </linearGradient>
+            <linearGradient id="balloonLow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff7e6"></stop>
+              <stop offset="1" stop-color="#ffe6bd"></stop>
+            </linearGradient>
+            <radialGradient id="cloudG" cx="42%" cy="34%" r="75%">
+              <stop offset="0" stop-color="#ffffff"></stop>
+              <stop offset="1" stop-color="#eaf4ff"></stop>
+            </radialGradient>
+            <radialGradient id="haze" cx="50%" cy="42%" r="58%">
+              <stop offset="0" stop-color="rgba(255,247,214,0.85)"></stop>
+              <stop offset="1" stop-color="rgba(255,247,214,0)"></stop>
+            </radialGradient>
+          </defs>
+
+          <!-- توهّج شمسي ناعم -->
+          <circle class="skyHaze" cx="140" cy="130" r="140" fill="url(#haze)"></circle>
+
+          <!-- الشمس وأشعّتها -->
+          <g class="skySun">
+            <g class="sunRays" stroke="#ffe2a0" stroke-width="3.4" stroke-linecap="round">
+              <line x1="44" y1="44" x2="44" y2="20"></line>
+              <line x1="44" y1="44" x2="20" y2="44"></line>
+              <line x1="44" y1="44" x2="26" y2="26"></line>
+              <line x1="44" y1="44" x2="62" y2="26"></line>
+              <line x1="44" y1="44" x2="26" y2="62"></line>
+            </g>
+            <circle cx="44" cy="44" r="22" fill="url(#sunG)"></circle>
+          </g>
+
+          <!-- لقلق يحمل صرّة المولود -->
+          <g class="skyStork">
+            <!-- الصرّة المعلّقة -->
+            <g class="storkBundle">
+              <path d="M212 168 q-4 -30 18 -30 q22 0 18 30 q-3 16 -18 18 q-15 -2 -18 -18 Z" fill="#fff" stroke="#e6eefc" stroke-width="2"></path>
+              <path d="M222 134 q8 -10 16 0" fill="none" stroke="#cfe0f7" stroke-width="3" stroke-linecap="round"></path>
+              <circle cx="230" cy="152" r="6" fill="#ffe6ef"></circle>
+              <circle cx="227.6" cy="150" r="1.6" fill="#d98aa6"></circle>
+              <circle cx="232.4" cy="150" r="1.6" fill="#d98aa6"></circle>
+              <path d="M227.5 155 q2.5 2.4 5 0" fill="none" stroke="#d98aa6" stroke-width="1.4" stroke-linecap="round"></path>
+            </g>
+            <!-- منقار اللقلق والخيط -->
+            <path d="M178 96 q14 6 40 38" fill="none" stroke="#f2b56a" stroke-width="2.4" stroke-linecap="round"></path>
+            <!-- جسم اللقلق -->
+            <ellipse cx="150" cy="86" rx="34" ry="20" fill="#fff" stroke="#e9f1fb" stroke-width="2"></ellipse>
+            <path d="M150 70 q26 -2 30 16 q-22 2 -30 -16 Z" fill="#f4f9ff" class="storkWing"></path>
+            <circle cx="122" cy="78" r="13" fill="#fff" stroke="#e9f1fb" stroke-width="2"></circle>
+            <path d="M110 78 l-14 -3 l14 -3 Z" fill="#f2a13f"></path>
+            <circle cx="120" cy="75" r="2.2" fill="#3f4d63"></circle>
+          </g>
+
+          <!-- بالون الهواء الساخن -->
+          <g class="skyBalloon">
+            <!-- خيوط السلّة -->
+            <g stroke="#cdd9ea" stroke-width="1.4">
+              <line x1="116" y1="196" x2="124" y2="232"></line>
+              <line x1="164" y1="196" x2="156" y2="232"></line>
+              <line x1="140" y1="200" x2="140" y2="232"></line>
+            </g>
+            <!-- القبّة -->
+            <path d="M140 70 C96 70 84 116 84 140 C84 176 116 196 140 200 C164 196 196 176 196 140 C196 116 184 70 140 70 Z" fill="url(#balloonTop)"></path>
+            <path d="M140 70 C124 70 116 116 116 144 C116 176 128 194 140 200 C152 194 164 176 164 144 C164 116 156 70 140 70 Z" fill="url(#balloonMid)"></path>
+            <path d="M140 70 C134 72 132 116 132 146 C132 178 136 196 140 200 C144 196 148 178 148 146 C148 116 146 72 140 70 Z" fill="url(#balloonLow)"></path>
+            <ellipse cx="118" cy="112" rx="10" ry="20" fill="#fff" opacity="0.35"></ellipse>
+            <!-- حلقة وصل -->
+            <ellipse cx="140" cy="201" rx="20" ry="5" fill="#f3c98a"></ellipse>
+            <!-- السلّة -->
+            <path d="M126 232 L154 232 L150 252 L130 252 Z" fill="#cf9a5e"></path>
+            <path d="M126 232 L154 232" stroke="#b07f47" stroke-width="2"></path>
+          </g>
+
+          <!-- غيوم ناعمة -->
+          <g class="skyClouds">
+            <g class="cloud cloud--a">
+              <ellipse cx="62" cy="244" rx="24" ry="15" fill="url(#cloudG)"></ellipse>
+              <ellipse cx="84" cy="248" rx="18" ry="12" fill="url(#cloudG)"></ellipse>
+              <ellipse cx="44" cy="250" rx="16" ry="11" fill="url(#cloudG)"></ellipse>
+              <rect x="42" y="248" width="46" height="12" rx="6" fill="url(#cloudG)"></rect>
+            </g>
+            <g class="cloud cloud--b">
+              <ellipse cx="216" cy="232" rx="22" ry="14" fill="url(#cloudG)"></ellipse>
+              <ellipse cx="236" cy="236" rx="15" ry="10" fill="url(#cloudG)"></ellipse>
+              <ellipse cx="200" cy="237" rx="13" ry="9" fill="url(#cloudG)"></ellipse>
+              <rect x="200" y="235" width="40" height="10" rx="5" fill="url(#cloudG)"></rect>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="cover__center">
+        <p class="cover__label">بشارة مولود جديد</p>
+        <div class="cover__mono" id="coverMono">أهلاً بالمولود الجديد</div>
+        <button class="cover__btn" id="openBtn" type="button">افتح البشارة 🍼</button>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="invite" id="invite" aria-hidden="true">
+    <div class="floaties" id="floaties" aria-hidden="true"></div>
+    <header class="section hero reveal">
+      <div class="bg-photo" id="heroBg" aria-hidden="true"></div>
+      <span class="miniCloud miniCloud--a" aria-hidden="true"><svg viewBox="0 0 70 40"><g fill="#fff"><ellipse cx="26" cy="24" rx="18" ry="12"/><ellipse cx="44" cy="26" rx="13" ry="9"/><ellipse cx="14" cy="28" rx="11" ry="8"/><rect x="13" y="24" width="40" height="10" rx="5"/></g></svg></span>
+      <span class="miniCloud miniCloud--b" aria-hidden="true"><svg viewBox="0 0 70 40"><g fill="#fff"><ellipse cx="26" cy="24" rx="18" ry="12"/><ellipse cx="44" cy="26" rx="13" ry="9"/><ellipse cx="14" cy="28" rx="11" ry="8"/><rect x="13" y="24" width="40" height="10" rx="5"/></g></svg></span>
+      <p class="hero__kicker" id="heroKicker">بشرى سارة</p>
+      <div class="hero-photo" id="heroPhoto"><img id="heroPhotoImg" alt=""></div>
+      <h1 class="celebrant" id="celebrantName">نور الدين مخملجي</h1>
+      <p class="english-name" id="englishName" lang="en" dir="ltr">Nour Aldeen Mokhmalji</p>
+      <p class="parents-line" id="parentsLine"></p>
+      <p class="birth-date" id="birthDateLabel"></p>
+      <p class="hero__greet" id="heroGreet">أهلاً بنور الدين مخملجي</p>
+      <p class="hero__verse" id="heroVerse">أهلاً بأحلى مولود 🍼</p>
+      <p class="hero__date" id="heroDate"></p>
+      <div class="hero__scroll" aria-hidden="true"><span class="hero__scroll-txt">مرّر للأسفل</span><span class="hero__scroll-arrow">↓</span></div>
+    </header>
+    <section class="section when reveal">
+      <h2 class="section__title">يبدأ الاستقبال بعد</h2>
+      <div class="countdown" id="countdown" role="timer" aria-label="الوقت المتبقّي">
+        <div class="cd__cell"><span class="cd__num" id="cdDays">٠٠</span><span class="cd__lbl">يوم</span></div>
+        <div class="cd__cell"><span class="cd__num" id="cdHours">٠٠</span><span class="cd__lbl">ساعة</span></div>
+        <div class="cd__cell"><span class="cd__num" id="cdMins">٠٠</span><span class="cd__lbl">دقيقة</span></div>
+        <div class="cd__cell"><span class="cd__num" id="cdSecs">٠٠</span><span class="cd__lbl">ثانية</span></div>
+      </div>
+      <p class="when__arrived" id="cdArrived" hidden>وصل اليوم 🍼 أهلاً بالضيف الصغير</p>
+    </section>
+    <section class="section invitation reveal"><h2 class="section__title">بطاقة بشارة</h2><p class="invitation__text" id="invitationText"></p></section>
+    <section class="section program reveal" id="programSection"><h2 class="section__title">برنامج الاستقبال</h2><ul class="timeline" id="timeline"></ul></section>
+    <section class="section notes reveal" id="notesSection"><h2 class="section__title">ملاحظات</h2><ul class="notes__list" id="notesList"></ul></section>
+    <section class="section prayers reveal"><h2 class="section__title">دعاء وبركة</h2><div class="prayers__list" id="prayersList"></div></section>
+    <section class="section hadith reveal"><h2 class="section__title">من هدي النبي ﷺ</h2><div class="hadith-card" id="hadithCard"></div></section>
+    <section class="section venue reveal">
+      <h2 class="section__title">مكان الاستقبال</h2>
+      <div class="venue__art" aria-hidden="true"><svg viewBox="0 0 200 120"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 110 L20 60 L100 24 L180 60 L180 110"/><path d="M40 110 L40 70 M70 110 L70 70 M130 110 L130 70 M160 110 L160 70"/><path d="M88 110 L88 84 L112 84 L112 110"/><path d="M14 110 L186 110" stroke-width="3"/><circle cx="100" cy="50" r="6"/></g></svg></div>
+      <p class="when__date" id="venueDate"></p><p class="when__time" id="venueTime"></p>
+      <div class="venue__photo" id="venuePhoto" aria-hidden="true"></div>
+      <p class="venue__name" id="venueName"></p><p class="venue__addr" id="venueAddr"></p>
+      <a class="venue__btn" id="mapBtn" target="_blank" rel="noopener"><span aria-hidden="true">⚲</span> الخريطة</a>
+    </section>
+    <footer class="section closing reveal">
+      <div class="divider" aria-hidden="true"><span></span>☁️<span></span></div>
+      <p class="closing__note" id="closingNote"></p><p class="closing__hashtag" id="closingHashtag"></p>
+      <div class="contact" id="contactBox"><span class="contact__label" id="contactLabel"></span><a class="contact__link" id="contactLink"></a></div>
+      <p class="closing__host" id="closingHost"></p><span class="cherry" aria-hidden="true">🍼</span>
+    </footer>
+    <section class="section calendar reveal" id="calendarSection">
+      <h2 class="section__title">احفظ الموعد ☁️</h2>
+      <div class="calendar-card"><p class="calendar-card__date" id="calendarDate"></p><p class="calendar-card__time" id="calendarTime"></p><div class="calendar-card__actions"><a id="googleCalendar" target="_blank" rel="noopener">تقويم جوجل</a><a id="icsCalendar" download="nour-aldeen.ics">تقويم آيفون</a></div></div>
+    </section>
+    <section class="section rsvp reveal" id="rsvpSection" hidden>
+      <div class="rsvp-card">
+        <h2 class="section__title">تأكيد الحضور</h2>
+        <p class="rsvp__sub">يسعدنا تأكيد حضوركم</p>
+        <form id="rsvpForm">
+          <label for="guestName">الاسم الكريم</label>
+          <input id="guestName" name="guestName" autocomplete="name" required placeholder="اسمك">
+          <fieldset class="rsvp__attendance">
+            <legend>هل ستحضر؟</legend>
+            <div class="rsvp__pills">
+              <button type="button" data-attendance="نعم" aria-pressed="true">نعم</button>
+              <button type="button" data-attendance="لا" aria-pressed="false">لا</button>
+              <button type="button" data-attendance="ربما" aria-pressed="false">ربما</button>
+            </div>
+          </fieldset>
+          <label for="guestCount">عدد المرافقين (عدا حضورك)</label>
+          <div class="rsvp__step"><button type="button" id="guestMinus" aria-label="إنقاص المرافقين">−</button><output id="guestCount">٠</output><button type="button" id="guestPlus" aria-label="زيادة المرافقين">+</button></div>
+          <label for="guestMessage">تهنئة للعائلة (اختياري)</label>
+          <textarea id="guestMessage" rows="3" placeholder="اكتب تهنئتك"></textarea>
+          <button class="rsvp__send" type="submit">إرسال التأكيد عبر واتساب</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="invitation-template.js" defer></script>
+  <script src="site.js" defer></script>
+</body>
+</html>
