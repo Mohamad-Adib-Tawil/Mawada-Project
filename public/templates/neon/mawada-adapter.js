@@ -2,16 +2,17 @@
   'use strict';
   const params = new URLSearchParams(location.search);
   const encoded = params.get('mawada');
-  if (!encoded) return;
-
-  let invitation;
-  try {
-    const binary = atob(encoded.replaceAll('-', '+').replaceAll('_', '/') + '='.repeat((4 - encoded.length % 4) % 4));
-    const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
-    invitation = JSON.parse(new TextDecoder().decode(bytes));
-  } catch { return; }
-
-  if (!invitation || typeof invitation !== 'object') return;
+  let invitation = null;
+  if (encoded) {
+    try {
+      const binary = atob(encoded.replaceAll('-', '+').replaceAll('_', '/') + '='.repeat((4 - encoded.length % 4) % 4));
+      const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
+      invitation = JSON.parse(new TextDecoder().decode(bytes));
+    } catch { invitation = null; }
+  }
+  // Run shared branding and contact cleanup on standalone previews too; only mutate invitation data when a payload exists.
+  const hasCustomInvitation = Boolean(invitation && typeof invitation === 'object');
+  if (!hasCustomInvitation) invitation = {};
   const clean = value => String(value ?? '').trim();
   const formatDate = value => {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(clean(value))) return '';
@@ -70,7 +71,7 @@
     program,
     closing: clean(invitation.closingNote),
     music: youtubeId(clean(invitation.musicUrl)),
-    title: [clean(invitation.groomNameAr), clean(invitation.brideNameAr)].filter(Boolean).join(' و ') || clean(invitation.childNameAr) || 'دعوة مناسبة',
+    title: [clean(invitation.groomNameAr), clean(invitation.brideNameAr)].filter(Boolean).join(' و ') || clean(invitation.childNameAr) || (hasCustomInvitation ? 'دعوة مناسبة' : 'الدعوة الإلكترونية'),
     phone: '963992688759',
     whatsapp: 'https://wa.me/963992688759',
   };
@@ -140,21 +141,23 @@
     assignAliases(config);
     return config;
   };
-  window.__MAWADA_INVITATION__ = invitation;
-  for (const globalName of ['__INVITE__', 'SITE_CONFIG', 'INVITATION', 'INVITATION_CONFIG', 'INVITATION_DATA', 'TEMPLATE_CONFIG']) {
-    try {
-      let current = window[globalName];
-      Object.defineProperty(window, globalName, {
-        configurable: true,
-        enumerable: true,
-        get: () => current,
-        set: value => { current = applyConfiguration(value); },
-      });
-      if (current) applyConfiguration(current);
-    } catch { /* A template may expose a non-configurable global. */ }
+  if (hasCustomInvitation) {
+    window.__MAWADA_INVITATION__ = invitation;
+    for (const globalName of ['__INVITE__', 'SITE_CONFIG', 'INVITATION', 'INVITATION_CONFIG', 'INVITATION_DATA', 'TEMPLATE_CONFIG']) {
+      try {
+        let current = window[globalName];
+        Object.defineProperty(window, globalName, {
+          configurable: true,
+          enumerable: true,
+          get: () => current,
+          set: value => { current = applyConfiguration(value); },
+        });
+        if (current) applyConfiguration(current);
+      } catch { /* A template may expose a non-configurable global. */ }
+    }
   }
 
-  if (typeof window.fetch === 'function') {
+  if (hasCustomInvitation && typeof window.fetch === 'function') {
     const originalFetch = window.fetch.bind(window);
     window.fetch = async (...args) => {
       const response = await originalFetch(...args);
@@ -177,7 +180,7 @@
         else element.remove();
       }
     }
-    if (document.title !== values.title) document.title = values.title;
+    if (hasCustomInvitation && values.title && document.title !== values.title) document.title = values.title;
   };
   const connectContactActions = () => {
     for (const anchor of document.querySelectorAll('a[href]')) {
@@ -276,7 +279,16 @@
       document.head.append(style);
     }
   };
-  const refresh = () => { removePromotion(); connectContactActions(); routeFormsToWhatsApp(); clearExampleWishes(); hideUnavailableSchedule(); setTheme(); };
+  const refresh = () => {
+    removePromotion();
+    connectContactActions();
+    routeFormsToWhatsApp();
+    clearExampleWishes();
+    if (hasCustomInvitation) {
+      hideUnavailableSchedule();
+      setTheme();
+    }
+  };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', refresh, { once: true });
   else refresh();
   new MutationObserver(refresh).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
