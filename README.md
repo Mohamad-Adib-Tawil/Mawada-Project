@@ -37,4 +37,4 @@ npm run build
 
 يستخدم سير العمل في `.github/workflows/pages.yml` GitHub Pages وينشر الموقع إلى `https://mohamad-adib-tawil.github.io/Mawada-Project/` بعد تفعيل Pages للمستودع.
 
-الموقع منشور أيضًا على Cloudflare Pages بعنوان `https://mawada-project.pages.dev/` من مشروع **Direct Upload** مستقل عن ربط Git. لتحديثه، ابنِ نسخة الجذر بمتغيري `VITE_SUPABASE_URL` و`VITE_SUPABASE_PUBLISHABLE_KEY` العامين مع `GITHUB_PAGES=false`، ثم انشر مجلد `dist` باستخدام `wrangler pages deploy dist --project-name mawada-project --branch main`. لا تضع مفتاح `service_role` أو رمز تحرير ضمن البناء. راجع `EXECUTION_STATUS.md` لحالة ربط النطاق الجديد مع Auth وEdge Functions قبل استخدام المحرر إنتاجيًا.
+العنوان الأساسي على Cloudflare Pages هو `https://mawada.pages.dev/` من مشروع **Direct Upload** مستقل عن ربط Git. لتحديثه، ابنِ نسخة الجذر بمتغيري `VITE_SUPABASE_URL` و`VITE_SUPABASE_PUBLISHABLE_KEY` العامين مع `GITHUB_PAGES=false`، ثم انشر مجلد `dist` باستخدام `wrangler pages deploy dist --project-name mawada --branch main`. لا تضع مفتاح `service_role` أو رمز تحرير ضمن البناء. راجع `EXECUTION_STATUS.md` لحالة ربط النطاق الجديد مع Auth وEdge Functions قبل استخدام المحرر إنتاجيًا.

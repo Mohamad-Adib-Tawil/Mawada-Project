@@ -2,6 +2,7 @@ export const occasions = ['wedding', 'engagement', 'birthday', 'newborn', 'gradu
 const fontFamilies = ['Tajawal', 'Amiri', 'Aref Ruqaa', 'Reem Kufi'] as const;
 const allowedOrigins = new Set([
   'https://mohamad-adib-tawil.github.io',
+  'https://mawada.pages.dev',
   'https://mawada-project.pages.dev',
   ...(Deno.env.get('ALLOWED_ORIGIN') ?? '').split(',').map(origin => origin.trim()).filter(Boolean),
   'http://localhost:5173',
