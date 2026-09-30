@@ -1,10 +1,10 @@
 // All invitation content and editable links live here.
 window.__INVITE__ = {
   config: {
-    groom: "محمد أديب طويل",
-    bride: "رزان بطايحي",
-    groomEnglish: "Mohamad Adib Tawil",
-    brideEnglish: "Razan Bataihi",
+    groom: "رامي",
+    bride: "ريم",
+    groomEnglish: "Rami",
+    brideEnglish: "Reem",
 
     date: "2026-12-18T19:00:00+03:00",
     dateText: "يوم الجمعة، ١٨ كانون الأول ٢٠٢٦",
@@ -34,7 +34,7 @@ window.__INVITE__ = {
     ],
 
     closingNote: "حضوركم يزيّن فرحتنا",
-    hashtag: "#محمد_ورزان",
+    hashtag: "#رامي_وريم",
     contactLabel: "للاستفسار والتأكيد",
     contactName: "واتساب",
     contactPhone: "+963992688759",

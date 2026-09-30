@@ -1,8 +1,8 @@
 window.__INVITE__ = { config: {
-  "groom": "محمد أديب طويل",
-  "groomLatin": "Mohamad Adib Tawil",
-  "bride": "رزان بطايحي",
-  "brideLatin": "Razan Bataihi",
+  "groom": "شادي",
+  "groomLatin": "Shadi",
+  "bride": "غنى",
+  "brideLatin": "Ghina",
   "date": "2026-11-20T19:00:00",
   "dateText": "يوم الجمعة، ٢٠ تشرين الثاني ٢٠٢٦",
   "timeText": "الساعة السابعة مساءً",
@@ -39,7 +39,7 @@ window.__INVITE__ = { config: {
     "نتشرّف بحضوركم بأبهى حلّة"
   ],
   "closingNote": "حضوركم يزيّن فرحتنا",
-  "hashtag": "#محمد_ورزان",
+  "hashtag": "#شادي_وغنى",
   "contactLabel": "للاستفسار والتأكيد",
   "contactName": "تواصل عبر واتساب",
   "contactPhone": "+963992688759",

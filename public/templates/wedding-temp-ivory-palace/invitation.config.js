@@ -53,8 +53,8 @@ window.__INVITE__ = {
     "brideRelationLabel": "",
     "groomRelationName": "يوسف",
     "brideRelationName": "مريم",
-    "groom": "محمد أديب طويل",
-    "bride": "رزان بطايحي",
+    "groom": "سيف",
+    "bride": "لُجين",
     "verse": "وَخَلَقْنَاكُمْ أَزْوَاجًا",
     "groomParents": "كريم عبد الله",
     "brideParents": "سامي الحسن",
@@ -76,8 +76,8 @@ window.__INVITE__ = {
   },
   "locales": {
     "en": {
-      "groom": "Mohamad Adib Tawil",
-      "bride": "Razan Bataihi",
+      "groom": "Saif",
+      "bride": "Lujain",
       "dateText": "Friday, May 14, 2027",
       "timeText": "6:00 PM"
     }

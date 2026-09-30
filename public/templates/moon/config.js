@@ -1,6 +1,6 @@
 window.INVITATION_CONFIG = {
-  baby: { nameArabic: "نور الدين مخملجي", nameEnglish: "Nour Aldeen Mokhmalji", gender: "boy", birthDate: "2026-10-17", birthDateText: "١٧ أكتوبر ٢٠٢٦" },
-  parents: { father: "محمد مخملجي", mother: "نجوى دبل", family: "عائلة مخملجي ودبل" },
+  baby: { nameArabic: "إياد النجار", nameEnglish: "Iyad Al Najjar", gender: "boy", birthDate: "2026-10-17", birthDateText: "١٧ أكتوبر ٢٠٢٦" },
+  parents: { father: "سامي الرفاعي", mother: "ليلى ناصر", family: "عائلة الرفاعي ودبل" },
   reception: {
     date: "2026-10-10T18:00:00+03:00", timeZone: "Asia/Baghdad", dateText: "يوم السبت، ١٠ تشرين الأول ٢٠٢٦", timeText: "الساعة السادسة مساءً",
     invitationText: "بفضلٍ من الله ونعمة، رُزقنا بمولودٍ جديد ملأ حياتنا فرحاً. ندعوكم لمشاركتنا هذه البهجة في حفل الاستقبال.",

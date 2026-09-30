@@ -1,9 +1,9 @@
 window.INVITATION_CONFIG = {
-  "groom": "محمد أديب طويل",
-  "groomLatin": "Mohamad Adib Tawil",
-  "coverNames": "محمد & رزان",
-  "bride": "رزان بطايحي",
-  "brideLatin": "Razan Bataihi",
+  "groom": "زياد",
+  "groomLatin": "Ziad",
+  "coverNames": "زياد & ياسمين",
+  "bride": "ياسمين",
+  "brideLatin": "Yasmin",
   "date": "2026-09-27T19:00:00",
   "timezone": "Asia/Baghdad",
   "dateText": "يوم الأحد، ٢٧ أيلول ٢٠٢٦",
@@ -44,7 +44,7 @@ window.INVITATION_CONFIG = {
     "هديّة حضوركم تكفينا"
   ],
   "closingNote": "حضوركم يزيّن فرحتنا",
-  "hashtag": "#زفاف_محمد_ورزان",
+  "hashtag": "#زفاف_زياد_وياسمين",
   "contactLabel": "للتأكيد والاستفسار",
   "contactName": "للتواصل",
   "contactPhone": "+963992688759",
@@ -97,7 +97,7 @@ window.INVITATION_CONFIG = {
   },
   "wishes": [
     {
-      "name": "أم محمد",
+      "name": "أم زياد",
       "message": "ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا",
       "color": "#b48b54"
     },

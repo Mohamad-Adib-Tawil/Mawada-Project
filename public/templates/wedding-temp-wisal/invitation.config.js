@@ -1,10 +1,10 @@
 /* Editable invitation content and asset paths. Keep event copy and links here. */
 window.__INVITE__ = {
   config: {
-    groom: "محمد أديب طويل",
-    groomLatin: "Mohamad Adib Tawil",
-    bride: "رزان بطايحي",
-    brideLatin: "Razan Bataihi",
+    groom: "عادل",
+    groomLatin: "Adel",
+    bride: "هنا",
+    brideLatin: "Hana",
     date: "2026-10-24T19:00:00+03:00",
     dateText: "يوم السبت، ٢٤ تشرين الأول ٢٠٢٦",
     timeText: "الساعة السابعة مساءً",
@@ -30,7 +30,7 @@ window.__INVITE__ = {
     ],
     notes: ["يُرجى الحضور قبل الموعد بنصف ساعة", "نتشرّف بحضوركم بأبهى حلّة"],
     closingNote: "حضوركم يزيّن فرحتنا ويُكمل بهجتنا",
-    hashtag: "#محمد_ورزان",
+    hashtag: "#عادل_وهنا",
     contactLabel: "للاستفسار والتأكيد",
     contactName: "واتساب",
     contactPhone: "+963992688759",

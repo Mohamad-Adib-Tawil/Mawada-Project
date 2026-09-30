@@ -1,10 +1,10 @@
 // Edit this file to update the invitation content, contact links, and assets.
 window.__INVITE__ = {
   config: {
-    groom: 'محمد أديب طويل',
-    groomEn: 'Mohamad Adib Tawil',
-    bride: 'رزان بطايحي',
-    brideEn: 'Razan Bataihi',
+    groom: 'فارس',
+    groomEn: 'Fares',
+    bride: 'ميس',
+    brideEn: 'Mais',
 
     date: '2026-12-18T19:00:00',
     dateText: 'يوم الجمعة، ١٨ كانون الأول ٢٠٢٦',

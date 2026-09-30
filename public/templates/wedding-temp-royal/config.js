@@ -1,7 +1,7 @@
 /* Edit all invitation content, links, and asset locations here. */
 window.__INVITE__ = { config: {
-  groom: "محمد أديب طويل", groomEn: "Mohamad Adib Tawil",
-  bride: "رزان بطايحي", brideEn: "Razan Bataihi",
+  groom: "أيهم", groomEn: "Ayham",
+  bride: "نور", brideEn: "Noor",
   date: "2026-12-18T19:00:00+03:00", timezone: "Asia/Baghdad", dateText: "يوم الجمعة، ١٨ كانون الأول ٢٠٢٦", timeText: "الساعة السابعة مساءً",
   verse: "اللّهُمَّ بارِكْ لهُما، وبارِكْ عليهِما، واجمَعْ بينهُما في خير",
   invitationText: "بقلوبٍ مفعمةٍ بالفرح والسرور، نتشرّف بدعوتكم لمشاركتنا أجمل لحظات حياتنا في حفل زفافنا. حضوركم شرفٌ لنا وبهجةٌ تكتمل بها فرحتنا.",
@@ -9,10 +9,10 @@ window.__INVITE__ = { config: {
   venueName: "قاعة الحمراء للمناسبات", venueAddr: "بغداد — شارع الكرادة", mapUrl: "https://www.google.com/maps/search/?api=1&query=Baghdad",
   program: [{time:"٧:٠٠ مساءً",title:"استقبال الضيوف"},{time:"٨:٠٠ مساءً",title:"مراسم الزفاف"},{time:"٩:٠٠ مساءً",title:"العشاء"},{time:"١٠:٣٠ مساءً",title:"السهرة والاحتفال"}],
   notes: ["يُرجى الحضور قبل الموعد بنصف ساعة","نتشرّف بحضوركم بأبهى حلّة","التصوير مسموح، شاركونا أجمل اللحظات","الدعوة تشمل حاملها والعائلة الكريمة"],
-  closingNote: "حضوركم يزيّن فرحتنا", hashtag: "#محمد_ورزان", contactLabel: "للاستفسار والتأكيد", contactName: "تواصل عبر واتساب", whatsappUrl: "https://wa.me/963992688759",
+  closingNote: "حضوركم يزيّن فرحتنا", hashtag: "#أيهم_ونور", contactLabel: "للاستفسار والتأكيد", contactName: "تواصل عبر واتساب", whatsappUrl: "https://wa.me/963992688759",
   closingFamilies: "عائلة حنّا  &  عائلة عبد العزيز", occasion: "wedding", showFamilies: true,
-  coupleInviteLine: "", groomParentsLabel: "", brideParentsLabel: "", groomRelationName: "محمد أديب طويل", brideRelationName: "رزان بطايحي",
-  story: { kicker:"حفل زفاف", primary:"محمد أديب طويل & رزان بطايحي", dateText:"يوم الجمعة، ١٨ كانون الأول ٢٠٢٦" },
+  coupleInviteLine: "", groomParentsLabel: "", brideParentsLabel: "", groomRelationName: "أيهم", brideRelationName: "نور",
+  story: { kicker:"حفل زفاف", primary:"أيهم & نور", dateText:"يوم الجمعة، ١٨ كانون الأول ٢٠٢٦" },
   images: { hero: "", venue: "", background: "" },
   siteUrl: "https://mohamad-adib-tawil.github.io/wedding-temp-royal/d/demo-royal/",
   music: { youtubeVideoId: "Hp8WTVqR_0U", startSeconds: 0, endSeconds: 0 },

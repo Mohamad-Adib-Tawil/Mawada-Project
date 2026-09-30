@@ -3,6 +3,7 @@ import type { FormEvent } from 'react';
 import { appPath, siteConfig } from '../config/site';
 import { checkTeamAccess } from '../services/invitation-repository';
 import { isSupabaseConfigured, supabase } from '../services/supabase';
+import { BrandMark } from '../components/SiteShell';
 
 export function SignInPage() {
   const [email, setEmail] = useState('');
@@ -37,7 +38,7 @@ export function SignInPage() {
   }
 
   return <main className="auth-page">
-    <a className="brand auth-brand" href={appPath('/')}><span className="brand-mark" aria-hidden="true">م</span><span>{siteConfig.brand}</span></a>
+    <a className="brand auth-brand" href={appPath('/')}><BrandMark /><span>{siteConfig.brand}</span></a>
     <section className="auth-card">
       <span className="auth-symbol" aria-hidden="true">✎</span>
       <span className="eyebrow">مساحة الفريق</span>

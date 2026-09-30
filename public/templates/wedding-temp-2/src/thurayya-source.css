@@ -107,7 +107,7 @@ img,video{max-width:100%}
   margin:0; -webkit-text-stroke:.4px rgba(216,178,108,.38);
   font-family:var(--disp); font-weight:700;
   /* ⚠️ لا letter-spacing مع «عرف رقعة» — يُعطّل الروابط الإلزامية فتسقط
-     ميم «محمد» (٨٥٫٦ ← ٧١ بكسل: النصّ يضيق لأن حرفاً ذهب). */
+     ميم «ياسر» (٨٥٫٦ ← ٧١ بكسل: النصّ يضيق لأن حرفاً ذهب). */
   font-size:clamp(2.5rem, 11.4vw, 4.2rem);
   line-height:1.14;
   color:var(--cover-name);

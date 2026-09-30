@@ -3,10 +3,10 @@
  * presentation or interaction code. Empty values keep optional sections hidden.
  */
 export const weddingConfig = Object.freeze({
-  groomArabic: 'محمد أديب طويل',
-  groomEnglish: 'Mohamad Adib Tawil',
-  brideArabic: 'رزان',
-  brideEnglish: 'Razan',
+  groomArabic: 'سليم',
+  groomEnglish: 'Salim',
+  brideArabic: 'ليان',
+  brideEnglish: 'Layan',
   weddingDate: '', // ISO date: YYYY-MM-DD
   startTime: '', // 24-hour local time: HH:MM
   endTime: '',

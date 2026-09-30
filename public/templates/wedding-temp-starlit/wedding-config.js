@@ -3,8 +3,8 @@ window.WEDDING_CONFIG = {
   locale: "ar",
   timezone: "Asia/Baghdad",
   couple: {
-    groom: { ar: "محمد أديب طويل", en: "Mohamad Adib Tawil" },
-    bride: { ar: "رزان بطايحي", en: "Razan Bataihi" },
+    groom: { ar: "مازن", en: "Mazen" },
+    bride: { ar: "فرح", en: "Farah" },
   },
   event: {
     date: "2026-12-18T19:00:00+03:00",
@@ -91,7 +91,7 @@ window.WEDDING_CONFIG = {
     "الدعوة تشمل حاملها والعائلة الكريمة",
   ],
   wishes: [
-    { name: "أم محمد", message: "ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا", color: "#e6c878" },
+    { name: "أم مازن", message: "ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا", color: "#e6c878" },
     { name: "سارة", message: "عقبال ما نفرح بيكم بأحلى المناسبات، دعوة بغاية الذوق 😍", color: "#8fa8d8" },
     { name: "حيدر", message: "مبارك الزواج، الله يجعل أيامكم كلها أفراح", color: "#c9a86a" },
     { name: "نور الهدى", message: "بيت جديد عامر بالمحبة إن شاء الله، ألف مبروك", color: "#7d90c9" },

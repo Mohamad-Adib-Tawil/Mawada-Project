@@ -209,7 +209,7 @@ html, body, main > *:not(#allrecords),
   -webkit-mask-image: linear-gradient(0turn, transparent, #000); mask-image: linear-gradient(0turn, transparent, #000);
 }
 
-/* الاسمان مكدّسان (محمد / و / رنا): خط الرقعة طويل الصعود والنزول، فيحتاج تباعداً
+/* الاسمان مكدّسان (سيف / و / رنا): خط الرقعة طويل الصعود والنزول، فيحتاج تباعداً
    أوسع كي لا يلتصق سطر المناسبة بالاسم الأول. */
 .ip-letters--hero .ip-letters__names--stacked { line-height: 1.3; font-size: 50px; margin-top: 6px; }
 .ip-letters--hero .ip-letters__names--stacked > span { display: block; }

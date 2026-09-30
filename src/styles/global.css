@@ -58,7 +58,7 @@ a:hover .arrow-mark { transform: translate(2px,-2px); }
 .site-header { position: sticky; z-index: 50; top: 0; border-bottom: 1px solid rgba(237,229,224,.72); background: rgba(255,250,246,.92); backdrop-filter: blur(16px); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; width: min(calc(100% - 64px), 1320px); height: 82px; margin-inline: auto; }
 .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--pink); font-family: 'Reem Kufi', sans-serif; font-size: 31px; line-height: 1; font-weight: 700; }
-.brand-mark { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 14px 14px 14px 4px; background: var(--pink); color: white; font-size: 24px; box-shadow: 0 7px 16px rgba(240,68,122,.24); }
+.brand-mark { display: block; width: 40px; height: 40px; border-radius: 12px; object-fit: cover; box-shadow: 0 7px 16px rgba(110,14,47,.18); }
 .main-nav { display: flex; align-items: center; gap: clamp(22px, 3.4vw, 48px); color: #554f5f; font-size: 16px; font-weight: 600; }
 .main-nav a { transition: color .2s ease; }
 .main-nav a:hover, .main-nav a.active { color: var(--pink-dark); }

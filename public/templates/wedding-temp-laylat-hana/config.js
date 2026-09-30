@@ -1,10 +1,10 @@
 window.__INVITE_CONFIG__ = {
   locale: "ar",
-  title: "دعوة ليلة الحنّة محمد أديب طويل و رزان بطايحي",
-  groom: "محمد أديب طويل",
-  bride: "رزان بطايحي",
-  groomEnglish: "Mohamad Adib Tawil",
-  brideEnglish: "Razan Bataihi",
+  title: "دعوة ليلة الحنّة سامر و رُبى",
+  groom: "سامر",
+  bride: "رُبى",
+  groomEnglish: "Samer",
+  brideEnglish: "Ruba",
   event: {
     date: "2026-12-18T19:00:00+03:00",
     dateText: "يوم الجمعة، ١٨ كانون الأول ٢٠٢٦",
@@ -23,9 +23,9 @@ window.__INVITE_CONFIG__ = {
     verse: "اللّهُمَّ بارِكْ لهُما، وبارِكْ عليهِما، واجمَعْ بينهما في خير",
     invitationText: "بقلوب مغمورة بالفرح، نتشرّف بدعوتكم لمشاركتنا ليلة الحنّة، ليلة الورد والذهب والبدايات الجميلة.",
     groomParents: "السيد أحمد عبد الكريم\nالسيدة سعاد محمود",
-    brideParents: "السيد محمد جاسم\nالسيدة زهراء علي",
+    brideParents: "السيد سامر جاسم\nالسيدة زهراء علي",
     closingNote: "بحضوركم تكتمل ليلة فرحنا",
-    closingFamilies: "أسرة أحمد عبد الكريم  •  أسرة محمد جاسم",
+    closingFamilies: "أسرة أحمد عبد الكريم  •  أسرة سامر جاسم",
     hashtag: "#دعوة",
     contactLabel: "للاستفسار والتأكيد",
     contactName: "تواصلوا معنا عبر واتساب",
@@ -43,8 +43,8 @@ window.__INVITE_CONFIG__ = {
     rsvpTitle: "تأكيد الحضور",
     rsvpSubtitle: "يسعدنا تأكيد حضوركم",
     orderTitle: "أعجبك قالب «ليلة الحنّة»؟",
-    orderSubtitle: "اطلبه الآن وعدّله بنفسك فوراً بعد الطلب",
-    orderNote: "للعرض فقط — يختفي بعد الطلب"
+    orderSubtitle: "تواصل مع فريق مودة لتخصيص هذا القالب",
+    orderNote: "معاينة للقالب قبل الطلب"
   },
   links: {
     whatsapp: "https://wa.me/+963992688759",
@@ -67,7 +67,7 @@ window.__INVITE_CONFIG__ = {
     localStorageKey: "laylat-henna-rsvp-v1",
     maxCompanions: 8,
     wishes: [
-      { initial: "أ", name: "أم محمد", message: "ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا", color: "#8f1322" },
+      { initial: "أ", name: "أم سامر", message: "ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا", color: "#8f1322" },
       { initial: "س", name: "سارة", message: "عقبال ما نفرح بيكم بأحلى المناسبات، دعوة بغاية الذوق 😍", color: "#b57a2a" },
       { initial: "ح", name: "حيدر", message: "مبارك الزواج، الله يجعل أيامكم كلها أفراح", color: "#c75058" },
       { initial: "ن", name: "نور الهدى", message: "بيت جديد عامر بالمحبة إن شاء الله، ألف مبروك", color: "#7b3d2f" },

@@ -77,7 +77,7 @@
     const eventTime = event.slice(11, 16).replace(":", "");
     const endDateTime = asCalendarDate(end);
     const ics = [
-      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Nour Aldeen Mokhmalji//Newborn Announcement//AR",
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Adam Al Rifai//Newborn Announcement//AR",
       "CALSCALE:GREGORIAN", "BEGIN:VEVENT", `UID:${eventDate}-${eventTime}@nour-aldeen-invitation`,
       `DTSTART;TZID=${config.timezone || "Asia/Baghdad"}:${eventDate}T${eventTime}`,
       `DTEND;TZID=${config.timezone || "Asia/Baghdad"}:${endDateTime}`,

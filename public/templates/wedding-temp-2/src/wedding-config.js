@@ -1,8 +1,8 @@
 /** Single source for names, copy, event details, links, and media paths. */
 export const weddingConfig = Object.freeze({
   siteUrl: 'https://mohamad-adib-tawil.github.io/wedding-temp-2/',
-  groom: { ar: 'محمد أديب طويل', displayAr: 'محمد', en: 'Mohamad Adib Tawil' },
-  bride: { ar: 'رزان بطايحي', displayAr: 'رزان', en: 'Razan Bataihi' },
+  groom: { ar: 'ياسر', displayAr: 'ياسر', en: 'Yaser' },
+  bride: { ar: 'ديمة', displayAr: 'ديمة', en: 'Dima' },
   weddingDate: '', // YYYY-MM-DD
   startTime: '', // HH:MM, local venue time
   endTime: '',
@@ -22,8 +22,8 @@ export const weddingConfig = Object.freeze({
   entranceVideoPath: 'new_assets/entrance.mp4',
   socialPreviewPath: 'new_assets/thurayya-share-tux.jpg',
   copy: {
-    pageTitle: 'دعوة زفاف محمد أديب طويل ورزان بطايحي',
-    pageDescription: 'دعوة زفاف محمد أديب طويل ورزان بطايحي. يسعدنا أن تشاركونا فرحتنا.',
+    pageTitle: 'دعوة زفاف ياسر وديمة',
+    pageDescription: 'دعوة زفاف ياسر وديمة. يسعدنا أن تشاركونا فرحتنا.',
     occasion: 'دعوة زفاف',
     doorHint: 'المسوا الباب… ليُفتح على فرحنا',
     open: 'افتحوا الدعوة',
@@ -59,7 +59,7 @@ export const weddingConfig = Object.freeze({
     rsvpDeadline: 'يرجى تأكيد الحضور قبل',
     rsvpButton: 'التأكيد عبر واتساب',
     order: 'اطلبه',
-    rsvpMessage: 'مرحبًا، أود تأكيد حضوري حفل زفاف محمد أديب طويل ورزان بطايحي.',
+    rsvpMessage: 'مرحبًا، أود تأكيد حضوري حفل زفاف ياسر وديمة.',
     closing: 'بحضوركم تضيء ليلتنا',
     share: 'مشاركة الدعوة',
     copyLink: 'نسخ الرابط',

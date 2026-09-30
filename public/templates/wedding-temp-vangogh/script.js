@@ -6,7 +6,7 @@
    ============================================================ */
 
 const WEDDING_CONFIG = (typeof window !== "undefined" && window.__INVITE__ && window.__INVITE__.config) || {
-  groom: "محمد",
+  groom: "جواد",
   bride: "لينا",
 
   date: "2026-12-11T19:00:00",
@@ -43,7 +43,7 @@ const WEDDING_CONFIG = (typeof window !== "undefined" && window.__INVITE__ && wi
   closingNote: "حضوركم نجمةٌ في سمائنا",
   hashtag: "#ليلة_النجوم",
   contactLabel: "للاستفسار والتأكيد",
-  contactName: "أبو محمد",
+  contactName: "أبو جواد",
   contactPhone: "+9647700000000",
   closingFamilies: "عائلة عبد الله  &  عائلة حسن",
 

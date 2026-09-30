@@ -1,11 +1,11 @@
 /* All invitation content and asset paths live here for easy updates. */
 window.WEDDING_DATA = {
   couple: {
-    groom: 'محمد أديب طويل',
-    groomEnglish: 'Mohamad Adib Tawil',
-    bride: 'رزان بطايحي',
-    brideEnglish: 'Razan Bataihi',
-    hashtag: '#محمد_ورزان'
+    groom: 'نادر',
+    groomEnglish: 'Nader',
+    bride: 'هالة',
+    brideEnglish: 'Hala',
+    hashtag: '#نادر_وهالة'
   },
   event: {
     date: '2026-11-20T19:00:00+03:00',
@@ -13,7 +13,7 @@ window.WEDDING_DATA = {
     timeText: 'الساعة السابعة مساءً',
     timezone: 'Asia/Baghdad',
     durationHours: 4,
-    title: 'دعوة زفاف محمد أديب طويل ورزان بطايحي',
+    title: 'دعوة زفاف نادر وهالة',
     heroSub: 'بكم يكتملُ الفرح… وبحضوركم تحلو الحكاية',
     invitationText: 'أطلقنا هديلَنا الأبيض يزفُّ البشارة: في حديقةٍ يتعانق فيها الوردُ والرخام، وتحت سماءٍ صافيةٍ كقلوبنا، نحتفل بإذن الله بأجمل ليالي العمر. كونوا شهودَ فرحتنا — فبحضوركم تكتمل البهجة، وبدعائكم تدوم.',
     verse: 'وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً',
@@ -49,7 +49,7 @@ window.WEDDING_DATA = {
     time: 'الساعة السابعة مساءً'
   },
   messages: [
-    { name: 'أم محمد', text: 'ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا', color: '#b76e83' },
+    { name: 'أم نادر', text: 'ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا', color: '#b76e83' },
     { name: 'سارة', text: 'عقبال ما نفرح بيكم بأحلى المناسبات، دعوة بغاية الذوق 😍', color: '#c2a05e' },
     { name: 'حيدر', text: 'مبارك الزواج، الله يجعل أيامكم كلها أفراح', color: '#dfa8b6' },
     { name: 'نور الهدى', text: 'بيت جديد عامر بالمحبة إن شاء الله، ألف مبروك', color: '#7f9a7d' },
@@ -59,7 +59,7 @@ window.WEDDING_DATA = {
     title: 'تأكيد الحضور',
     subtitle: 'يسعدنا تأكيد حضوركم',
     sendLabel: 'إرسال التأكيد عبر واتساب',
-    whatsappMessage: 'تأكيد حضور حفل زفاف محمد أديب طويل ورزان بطايحي'
+    whatsappMessage: 'تأكيد حضور حفل زفاف نادر وهالة'
   },
   pageUrl: 'https://mohamad-adib-tawil.github.io/wedding-temp-dove/',
   assets: {

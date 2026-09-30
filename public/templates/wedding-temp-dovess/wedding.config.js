@@ -4,10 +4,10 @@
  */
 window.__INVITE__ = {
   config: {
-    groom: "محمد أديب طويل",
-    groomEnglish: "Mohamad Adib Tawil",
-    bride: "رزان بطايحي",
-    brideEnglish: "Razan Bataihi",
+    groom: "مروان",
+    groomEnglish: "Marwan",
+    bride: "بيان",
+    brideEnglish: "Bayan",
 
     date: "2026-12-18T19:00:00",
     timeZone: "Asia/Baghdad",
@@ -42,7 +42,7 @@ window.__INVITE__ = {
     ],
 
     closingNote: "حضوركم يزيّن فرحتنا",
-    hashtag: "#محمد_أديب_ورزان",
+    hashtag: "#مروان_أديب_وبيان",
     contactLabel: "للاستفسار والتأكيد",
     contactName: "+963 992 688 759",
     whatsappUrl: "https://wa.me/+963992688759",

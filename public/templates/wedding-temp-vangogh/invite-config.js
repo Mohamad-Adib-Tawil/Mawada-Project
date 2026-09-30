@@ -1,8 +1,8 @@
 window.__INVITE__ = { config: {
-  "groom": "محمد أديب طويل",
-  "groomEnglish": "Mohamad Adib Tawil",
-  "bride": "رزان بطايحي",
-  "brideEnglish": "Razan Bataihi",
+  "groom": "جواد",
+  "groomEnglish": "Jawad",
+  "bride": "ميساء",
+  "brideEnglish": "Maysaa",
   "date": "2026-12-11T19:00:00",
   "dateText": "يوم الجمعة، ١١ كانون الأول ٢٠٢٦",
   "timeText": "الساعة السابعة مساءً",
@@ -52,7 +52,7 @@ window.__INVITE__ = { config: {
     "capacity": 3,
     "wishes": [
       {
-        "name": "أم محمد",
+        "name": "أم جواد",
         "message": "ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا",
         "color": "#e8c060"
       },

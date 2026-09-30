@@ -4,7 +4,7 @@
    → كشف الهيرو (فيديو البجع على البحيرة)
    ============================================================ */
 const WEDDING_CONFIG = (typeof window !== "undefined" && window.__INVITE__ && window.__INVITE__.config) || {
-  groom: "محمد", bride: "زينب",
+  groom: "أنس", bride: "زينب",
   date: "2026-11-20T19:00:00",
   dateText: "يوم الجمعة، ٢٠ تشرين الثاني ٢٠٢٦",
   timeText: "الساعة السابعة مساءً",
@@ -23,8 +23,8 @@ const WEDDING_CONFIG = (typeof window !== "undefined" && window.__INVITE__ && wi
   ],
   notes: ["يُرجى الحضور قبل الموعد بنصف ساعة", "الدعوة تشمل حاملها والعائلة الكريمة"],
   closingNote: "حضوركم يزيّن فرحتنا",
-  hashtag: "#محمد_وزينب",
-  contactLabel: "للتواصل والتأكيد", contactName: "أبو محمد", contactPhone: "+9647700000000",
+  hashtag: "#أنس_وزينب",
+  contactLabel: "للتواصل والتأكيد", contactName: "أبو أنس", contactPhone: "+9647700000000",
   closingFamilies: "عائلة عبد الله  &  عائلة حسن",
   images: {},
 };

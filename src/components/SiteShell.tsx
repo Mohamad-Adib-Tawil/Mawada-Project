@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { appPath, siteConfig, whatsappHref } from '../config/site';
+import { appPath, publicAsset, siteConfig, whatsappHref } from '../config/site';
+
+export function BrandMark() {
+  return <img className="brand-mark" src={publicAsset('/assets/brand/mark.jpg')} alt="" aria-hidden="true" />;
+}
 
 export function SiteHeader({ active = '' }: { active?: string }) {
   const [open, setOpen] = useState(false);
@@ -7,7 +11,7 @@ export function SiteHeader({ active = '' }: { active?: string }) {
     <header className="site-header">
       <div className="header-inner">
         <a className="brand" href={appPath('/')} aria-label="مودة — الصفحة الرئيسية">
-          <span className="brand-mark" aria-hidden="true">م</span>
+          <BrandMark />
           <span>{siteConfig.brand}</span>
         </a>
         <button className="menu-toggle" aria-expanded={open} aria-label={open ? 'إغلاق القائمة' : 'فتح القائمة'} onClick={() => setOpen(value => !value)}>
@@ -28,7 +32,7 @@ export function SiteHeader({ active = '' }: { active?: string }) {
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <a className="brand footer-brand" href={appPath('/')}><span className="brand-mark" aria-hidden="true">م</span><span>{siteConfig.brand}</span></a>
+      <a className="brand footer-brand" href={appPath('/')}><BrandMark /><span>{siteConfig.brand}</span></a>
       <p>دعوات إلكترونية تليق بلحظاتكم الجميلة.</p>
       <div className="footer-links">
         <a href={appPath('/templates/')}>القوالب</a>

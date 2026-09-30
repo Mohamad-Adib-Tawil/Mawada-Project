@@ -1,8 +1,8 @@
 /* Update event details, text, links, and asset paths here. */
 window.INVITATION = {
   couple: {
-    groom: { ar: "محمد أديب طويل", en: "Mohamad Adib Tawil" },
-    bride: { ar: "رزان بطايحي", en: "Razan Bataihi" }
+    groom: { ar: "كنان", en: "Kenan" },
+    bride: { ar: "سارة", en: "Sara" }
   },
   event: {
     kind: "wedding",

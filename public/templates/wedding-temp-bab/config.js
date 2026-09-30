@@ -1,9 +1,9 @@
 window.SITE_CONFIG = {
   "names": {
-    "groomArabic": "محمد أديب طويل",
-    "brideArabic": "رزان بطايحي",
-    "groomEnglish": "Mohamad Adib Tawil",
-    "brideEnglish": "Razan Bataihi"
+    "groomArabic": "كريم",
+    "brideArabic": "ميرا",
+    "groomEnglish": "Karim",
+    "brideEnglish": "Mira"
   },
   "event": {
     "date": "2026-11-20T19:00:00",
@@ -40,9 +40,9 @@ window.SITE_CONFIG = {
       "الدعوة تشمل حاملها والعائلة الكريمة"
     ],
     "closingNote": "حضوركم يفتح أبواب سعادتنا",
-    "hashtag": "#محمد_ورزان",
+    "hashtag": "#كريم_وميرا",
     "contactLabel": "للتواصل والتأكيد",
-    "contactName": "أبو محمد",
+    "contactName": "أبو كريم",
     "contactPhone": "+963992688759",
     "dateKicker": "",
     "showDateKicker": true,
@@ -59,16 +59,16 @@ window.SITE_CONFIG = {
     "coupleInviteLine": "",
     "groomRelationLabel": "",
     "brideRelationLabel": "",
-    "groomRelationName": "محمد أديب طويل",
-    "brideRelationName": "رزان بطايحي",
-    "groom": "محمد أديب طويل",
-    "bride": "رزان بطايحي",
+    "groomRelationName": "كريم",
+    "brideRelationName": "ميرا",
+    "groom": "كريم",
+    "bride": "ميرا",
     "verse": "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
     "groomParents": "نجل السيّد كريم عبد الله و السيّدة هدى",
     "brideParents": "كريمة السيّد سامي حسن و السيّدة رنا",
     "closingFamilies": "عائلة عبد الله  &  عائلة حسن",
-    "groomEnglish": "Mohamad Adib Tawil",
-    "brideEnglish": "Razan Bataihi"
+    "groomEnglish": "Karim",
+    "brideEnglish": "Mira"
   },
   "assets": {
     "doorVideo": "assets/door.mp4",
@@ -128,13 +128,13 @@ window.SITE_CONFIG = {
     "rsvpWishLabel": "كلمة للعروسين 💌",
     "rsvpWishPlaceholder": "اكتب تهنئتك للعروسين...",
     "promoHeading": "أعجبك قالب «باب الفرح»؟",
-    "promoSubtitle": "اطلبه الآن وعدّله بنفسك فوراً بعد الطلب",
-    "promoNote": "للعرض فقط — يختفي بعد الطلب",
+    "promoSubtitle": "تواصل مع فريق مودة لتخصيص هذا القالب",
+    "promoNote": "معاينة للقالب قبل الطلب",
     "promoOrder": "اطلبه 🎉"
   },
   "wishes": [
     {
-      "name": "أم محمد",
+      "name": "أم كريم",
       "message": "ألف مبروك 🤍 بالرفاه والبنين إن شاء الله، فرحتكم فرحتنا"
     },
     {

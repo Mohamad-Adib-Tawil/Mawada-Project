@@ -159,7 +159,7 @@ function downloadCalendarEvent() {
   const location = [config.venue, config.address].filter(Boolean).join(', ');
   const description = config.mapsUrl ? `الموقع: ${config.mapsUrl}` : '';
   const uid = crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-  const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mohamad and Razan//Wedding Invitation//AR', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT', `UID:${uid}@wedding`, `DTSTAMP:${toUtc(new Date())}`, `DTSTART:${toUtc(start)}`, `DTEND:${toUtc(end)}`, `SUMMARY:${escapeIcs(`${config.groomEnglish} & ${config.brideEnglish} Wedding`)}`, `LOCATION:${escapeIcs(location)}`, `DESCRIPTION:${escapeIcs(description)}`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+  const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Salim and Layan//Wedding Invitation//AR', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT', `UID:${uid}@wedding`, `DTSTAMP:${toUtc(new Date())}`, `DTSTART:${toUtc(start)}`, `DTEND:${toUtc(end)}`, `SUMMARY:${escapeIcs(`${config.groomEnglish} & ${config.brideEnglish} Wedding`)}`, `LOCATION:${escapeIcs(location)}`, `DESCRIPTION:${escapeIcs(description)}`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
   const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const link = Object.assign(document.createElement('a'), { href: url, download: 'mohamad-and-razan-wedding.ics' });

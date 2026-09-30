@@ -4,10 +4,10 @@
  */
 window.__INVITE__ = {
   config: {
-    groom: "محمد أديب طويل",
-    groomEnglish: "Mohamad Adib Tawil",
-    bride: "رزان بطايحي",
-    brideEnglish: "Razan Bataihi",
+    groom: "أنس",
+    groomEnglish: "Anas",
+    bride: "لمى",
+    brideEnglish: "Lama",
     date: "2026-11-20T19:00:00+03:00",
     dateText: "يوم الجمعة، ٢٠ تشرين الثاني ٢٠٢٦",
     timeText: "الساعة السابعة مساءً",
@@ -32,7 +32,7 @@ window.__INVITE__ = {
       "الدعوة تشمل حاملها والعائلة الكريمة"
     ],
     closingNote: "حضوركم يزيّن فرحتنا",
-    hashtag: "#محمد_وزينب",
+    hashtag: "#أنس_وزينب",
     closingFamilies: "عائلة عبد الله  &  عائلة حسن",
     contactLabel: "للاستفسار والتأكيد",
     contactName: "واتساب",

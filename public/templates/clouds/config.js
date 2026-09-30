@@ -1,9 +1,9 @@
 /* بيانات البشارة وروابطها وأصولها في مكان واحد. اترك الحقول الاختيارية فارغة عند عدم توفرها. */
 window.__INVITE__ = {
   config: {
-    celebrant: "نور الدين مخملجي",
-    englishName: "Nour Aldeen Mokhmalji",
-    parents: "محمد مخملجي ونجوى دبل",
+    celebrant: "آدم الرفاعي",
+    englishName: "Adam Al Rifai",
+    parents: "سامي الرفاعي وليلى ناصر",
     gender: "boy",
     birthDate: "2026-10-17",
     birthDateText: "١٧ تشرين الأول ٢٠٢٦",
@@ -51,7 +51,7 @@ window.__INVITE__ = {
     contactLabel: "للتأكيد والاستفسار",
     contactName: "للتواصل والتهنئة",
     whatsappUrl: "",
-    closingHost: "محمد مخملجي ونجوى دبل",
+    closingHost: "سامي الرفاعي وليلى ناصر",
     images: {
       hero: "",
       venue: "",

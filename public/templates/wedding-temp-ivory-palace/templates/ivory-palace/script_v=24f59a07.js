@@ -184,7 +184,7 @@
     const names = [cfg.groom, cfg.bride].map(v => String(v || '').trim()).filter(Boolean);
     const namesEl = document.getElementById('ip-hero-names');
     if (namesEl && cfg.namesStacked && names.length === 2) {
-      /* الاسمان كلٌّ في سطر وبينهما حرف الوصل صغيراً: محمد / و / رنا */
+      /* الاسمان كلٌّ في سطر وبينهما حرف الوصل صغيراً: سيف / و / رنا */
       namesEl.textContent = '';
       namesEl.classList.add('ip-letters__names--stacked');
       [names[0], dict.namesJoin.trim(), names[1]].forEach((text, i) => {

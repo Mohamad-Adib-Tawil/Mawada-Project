@@ -1,8 +1,8 @@
 /* بيانات البشارة وأصولها في مكان واحد. لا تُضاف تفاصيل ولادة أو استقبال غير مؤكدة. */
 window.INVITATION_CONFIG = {
   baby: {
-    nameArabic: "نور الدين مخملجي",
-    nameEnglish: "Nour Aldeen Mokhmalji",
+    nameArabic: "يونس السالم",
+    nameEnglish: "Younes Al Salem",
     birthDate: "17 أكتوبر 2026",
     birthDateISO: "2026-10-17",
     birthTime: "",
@@ -10,13 +10,13 @@ window.INVITATION_CONFIG = {
     length: "",
   },
   parents: {
-    father: "محمد مخملجي",
-    mother: "نجوى دبل",
+    father: "سامي الرفاعي",
+    mother: "ليلى ناصر",
   },
   copy: {
     kicker: "بشرى سارّة",
-    welcome: "أهلاً بقدوم نور الدين",
-    familyMessage: "بقلوبٍ تفيض بالحمد والفرح، نزفّ إليكم بشرى قدوم نور الدين، ونسأل الله أن يجعله من مواليد السعادة وأن يقرّ به أعين والديه.",
+    welcome: "أهلاً بقدوم يونس",
+    familyMessage: "بقلوبٍ تفيض بالحمد والفرح، نزفّ إليكم بشرى قدوم يونس، ونسأل الله أن يجعله من مواليد السعادة وأن يقرّ به أعين والديه.",
     closing: "الحمد لله الذي بنعمته تتمّ الصالحات",
     prayers: [
       {
