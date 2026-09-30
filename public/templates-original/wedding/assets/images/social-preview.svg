@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f4f0e9"/>
+  <path d="M106 558V268C106 139 201 47 324 47s218 92 218 221v290Z" fill="#e4e9df"/>
+  <path d="M122 543V269C122 149 209 63 324 63s202 86 202 206v274Z" fill="none" stroke="#cbd3c9"/>
+  <g transform="rotate(-5 324 310)">
+    <rect x="171" y="114" width="306" height="408" fill="#34473d"/>
+    <rect x="184" y="127" width="280" height="382" fill="none" stroke="#899a88"/>
+    <text x="324" y="332" text-anchor="middle" fill="#f6eee2" font-family="Geeza Pro,serif" font-size="62">م <tspan fill="#d6b79e" font-size="40">&amp;</tspan> ر</text>
+    <path d="M302 355h44" stroke="#c8a994"/>
+    <text x="324" y="391" text-anchor="middle" fill="#f6eee2" font-family="sans-serif" font-weight="600" letter-spacing="5" font-size="13">MOHAMAD · RAZAN</text>
+  </g>
+  <path d="M804 165h70" stroke="#a9785f" stroke-width="2"/>
+  <text x="874" y="208" text-anchor="end" direction="rtl" fill="#a9785f" font-family="Geeza Pro,serif" font-size="28">دعوة زفاف</text>
+  <text x="1060" y="301" text-anchor="end" direction="rtl" fill="#34473d" font-family="Geeza Pro,serif" font-size="76">سليم</text>
+  <text x="1060" y="365" text-anchor="end" fill="#a9785f" font-family="Georgia,serif" font-size="44">&amp;</text>
+  <text x="1060" y="460" text-anchor="end" direction="rtl" fill="#34473d" font-family="Geeza Pro,serif" font-size="82">ليان</text>
+  <path d="M804 502h256" stroke="#d5d8ce"/>
+</svg>

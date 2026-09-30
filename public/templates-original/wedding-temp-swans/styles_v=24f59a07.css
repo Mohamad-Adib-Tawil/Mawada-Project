@@ -1,0 +1,532 @@
+/* ============================================================
+   swans — قالب «بحيرة البجع» (معرض عام، عربي بالكامل)
+   ظرف زيتوني منقوش بختم شمع عاجي ← بطاقة عاجية بأخضرَين
+   (غامق/زيتوني) وزنابق كالا: خطية بيضاء، وعنّابية متدلية.
+   مشتق من تصميم قالب zanbaq الـVIP بصياغة عربية RTL خالصة.
+   ============================================================ */
+
+:root {
+  --ivory: #f8f4e9;        /* أرضية البطاقة */
+  --ivory-2: #f2ecdd;      /* بطاقات فرعية */
+  --forest: #33492f;       /* الأخضر الغامق — النص الرئيس */
+  --forest-deep: #24361f;
+  --olive: #6d6f4e;        /* الأخضر الزيتوني — النص الثانوي */
+  --sage: #8b9070;         /* الرسم الخطي */
+  --env: #67654a;          /* ورق الظرف */
+  --env-hi: #79765a;
+  --env-lo: #504e37;
+  --wax: #efe6d1;          /* الشمع العاجي */
+  --burg: #5c2331;         /* العنّابي */
+  --burg-deep: #3f1420;
+  /* الاسمان القديمان محفوظان (--serif/--script) كي تبقى كل قواعد المحرّك
+     الموروثة صالحة — لكن قيمتاهما عربيتان بالكامل بهذا القالب */
+  --serif: "Amiri", serif;
+  --script: "Aref Ruqaa", serif;
+  --amiri: "Amiri", serif;
+  --ruqaa: "Aref Ruqaa", serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  background: var(--ivory);
+  color: var(--forest);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body.locked { overflow: hidden; height: 100dvh; }
+.ar { font-family: var(--amiri); direction: rtl; }
+img { max-width: 100%; }
+
+/* حبيبات ورق ناعمة فوق كل شيء — ملمس مطبوعات فاخر */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══════════ بوابة الظرف (فيديو الظرف) ═══════════ */
+#gate {
+  position: fixed; inset: 0; z-index: 60;
+  background: var(--env-lo);
+  cursor: pointer;
+  overflow: hidden;
+}
+/* الپوستر خلفية CSS: سفاري iOS يتجاهل object-fit على poster فتظهر أشرطة */
+.gate__bgposter {
+  position: absolute; inset: 0;
+  background: var(--asset-entrance-poster) center/cover no-repeat var(--env-lo);
+}
+.gate__vid {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity .35s ease;
+}
+/* يظهر عند أول إطار معروض فعلاً (is-live من السكربت) لا عند play(): بينهما يرسم آيفون
+   طبقة الفيديو سوداء لجزء من الثانية، وملصق البوّابة تحته هو الإطار الأول نفسه */
+#gate.is-playing .gate__vid.is-live { opacity: 1; }
+
+#gate.is-playing .gate__hint { opacity: 0; }
+
+/* تلميح الفتح: وهج داكن ناعم أسفل الشاشة يفصله عن نقش الورق فيُقرأ بوضوح */
+.gate__hint {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 54px 20px calc(30px + env(safe-area-inset-bottom));
+  text-align: center; pointer-events: none;
+  background: linear-gradient(180deg, rgba(38, 40, 22, 0) 0%, rgba(38, 40, 22, .5) 62%, rgba(32, 34, 18, .72) 100%);
+  transition: opacity .5s ease;
+}
+.gate__hint > span { animation: hintPulse 3s ease-in-out infinite; }
+@keyframes hintPulse { 0%, 100% { opacity: 1; } 50% { opacity: .62; } }
+/* قبل جاهزية الفيديو: مؤشّر تحميل مكان التلميح (نمط كلاسيك)؛
+   وعند الجاهزية يختفي ويظهر تلميح الفتح */
+.gate__load { display: block; }
+/* المستطيل يختفي حين يمتلئ لا حين تصل الجهوزية — يضيف JS الصنف بعد بلوغ ١٠٠٪ */
+.gate__load.is-gone { display: none; }
+.gate__load-txt {
+  display: block; font-family: var(--amiri);
+  font-size: .98rem; color: #efeada;
+  text-shadow: 0 1px 10px rgba(24, 26, 12, .7);
+}
+.gate__load-bar {
+  display: block; width: min(210px, 58vw); height: 2px;
+  margin: 10px auto 0; border-radius: 2px; overflow: hidden;
+  background: rgba(244, 240, 224, .28);
+}
+.gate__load-bar i {
+  display: block; height: 100%; width: 0%;
+  background: #f4f0e0; transition: none;   /* JS يُنعّم الصعود كل إطار — أي انتقال هنا يُخلّف المستطيل عن الرقم */
+}
+.gate__hint-ar {
+  display: none; font-family: var(--ruqaa);
+  font-size: 1.18rem; color: #f4f0e0;
+  text-shadow: 0 1px 10px rgba(24, 26, 12, .7);
+}
+#gate.is-ready .gate__hint-ar { display: block; }
+.gate__hint-sub {
+  display: none; margin-top: 5px; font-family: var(--amiri);
+  font-size: .92rem; color: #e4dfc6; opacity: .9;
+  text-shadow: 0 1px 10px rgba(24, 26, 12, .7);
+}
+#gate.is-ready .gate__hint-sub { display: block; }
+#gate.is-done { pointer-events: none; }
+
+/* زر الصوت يبقى بزاويته الجانبية حتى والظرف مغلق (بلا توسيط ولا حلقة — بطلب كرار) */
+
+/* ═══════════ البطاقة (الموقع) ═══════════ */
+body.locked #site { visibility: hidden; }
+#site { position: relative; }
+#site.rise { animation: siteRise 1.25s cubic-bezier(.2, .7, .25, 1) both; }
+@keyframes siteRise {
+  from { transform: translateY(6vh); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.sec { position: relative; padding: 64px 22px; max-width: 560px; margin: 0 auto; text-align: center; }
+
+/* ظهور تدريجي مع التمرير */
+.creveal { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform .9s ease; }
+.creveal.is-visible { opacity: 1; transform: none; }
+
+/* عناوين الأقسام: سطر عربي واحد بخط الرقعة */
+.sec__title { display: block; margin-bottom: 26px; font-weight: 400; }
+.sec__title-main {
+  display: block; font-family: var(--ruqaa);
+  font-size: clamp(1.5rem, 6.4vw, 2rem); color: var(--forest);
+  line-height: 1.7;
+}
+
+/* ═══════════ الواجهة: لوحة البجعتين ═══════════
+   تصل بحالة النقش العاجي (كما انتهى فيديو الظرف) ثم تدبّ فيها الحياة
+   ملوّنةً وتتمدّد لملء الشاشة — فيقرأ الضيف الانتقال «اللوحة صارت حيّة». */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: space-between;
+  /* حشوة سفلى أوسع: تترك شريط ذوبان تحت تلميح التمرير بدل قصّه عند الحافة */
+  padding: calc(30px + env(safe-area-inset-top)) 20px calc(84px + env(safe-area-inset-bottom));
+  background: var(--ivory);   /* ما ينكشف تحت الحافة الذائبة */
+  overflow: hidden;
+}
+/* لحظة الخروج من الظرف: أرضية زيتونية تحيط البطاقة المصغّرة كما في الفيديو */
+#site.hero-pre .hero { background: var(--env); }
+/* الوضع الافتراضي (الآمن) = اللوحة ملوّنة كاملة الحجم — فلو جمّد متصفح
+   الضيف الانتقالات بقيت الواجهة صحيحة. حالة النقش العاجي طارئة تُنزع. */
+.hero__art {
+  position: absolute; inset: 0;
+  background: var(--asset-hero) center 42% / cover no-repeat;
+  transition: transform 2.2s cubic-bezier(.22, .68, .3, 1), filter 2.4s ease .25s;
+}
+#site.hero-pre .hero__art {
+  /* لحظة الوصول: نقش عاجي بحجم البطاقة الخارجة من الظرف */
+  transform: scale(.9);
+  filter: saturate(.05) sepia(.42) brightness(1.1) contrast(.94);
+  transition: none;
+}
+/* الحجاب أُفرغ بطلب كرار: لا وهج عاجياً خلف الأسماء ولا حجاباً
+   داكناً أسفل — اللوحة صافية والنصوص فوقها مباشرة */
+.hero__veil { position: absolute; inset: 0; }
+/* ذوبان الحافة السفلى في أرضية الصفحة العاجية: قناع واحد على اللوحة
+   وحجابها معاً (لو قُنّعت اللوحة وحدها بقي الحجاب الداكن حدّاً حادّاً)،
+   والأرضية العاجية تحتهما هي ما ينكشف تدريجياً */
+.hero__art, .hero__veil {
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 88%, rgba(0,0,0,.72) 93%, rgba(0,0,0,.3) 97%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 88%, rgba(0,0,0,.72) 93%, rgba(0,0,0,.3) 97%, transparent 100%);
+}
+.hero__top, .hero__bottom { position: relative; z-index: 2; text-align: center; }
+
+/* حروف أعلى الواجهة صافية بلا أي بياض خلفها (بطلب كرار)؛
+   حافة داكنة فقط حول نصوص الأسفل العاجية كي تُقرأ فوق اللوحة */
+.hero__bottom .hero__date-ar,
+.hero__bottom .hero__scroll {
+  paint-order: stroke fill;
+  -webkit-text-stroke: 2.6px rgba(26, 30, 14, .55);
+}
+
+/* عبارة الترحيب أعلى الدعوة — بين غصينين رفيعين */
+.hero__welcome {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  font-family: var(--ruqaa); font-weight: 400;
+  font-size: clamp(1rem, 4.2vw, 1.3rem); color: var(--forest);
+  margin-bottom: 14px;
+}
+.hero__welcome-orn {
+  flex: 0 0 auto; width: clamp(28px, 9vw, 48px); height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(51, 73, 47, .55));
+}
+/* بصفحة RTL الغصين الأول يقع يميناً — نعكسه هو كي يبقى الأغمق جهة النص */
+.hero__welcome-orn:first-child { transform: scaleX(-1); }
+
+.hero__together {
+  font-family: var(--amiri);
+  font-size: clamp(1.02rem, 4.2vw, 1.25rem);
+  color: var(--forest); margin-bottom: 18px;
+}
+
+/* الأسماء صافية فوق سماء اللوحة — بلا هالة ولا تطويق (بطلب كرار) */
+.hero__names { font-weight: 400; }
+.hero__name {
+  display: block; font-family: var(--ruqaa); font-weight: 700;
+  font-size: clamp(2.9rem, 13.5vw, 4.2rem);
+  line-height: 1.6;
+  color: #1c2b17;
+}
+/* «&» بين الاسمين (بطلب كرار بدل واو العطف) — زيتونية بحجم أهدأ من الأسماء.
+   الخط بالترتيب: الرقعة ثم أميري — لو لم يحمل أحدهما رمز & رسمه الآخر */
+.hero__amp {
+  display: block; font-family: "Aref Ruqaa", "Amiri", serif; font-weight: 400;
+  font-size: clamp(1.9rem, 8.2vw, 2.7rem);
+  color: #5f6b45; line-height: 1.2; margin: 2px 0 4px;
+}
+
+/* عنقودا الكالا العنّابية المتدليان (قسم نص الدعوة) */
+.dangle {
+  position: absolute; top: 0; width: clamp(130px, 34vw, 210px);
+  z-index: 3; pointer-events: none;
+  filter: drop-shadow(0 14px 16px rgba(63, 20, 32, .18));
+}
+.dangle--l { left: -10px; }
+.dangle--r { right: -10px; transform: scaleX(-1); }
+.sway { transform-origin: 50% 0; animation: sway 6.4s ease-in-out infinite alternate; }
+.sway--b { animation-duration: 5.1s; animation-delay: -1.6s; }
+.sway--c { animation-delay: -3.1s; }
+@keyframes sway {
+  from { transform: rotate(-2.1deg); }
+  to { transform: rotate(2.3deg); }
+}
+
+/* ═══════════ نص الدعوة ═══════════
+   الحشوات تتجاوز ارتفاع الكالات المتدلية أعلاه والخطية أسفله فلا يتداخلان مع النص.
+   overflow مقصوص هنا لا على body: الكالا اليمنى تخرج ١٤بك عن الحافة فتفتح
+   تمريراً أفقياً يترك شريطاً فارغاً يمين الواجهة (والقصّ على body يكسر
+   position:fixed لبوابة الدخول على آيفون). */
+.invite { padding-top: 152px; padding-bottom: 156px; overflow: hidden; }
+.invite__dua {
+  font-size: clamp(1.02rem, 4.1vw, 1.28rem); line-height: 2;
+  color: var(--olive); margin-bottom: 26px;
+}
+.invite__request { font-size: clamp(1.05rem, 4.2vw, 1.25rem); line-height: 2.1; color: var(--forest); }
+
+/* ═══ أهل العروسين ═══
+   عمود واحد بأوركيدة صغيرة فاصلة — يبقى مقروءاً مهما طالت الأسماء،
+   وحارس المنصّة يخفي صفّاً أو الفقرة كلها بـdisplay:none بلا كسر الشكل */
+.families { margin-top: clamp(30px, 8vw, 46px); }
+.family { padding: 4px 0; }
+.family__label {
+  display: block; font-family: var(--ruqaa);
+  font-size: clamp(.95rem, 3.7vw, 1.08rem); color: var(--olive);
+  margin-bottom: 7px;
+}
+.family__names {
+  font-family: var(--amiri); font-size: clamp(1.08rem, 4.3vw, 1.28rem);
+  line-height: 1.95; color: var(--forest-deep);
+}
+.families__heart {
+  display: block; width: 40px; height: auto; margin: 14px auto;
+  opacity: .9; filter: drop-shadow(0 4px 9px rgba(80, 84, 56, .2));
+}
+.invite__flora {
+  position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+  width: min(96vw, 560px); opacity: .8; pointer-events: none;
+}
+
+/* سطر التاريخ أسفل اللوحة — عاجي فوق الحجاب الزيتوني */
+.hero__date { display: flex; flex-direction: column; align-items: center; gap: 9px; }
+.hero__date-line { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, rgba(244, 240, 224, .6), transparent); }
+.hero__date-ar {
+  font-family: var(--amiri);
+  font-size: clamp(1.02rem, 4.2vw, 1.22rem); color: #fbf8ec; line-height: 1.9;
+  text-shadow: 0 1px 3px rgba(20, 24, 10, .85), 0 2px 14px rgba(20, 24, 10, .7);
+}
+
+.hero__scroll {
+  margin-top: 20px; opacity: .85; animation: cueFloat 2.6s ease-in-out infinite;
+  color: #eae5cd; font-family: var(--amiri); font-size: .92rem;
+}
+@keyframes cueFloat { 0%, 100% { transform: none; } 50% { transform: translateY(7px); } }
+
+/* ظهور افتتاحي متدرّج لعناصر الواجهة بعد فتح الظرف */
+.rv { opacity: 0; transform: translateY(18px); }
+#site.opened .rv { animation: rvIn 1s cubic-bezier(.2, .7, .3, 1) forwards; }
+#site.opened .hero__together { animation-delay: 1.05s; }
+#site.opened .hero__names { animation-delay: 1.3s; }
+#site.opened .hero__date { animation-delay: 1.6s; }
+#site.opened .hero__scroll { animation-delay: 2s; }
+@keyframes rvIn { to { opacity: 1; transform: none; } }
+/* شبكة أمان: بعد ثوانٍ من الفتح يفرض السكربت الظهور الكامل —
+   حتى لو جمّد متصفح الضيف أنيميشن CSS (متصفحات داخل التطبيقات) */
+#site.rv-done .rv { opacity: 1; transform: none; animation: none; }
+
+/* فاصل: أوركيدة حقيقية بين خطّين */
+.divider { position: relative; max-width: 380px; margin: 0 auto; padding: 8px 22px; }
+.divider svg { width: 100%; display: block; }
+.divider__orchid {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 64px; height: auto; pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(80, 84, 56, .22));
+}
+
+/* ═══════════ العدّ التنازلي ═══════════ */
+/* بطاقة مسح الموعد: كسوة زيتونية تُمسح بالإصبع فيظهر التاريخ تحتها.
+   الكانفاس بعرض صريح 100% — كانفاس مطلق بلا width بصفحة RTL يفيض خارج الشاشة */
+.scratch {
+  position: relative; width: min(340px, 86vw); margin: -4px auto 28px;
+  border-radius: 10px; overflow: hidden;
+  background: #fffdf6;
+  border: 1px solid rgba(109, 111, 78, .35);
+  box-shadow: 0 8px 22px rgba(51, 73, 47, .1);
+}
+.scratch__under { padding: 22px 14px 20px; }
+.scratch__kicker { display: block; font-family: var(--ruqaa); font-size: .95rem; color: var(--olive); margin-bottom: 6px; }
+.scratch__date { font-family: var(--amiri); font-weight: 700; font-size: clamp(1.02rem, 4.2vw, 1.2rem); line-height: 1.9; color: var(--burg); }
+.scratch__cv {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  touch-action: none; cursor: crosshair;
+}
+.scratch.is-revealed .scratch__cv { opacity: 0; transition: opacity .8s ease; pointer-events: none; }
+.scratch__hint {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  pointer-events: none; font-family: var(--amiri); font-size: 1rem;
+  color: #f4f0e0; text-shadow: 0 1px 6px rgba(24, 26, 12, .55);
+  animation: hintPulse 3s ease-in-out infinite;
+  transition: opacity .4s ease;
+}
+.scratch.is-started .scratch__hint { opacity: 0; animation: none; visibility: hidden; }
+.count__row { display: flex; justify-content: center; gap: clamp(8px, 2.6vw, 16px); }
+.count__cell {
+  min-width: clamp(64px, 19vw, 88px); padding: 14px 6px 12px;
+  background: #fffdf6;
+  border: 1px solid rgba(109, 111, 78, .35); border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(51, 73, 47, .08);
+  position: relative;
+}
+.count__cell::after {
+  content: ""; position: absolute; inset: 3px;
+  border: 1px solid rgba(139, 144, 112, .25); border-radius: 2px; pointer-events: none;
+}
+.count__cell b {
+  display: block; font-family: var(--amiri); font-weight: 700;
+  font-size: clamp(1.7rem, 7vw, 2.3rem); color: var(--forest-deep); line-height: 1.2;
+}
+.count__cell span { display: block; margin-top: 4px; font-family: var(--amiri); font-size: .9rem; color: var(--olive); }
+.count__done { font-family: var(--amiri); font-size: 1.1rem; color: var(--forest); }
+
+/* ═══════════ برنامج الحفل ═══════════ */
+.sched__list { position: relative; max-width: 420px; margin: 0 auto; padding: 6px 0; }
+/* الأوركيدة المنزلقة: تتبع تمرير الضيف على الخيط صعوداً ونزولاً.
+   طبقتها تحت نصوص الفقرات (z-index 1 مقابل 4) فتعبر خلفها ولا تحجب القراءة.
+   ⚠️ بلا filter: drop-shadow — سفاري iOS يترك أثراً رمادياً ضبابياً على مسار
+   العنصر المتحرّك بالفلتر. التحريك بـtranslate على طبقة مركّبة خاصة
+   (will-change + translateZ) فلا يبقى أي أثر. */
+.sched__orchid {
+  position: absolute; left: 50%; top: 4%;
+  /* فوق الخيط وتحت النصوص (z4) — فلا تحجب القراءة وهي تعبر */
+  width: 56px; height: auto; z-index: 3;
+  transform: translate(-50%, -50%) translateZ(0);
+  transition: top .16s linear;
+  will-change: top;
+  pointer-events: none;
+}
+/* خيط رفيع متصل بلا انقطاع (بطلب كرار) تنساب عليه الأوركيدة مع التمرير */
+.sched__list::before {
+  content: ""; position: absolute; left: 50%; top: 12px; bottom: 12px;
+  width: 1px; transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 144, 112, .55) 7%, rgba(139, 144, 112, .55) 93%, transparent 100%);
+}
+.srow { position: relative; padding: 23px 0; }
+.srow time {
+  display: block; position: relative; z-index: 4;
+  font-family: var(--amiri); font-weight: 700;
+  font-size: 1.02rem; color: var(--burg);
+  margin: 14px 0 4px;
+}
+.srow .sched__t { display: block; position: relative; z-index: 4; font-family: var(--amiri); font-size: clamp(1.1rem, 4.4vw, 1.3rem); color: var(--forest-deep); }
+
+/* ═══════════ المكان ═══════════ */
+/* أوركيدة المكان: الصورة الحقيقية وسط غصينين */
+.loc__orchids { position: relative; width: min(76vw, 300px); margin: 0 auto 10px; }
+.loc__orchids svg { width: 100%; display: block; }
+.loc__orchid-img {
+  position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);
+  width: 62px; height: auto; pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(80, 84, 56, .22));
+}
+/* بلا تباعد حروف: التباعد يفكّ وصل الحروف العربية */
+.loc__venue { font-family: var(--amiri); font-weight: 700; font-size: clamp(1.3rem, 5.4vw, 1.7rem); color: var(--forest-deep); }
+.loc__addr { margin-top: 6px; font-family: var(--amiri); font-size: 1.02rem; color: var(--olive); }
+.loc__mapwrap { margin: 22px auto 0; max-width: 460px; display: none; }
+.loc__mapwrap.on { display: block; }
+.loc__mapwrap iframe {
+  width: 100%; height: 240px; border: 0; border-radius: 6px;
+  outline: 1px solid rgba(109, 111, 78, .4); outline-offset: 4px;
+  filter: sepia(.14) saturate(.9);
+}
+/* سمة hidden تنهزم أمام display:inline-block — نعيد لها سلطتها (درس #rsvpModal) */
+.loc__maplink[hidden] { display: none; }
+.loc__maplink {
+  display: inline-block; margin-top: 18px; padding: 11px 22px;
+  font-family: var(--amiri); font-size: .98rem;
+  color: var(--ivory); background: var(--forest); text-decoration: none;
+  border-radius: 3px; box-shadow: 0 8px 20px rgba(36, 54, 31, .25);
+}
+.loc__maplink:active { transform: translateY(1px); }
+
+/* ═══════════ تنويهات ═══════════ */
+.notes ul { list-style: none; max-width: 420px; margin: 0 auto; }
+.notes li {
+  font-family: var(--amiri); font-size: 1.02rem; line-height: 2; color: var(--forest);
+  padding: 10px 0; border-bottom: 1px dashed rgba(139, 144, 112, .4);
+}
+.notes li:last-child { border-bottom: none; }
+
+/* كتلة معاينة تأكيد الحضور (الاستعراض الثابت فقط — يحذفها السكربت من الدعوات الحقيقية) */
+.rsvp-preview__note {
+  max-width: 380px; margin: 0 auto; font-family: var(--amiri);
+  font-size: 1rem; line-height: 2; color: var(--olive);
+  padding: 18px 20px; border: 1px dashed rgba(139, 144, 112, .55); border-radius: 6px;
+}
+.rsvp-preview__note--sm { margin-top: 10px; border: none; padding: 0; font-size: .88rem; opacity: .8; }
+
+/* ═══════════ الختام ═══════════ */
+.closing { padding-bottom: 40px; }
+.closing__panel {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 252, 240, .1) 0%, rgba(255, 252, 240, 0) 50%),
+    linear-gradient(170deg, #6e6b4e, var(--env) 55%, #55523a);
+  border-radius: 8px; padding: 52px 26px 44px;
+  box-shadow: 0 18px 44px rgba(48, 46, 26, .3);
+}
+.closing__flora { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: min(92%, 420px); opacity: .5; }
+.closing__bless { font-family: var(--amiri); font-size: clamp(1.25rem, 5.2vw, 1.6rem); color: #f3efe0; }
+.closing__bless-sub { margin-top: 6px; font-family: var(--amiri); font-size: 1rem; color: #cfc9a9; }
+
+/* رقم التواصل داخل لوحة الختام — سمة hidden تُعاد لها سلطتها أمام display */
+.closing__contact[hidden] { display: none; }
+.closing__contact { margin-top: 26px; }
+.contact__label { display: block; font-family: var(--amiri); font-size: .92rem; color: #cfc9a9; margin-bottom: 9px; }
+.contact__link {
+  display: inline-block; padding: 10px 20px;
+  font-family: var(--amiri); font-size: 1rem;
+  color: var(--forest-deep); background: #f3efe0; text-decoration: none;
+  border-radius: 3px; box-shadow: 0 8px 20px rgba(24, 26, 12, .28);
+}
+.contact__link:active { transform: translateY(1px); }
+.closing__names { margin-top: 30px; font-family: var(--ruqaa); font-size: clamp(1.6rem, 6.6vw, 2.2rem); color: #f6f2e3; line-height: 1.7; }
+/* أرقام التاريخ هندية منفصلة — التباعد هنا آمن ولا يفكّ حروفاً */
+.closing__date { margin-top: 10px; font-family: var(--amiri); letter-spacing: .3em; font-size: .95rem; color: #cbc5a5; }
+
+/* التوقيع */
+.credit { text-align: center; padding: 26px 0 34px; }
+.credit__link { font-family: var(--amiri); font-size: .95rem; color: var(--olive); text-decoration: none; }
+.credit__link b { color: var(--burg); }
+
+/* ═══════════ الأقسام المحقونة من المنصّة ═══════════ */
+#da3wa-credit { display: none !important; } /* التوقيع لنا بأسفل الصفحة */
+/* تأكيد الحضور = قسم المنصّة نفسه بترتيبه (اسم ← الحضور ← عدد المرافقين ←
+   التهنئة) وجدار تهانيه وستوري حضوره — يظهر كما هو مكسوّاً بثيم zanbaq */
+
+/* ═══════════ الدعوات الكردية: القالب يحتفظ بخطّه ═══════════
+   المنصّة تفرض ڤازیرماتن على كل صفحة كردية (body *{… !important}) لأن أغلب
+   الخطوط الزخرفية تنقصها حروف ە ۆ ێ ڵ ڕ. لكن **أميري يغطّيها كلها** (فحص
+   cmap — scripts/check-kurdish-cmap.py)، فنعيد فرضه على عناصر القالب وحدها
+   بدل ڤازیرماتن: خطّ القالب نفسه، والكردية تُقرأ.
+   ⚠️ **خطّ الرقعة لا يُستعمل بالكردية** رغم أن cmap فيه الحروف: طرازه المتصل
+   الضيّق يُلصق علامات ڕ ێ ۆ ڵ بالحروف المجاورة فتصير الكلمة غير مقروءة
+   (فُحص بصرياً 2026-08-03). فبالكردية تأخذ العناوين والأسماء أميري أيضاً —
+   نفس عائلة القالب الكلاسيكية، لكن بوزن ثقيل يميّزها عن النصوص.
+   الأقسام المحقونة من المنصّة (#da3wa-rsvp وأخواتها) لا تُمسّ فتبقى على
+   ڤازیرماتن. الشرط lang="ckb" يضعه الخادم للكردية وحدها، فالعربية
+   والإنجليزية لا تتأثران. */
+:root[lang="ckb"] .gate__hint-ar,
+:root[lang="ckb"] .hero__welcome,
+:root[lang="ckb"] .hero__name,
+:root[lang="ckb"] .hero__amp,
+:root[lang="ckb"] .sec__title-main,
+:root[lang="ckb"] .family__label,
+:root[lang="ckb"] .scratch__kicker,
+:root[lang="ckb"] .closing__names {
+  font-family: "Amiri", serif !important;
+  font-weight: 700;
+}
+:root[lang="ckb"] .gate__hint-sub,
+:root[lang="ckb"] .gate__load-txt,
+:root[lang="ckb"] .hero__together,
+:root[lang="ckb"] .hero__date-ar,
+:root[lang="ckb"] .hero__scroll,
+:root[lang="ckb"] .invite__dua,
+:root[lang="ckb"] .invite__request,
+:root[lang="ckb"] .family__names,
+:root[lang="ckb"] .scratch__date,
+:root[lang="ckb"] .scratch__hint,
+:root[lang="ckb"] .count__cell b,
+:root[lang="ckb"] .count__cell span,
+:root[lang="ckb"] .count__done,
+:root[lang="ckb"] .srow time,
+:root[lang="ckb"] .srow .sched__t,
+:root[lang="ckb"] .loc__venue,
+:root[lang="ckb"] .loc__addr,
+:root[lang="ckb"] .loc__maplink,
+:root[lang="ckb"] .notes li,
+:root[lang="ckb"] .closing__bless,
+:root[lang="ckb"] .closing__bless-sub,
+:root[lang="ckb"] .closing__date,
+:root[lang="ckb"] .contact__label,
+:root[lang="ckb"] .contact__link,
+:root[lang="ckb"] .credit__link {
+  font-family: "Amiri", serif !important;
+}
+
+/* حركة أقل لمن يفضّلها */
+@media (prefers-reduced-motion: reduce) {
+  .sway, .hero__scroll, .gate__hint > span { animation: none !important; }
+  .hero__art, .creveal, .rv { transition-duration: .2s !important; }
+}
+
+/* Full formal names must remain on one line on narrow phones. */
+@media (max-width: 600px) {
+  .hero__name {
+    font-size: clamp(1.7rem, 7.5vw, 2.6rem);
+    white-space: nowrap;
+  }
+}

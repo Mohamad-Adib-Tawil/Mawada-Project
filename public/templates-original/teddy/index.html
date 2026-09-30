@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <script src="./mawada-adapter.js?v=4"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf2e6">
+  <meta name="description" content="دعوة مناسبة">
+  <meta property="og:title" content="دعوة مناسبة">
+  <meta property="og:description" content="تفاصيل الدعوة">
+  <meta property="og:image" content="assets/share.jpg">
+  <title>دعوة مناسبة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <div class="cover" id="cover">
+    <div class="cover__hearts" id="coverHearts" aria-hidden="true"></div>
+    <div class="cover__inner">
+      <div class="cover__teddy" aria-hidden="true">
+        <svg class="teddySvg" viewBox="0 0 260 280" role="img" aria-label="دبدوب لطيف">
+          <defs>
+            <radialGradient id="furBody" cx="42%" cy="34%" r="72%"><stop offset="0" stop-color="#e8c08f"/><stop offset=".6" stop-color="#cf9c63"/><stop offset="1" stop-color="#b67f47"/></radialGradient>
+            <radialGradient id="furHead" cx="40%" cy="32%" r="75%"><stop offset="0" stop-color="#edc798"/><stop offset=".62" stop-color="#d2a067"/><stop offset="1" stop-color="#b9824a"/></radialGradient>
+            <radialGradient id="tummy" cx="50%" cy="40%" r="65%"><stop offset="0" stop-color="#fff6ea"/><stop offset="1" stop-color="#ffe7cf"/></radialGradient>
+            <radialGradient id="balloonG" cx="38%" cy="30%" r="70%"><stop offset="0" stop-color="#ffd1de"/><stop offset=".5" stop-color="#ff9cb8"/><stop offset="1" stop-color="#f06f97"/></radialGradient>
+            <radialGradient id="warmGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="rgba(255,214,160,.85)"/><stop offset="1" stop-color="rgba(255,214,160,0)"/></radialGradient>
+          </defs>
+          <circle class="teddyGlow" cx="120" cy="150" r="120" fill="url(#warmGlow)"/>
+          <ellipse cx="126" cy="216" rx="61" ry="49" fill="url(#furBody)"/>
+          <ellipse cx="126" cy="218" rx="34" ry="27" fill="url(#tummy)"/>
+          <ellipse class="teddyArm teddyArm--l" cx="64" cy="172" rx="22" ry="30" fill="url(#furBody)" transform="rotate(20 64 172)"/>
+          <ellipse class="teddyArm teddyArm--r" cx="190" cy="158" rx="20" ry="28" fill="url(#furBody)" transform="rotate(-26 190 158)"/>
+          <g class="teddyHead"><circle cx="78" cy="74" r="26" fill="url(#furHead)"/><circle cx="78" cy="74" r="13" fill="#e8b985"/><circle cx="174" cy="74" r="26" fill="url(#furHead)"/><circle cx="174" cy="74" r="13" fill="#e8b985"/><circle cx="126" cy="100" r="62" fill="url(#furHead)"/><ellipse cx="126" cy="120" rx="34" ry="28" fill="#fff2df"/><circle class="teddyCheek" cx="82" cy="112" r="11" fill="#ffb0c0" opacity=".75"/><circle class="teddyCheek" cx="170" cy="112" r="11" fill="#ffb0c0" opacity=".75"/><g class="teddyEyes"><circle cx="104" cy="96" r="7.5" fill="#5a3a26"/><circle cx="148" cy="96" r="7.5" fill="#5a3a26"/><circle cx="106" cy="93" r="2.4" fill="#fff"/><circle cx="150" cy="93" r="2.4" fill="#fff"/></g><ellipse cx="126" cy="112" rx="9" ry="7" fill="#6b4429"/><path d="M126 119v7m0 0q-9 9-17 2m17-2q9 9 17 2" fill="none" stroke="#6b4429" stroke-width="2.6" stroke-linecap="round"/></g>
+          <path class="teddyHeart" d="M126 188q-7-9-14-4-7 6 0 13l14 13 14-13q7-7 0-13-7-5-14 4Z" fill="#ff7d9e"/>
+          <g class="teddyBalloon"><path d="M217 68q0 5-5 8" fill="none" stroke="#ba8b79" stroke-width="2"/><path d="M189 35c0-13 16-18 24-7 8-11 24-6 24 7 0 16-24 30-24 30s-24-14-24-30Z" fill="url(#balloonG)"/><path d="M213 65v20" stroke="#c08776" stroke-width="1.5"/></g>
+        </svg>
+      </div>
+      <div class="cover__center">
+        <p class="cover__label">دعوة عيد ميلاد</p>
+        <div class="cover__mono" id="coverMono">عيد ميلاد سعيد</div>
+        <button class="cover__btn" id="openBtn" type="button">افتح الدعوة 🧸</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="invite" id="invite" aria-hidden="true">
+    <div class="floaties" id="floaties" aria-hidden="true"></div>
+    <header class="section hero reveal">
+      <span class="miniTeddy miniTeddy--a" aria-hidden="true">🧸</span><span class="miniTeddy miniTeddy--b" aria-hidden="true">🎈</span>
+      <p class="hero__kicker">حفل عيد ميلاد</p>
+      <h1 class="celebrant" id="celebrantName">ميرا</h1>
+      <div class="agewrap"><span class="age__icon">🧸</span><span class="age__num" id="ageNum">٣</span><span class="age__txt">سنوات</span></div>
+      <p class="hero__greet" id="heroGreet">عيد ميلاد</p>
+      <p class="hero__date" id="heroDate">—</p>
+      <div class="hero__scroll" aria-hidden="true"><span class="hero__scroll-txt">مرّر للأسفل</span><span class="hero__scroll-arrow">↓</span></div>
+    </header>
+    <section class="section when reveal"><h2 class="section__title" id="countdownTitle">يبدأ الحفل بعد</h2><div class="countdown" id="countdown" role="timer" aria-label="الوقت المتبقي"><div class="cd__cell"><span class="cd__num" id="cdDays">٠٠</span><span class="cd__lbl">يوم</span></div><div class="cd__cell"><span class="cd__num" id="cdHours">٠٠</span><span class="cd__lbl">ساعة</span></div><div class="cd__cell"><span class="cd__num" id="cdMins">٠٠</span><span class="cd__lbl">دقيقة</span></div><div class="cd__cell"><span class="cd__num" id="cdSecs">٠٠</span><span class="cd__lbl">ثانية</span></div></div><p class="when__arrived" id="cdArrived" hidden></p></section>
+    <section class="section invitation reveal"><h2 class="section__title">بطاقة دعوة</h2><div class="divider" aria-hidden="true"><span></span>🎈<span></span></div><p class="invitation__text" id="invitationText"></p></section>
+    <section class="section program reveal"><h2 class="section__title">برنامج الحفل</h2><ul class="timeline" id="timeline"></ul></section>
+    <section class="section notes reveal"><h2 class="section__title">ملاحظات</h2><ul class="notes__list" id="notesList"></ul></section>
+    <section class="section venue reveal"><h2 class="section__title">مكان الحفل</h2><div class="venue__art" aria-hidden="true"><svg viewBox="0 0 200 120"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 110V60l80-36 80 36v50M40 110V70m30 40V70m60 40V70m30 40V70M14 110h172" stroke-width="3"/><circle cx="100" cy="50" r="6"/></g></svg></div><p class="when__date" id="venueDate"></p><p class="when__time" id="venueTime"></p><p class="venue__name" id="venueName"></p><p class="venue__addr" id="venueAddr"></p><a class="venue__btn" id="mapBtn" target="_blank" rel="noopener">⌖ الخريطة</a></section>
+    <section class="section calendar reveal" id="da3wa-cal"><p class="cal-title">احفظ الموعد 🧸</p><div class="cal"><div class="cal-top" id="calMonth"></div><div class="cal-body"><div class="cal-wd" id="calWeekday"></div><div class="cal-day" id="calDay"></div><div class="cal-time" id="calTime"></div></div><div class="cal-foot"><p class="cal-cap">📲 أضِف الموعد إلى تقويم هاتفك بضغطة</p><div class="cal-btns"><a id="googleCalendar" target="_blank" rel="noopener">تقويم جوجل</a><a id="appleCalendar" download="birthday-invitation.ics">تقويم آيفون</a></div></div></div></section>
+    <section class="section closing reveal"><div class="divider" aria-hidden="true"><span></span>🧸<span></span></div><p class="closing__note" id="closingNote"></p><p class="closing__hashtag" id="closingHashtag"></p><div class="contact"><span class="contact__label">للاستفسار والتأكيد</span><a class="contact__link" id="contactLink" target="_blank" rel="noopener">راسلونا على واتساب</a></div><p class="closing__host" id="closingHost"></p></section>
+
+    <section class="section rsvp-section reveal" aria-labelledby="rsvpTitle"><div class="rsvp-card"><div class="orn-line" aria-hidden="true"><i></i><b>🧸</b><i></i></div><h2 id="rsvpTitle">تأكيد الحضور</h2><p class="sub">يسعدنا تأكيد حضوركم</p><form id="rsvpForm"><label for="guestName">الاسم الكريم</label><input id="guestName" name="guest_name" required maxlength="80" placeholder="اسمك"><label>هل ستحضر؟</label><div class="pills" id="attendance"><button type="button" class="pill" data-value="نعم" aria-pressed="true">نعم</button><button type="button" class="pill" data-value="لا" aria-pressed="false">لا</button><button type="button" class="pill" data-value="ربما" aria-pressed="false">ربما</button></div><label>عدد المرافقين (عدا حضورك — ٠ إن كنت وحدك)</label><div class="step"><button type="button" id="minus" aria-label="إنقاص عدد المرافقين">−</button><output id="guestCount">٠</output><button type="button" id="plus" aria-label="زيادة عدد المرافقين">+</button></div><label for="message">كلمة لصاحبة العيد 🎂</label><textarea id="message" name="message" rows="2" maxlength="300" placeholder="اكتب تهنئتك لصاحبة العيد..."></textarea><button class="send" type="submit">إرسال التأكيد عبر واتساب</button><p class="err" id="formHint" aria-live="polite">لن تُحفظ الردود على هذا الموقع.</p><a class="wa-ready" id="whatsappSubmitLink" target="_blank" rel="noopener noreferrer" hidden>متابعة إلى واتساب</a></form></div>
+      <div class="wishes" id="wishes"><div class="wishes-h"><h2>كلمات المهنّئين 🧸</h2></div><div class="wish-list" id="wishList"></div><button class="wishes-more" id="wishMore" type="button" hidden>عرض المزيد</button><a class="wish-share" id="wishShare" target="_blank" rel="noopener">أرسل تهنئتك عبر واتساب 💌</a></div>
+    </section>
+  </main>
+  <button class="music-button" id="musicToggle" type="button" aria-label="تشغيل الموسيقى" aria-pressed="false">🎵</button>
+  <div class="audio-player" id="audioPlayer" aria-hidden="true"></div>
+  <noscript><p class="noscript">يلزم تفعيل JavaScript لعرض الدعوة التفاعلية.</p></noscript>
+</body>
+</html>

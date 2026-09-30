@@ -6,12 +6,27 @@ import { TemplateCard } from '../components/TemplateCard';
 
 export function TemplatesPage() {
   const [category, setCategory] = useState<'all' | TemplateCategory>('all');
-  const templates = useMemo(() => category === 'all' ? siteConfig.templates : siteConfig.templates.filter(item => item.category === category), [category]);
+  const [version, setVersion] = useState<'all' | 'new' | 'original'>('all');
+  const templates = useMemo(() => siteConfig.catalogTemplates.filter(item =>
+    (category === 'all' || item.category === category) && (version === 'all' || item.variant === version),
+  ), [category, version]);
+  const versionCounts = {
+    all: siteConfig.catalogTemplates.length,
+    new: siteConfig.catalogTemplates.filter(item => item.variant === 'new').length,
+    original: siteConfig.catalogTemplates.filter(item => item.variant === 'original').length,
+  };
   return <>
     <SiteHeader active="/templates/" />
     <main className="catalog-page">
-      <section className="catalog-hero"><div className="page-container"><span className="eyebrow">معرض مودة</span><h1>شاهدوا القوالب<br /><em>حيّةً قبل الاختيار</em></h1><p>تصفّحوا التصاميم حسب مناسبتكم. افتحوا معاينة القالب، أو تواصلوا معنا لطلب تخصيصه.</p><div className="catalog-count"><span>✳</span> {siteConfig.templates.length} قالبًا من أصول المشروع المتاحة</div></div></section>
+      <section className="catalog-hero"><div className="page-container"><span className="eyebrow">معرض مودة</span><h1>شاهدوا القوالب<br /><em>حيّةً قبل الاختيار</em></h1><p>لكل تصميم نسختان مستقلتان: النسخة الأصلية ونسخة مودة الجديدة. افتحوا معاينة أي نسخة أو تواصلوا معنا لطلبها.</p><div className="catalog-count"><span>✳</span> {siteConfig.templates.length} تصميمًا × نسختين = {siteConfig.catalogTemplates.length} قالبًا مستقلًا</div></div></section>
       <section className="catalog-content page-container">
+        <div className="filter-row filter-row-versions" role="group" aria-label="تصفية القوالب حسب النسخة">
+          {([
+            ['all', `كل النسخ (${versionCounts.all})`],
+            ['new', `نسخ مودة الجديدة (${versionCounts.new})`],
+            ['original', `النسخ الأصلية (${versionCounts.original})`],
+          ] as const).map(([id, label]) => <button key={id} className={`filter-chip ${version === id ? 'selected' : ''}`} onClick={() => setVersion(id)} aria-pressed={version === id}>{label}</button>)}
+        </div>
         <div className="filter-row" role="group" aria-label="تصفية القوالب حسب المناسبة">
           {siteConfig.categories.map((item) => <button key={item.id} className={`filter-chip ${category === item.id ? 'selected' : ''}`} onClick={() => setCategory(item.id)} aria-pressed={category === item.id}>{item.label}</button>)}
         </div>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <script src="./mawada-adapter.js?v=4"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f4eee3">
+    <meta name="description" content="دعوة زفاف. يسعدنا أن تشاركونا فرحتنا.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://mohamad-adib-tawil.github.io/simple-invide-merrage/">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preload" as="image" href="assets/images/reference/ceremonial-doors.jpg">
+    <link rel="preload" as="image" href="assets/images/reference/floral-arch.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="دعوة زفاف">
+    <meta property="og:description" content="بكل الحب، ندعوكم لمشاركتنا فرحتنا.">
+    <meta property="og:url" content="https://mohamad-adib-tawil.github.io/simple-invide-merrage/">
+    <meta property="og:image" content="https://mohamad-adib-tawil.github.io/simple-invide-merrage/assets/images/social-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="قوس مزين بالزهور والشموع لدعوة زفاف">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="دعوة زفاف">
+    <meta name="twitter:description" content="بكل الحب، ندعوكم لمشاركتنا فرحتنا.">
+    <meta name="twitter:image" content="https://mohamad-adib-tawil.github.io/simple-invide-merrage/assets/images/social-preview.jpg">
+    <title>دعوة زفاف</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="module" src="assets/js/main.js"></script>
+  </head>
+  <body class="is-locked">
+    <a class="skip-link" href="#wedding-content" hidden>انتقل إلى تفاصيل الدعوة</a>
+    <main>
+      <section class="experience" id="experience" aria-label="افتتاح الدعوة">
+        <div class="experience__viewport">
+          <div class="experience__landscape" aria-hidden="true"></div>
+          <div class="experience__light" aria-hidden="true"></div>
+          <div class="experience__copy" id="experience-copy" aria-live="polite" inert>
+            <div class="scene-chapter scene-chapter--names" data-chapter="names" aria-hidden="true">
+              <p class="scene-chapter__eyebrow" id="scene-occasion" data-wording="occasion">دعوة بمحبة</p>
+              <p class="scene-chapter__monogram" dir="ltr"><span data-config="monogramGroomArabic">م</span><span class="scene-chapter__monogram-join">&amp;</span><span data-config="monogramBrideArabic">ر</span></p>
+              <p class="scene-chapter__english" dir="ltr"><span data-config="groomEnglish"></span><span> &amp; </span><span data-config="brideEnglish"></span></p>
+              <p class="scene-chapter__date" id="scene-cover-date" hidden></p>
+            </div>
+            <div class="scene-chapter scene-chapter--message" data-chapter="message" aria-hidden="true">
+              <span class="scene-chapter__flourish" aria-hidden="true">✦</span>
+              <p class="scene-chapter__lead" id="scene-opening" data-wording="opening">يسعدنا أن تشاركونا فرحتنا</p>
+              <h1 class="scene-chapter__names"><span data-config="groomArabic">آدم</span><span class="scene-chapter__join">و</span><span data-config="brideArabic">جنى</span></h1>
+              <p class="scene-chapter__families" id="scene-families" hidden></p>
+              <p class="scene-chapter__closing" id="scene-closing" data-wording="closing">بمحبتكم تكتمل فرحتنا</p>
+            </div>
+            <div class="scene-chapter scene-chapter--details" data-chapter="details" aria-hidden="true" hidden>
+              <p class="scene-chapter__details-lead" data-wording="sceneDetailsLead">بكل الحب ننتظركم</p>
+              <p class="scene-chapter__detail" id="scene-date" hidden></p>
+              <p class="scene-chapter__detail" id="scene-venue" hidden></p>
+            </div>
+          </div>
+          <video class="experience__video" id="invitation-video" playsinline preload="none" controls hidden aria-label="فيديو دعوة الزفاف"></video>
+          <div class="experience__door experience__door--left" aria-hidden="true"></div>
+          <div class="experience__door experience__door--right" aria-hidden="true"></div>
+          <div class="experience__controls">
+            <button class="experience__open" id="open-invitation" type="button" aria-label="فتح الدعوة">افتح الدعوة <span aria-hidden="true">✦</span></button>
+            <button class="experience__skip" id="skip-intro" type="button" hidden>تخطّي المقدمة</button>
+            <button class="experience__continue" id="continue-to-site" type="button" hidden>متابعة إلى الموقع <span aria-hidden="true">←</span></button>
+            <button class="experience__sound" id="sound-toggle" type="button" aria-pressed="false" hidden>تشغيل الصوت</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="site-shell" id="wedding-content" aria-hidden="true" inert>
+        <header class="site-header">
+          <a class="wordmark" href="#home" aria-label="إلى بداية الدعوة"><span data-config="monogramGroomArabic">م</span><span>&amp;</span><span data-config="monogramBrideArabic">ر</span></a>
+          <button class="text-button" id="replay-invitation" type="button">إعادة فتح الدعوة <span aria-hidden="true">↶</span></button>
+        </header>
+
+        <section class="hero section-wrap" id="home">
+          <div class="hero__copy">
+            <p class="eyebrow" data-wording="heroEyebrow">بكل الحب</p>
+            <h1 class="hero__names"><span data-config="groomArabic">آدم</span><span class="hero__join">و</span><span data-config="brideArabic">جنى</span></h1>
+            <p class="hero__note" id="hero-note" data-wording="opening">يسعدنا أن تشاركونا فرحتنا</p>
+            <div class="hero__date" id="hero-date" hidden></div>
+            <a class="scroll-cue" href="#details"><span>اكتشفوا التفاصيل</span><span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero__art" aria-hidden="true"></div>
+        </section>
+
+        <section class="countdown section-wrap" id="countdown-section" hidden aria-labelledby="countdown-title">
+          <p class="eyebrow" id="countdown-title" data-wording="countdownHeading">الوقت حتى لقائنا</p>
+          <div class="countdown__units" id="countdown" aria-live="off"></div>
+          <p class="countdown__passed" id="countdown-passed" hidden>بدأت حكاية يومنا الجميل</p>
+        </section>
+
+        <section class="details section-wrap" id="details">
+          <div class="section-heading">
+            <span class="section-heading__ornament" aria-hidden="true">✳</span>
+            <h2 data-wording="detailsHeading">تفاصيل لقائنا</h2>
+            <p data-wording="detailsSubtitle">ننتظر أن نشارككم هذه اللحظات</p>
+          </div>
+          <div class="details__grid">
+            <article class="detail-card" id="date-card" hidden>
+              <span class="detail-card__icon" aria-hidden="true">◷</span>
+              <h3 data-wording="dateHeading">الموعد</h3>
+              <p id="event-date"></p>
+              <p id="event-time"></p>
+              <button class="button button--outline" id="calendar-button" type="button">إضافة إلى التقويم</button>
+            </article>
+            <article class="detail-card" id="venue-card" hidden>
+              <span class="detail-card__icon" aria-hidden="true">⌖</span>
+              <h3 id="venue-name"></h3>
+              <p id="venue-address"></p>
+              <a class="button button--outline" id="map-link" target="_blank" rel="noopener noreferrer">فتح الموقع على الخريطة</a>
+            </article>
+            <article class="detail-card" id="guest-notes-card" hidden>
+              <span class="detail-card__icon" aria-hidden="true">✳</span>
+              <h3 data-wording="guestNotesHeading">ملاحظات للضيوف</h3>
+              <div class="guest-notes__list" id="guest-notes"></div>
+            </article>
+            <article class="detail-card detail-card--empty" id="details-note">
+              <span class="detail-card__icon" aria-hidden="true">✳</span>
+              <h3>سنلتقي قريباً</h3>
+              <p>تفاصيل الموعد والمكان ستجدونها هنا.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="rsvp section-wrap" id="rsvp-section" hidden>
+          <div class="rsvp__inner">
+            <p class="eyebrow" data-wording="rsvpEyebrow">حضوركم يسعدنا</p>
+            <h2 data-wording="rsvpHeading">هل تشاركوننا فرحتنا؟</h2>
+            <p id="rsvp-copy"></p>
+            <a class="button button--filled" id="rsvp-link" target="_blank" rel="noopener noreferrer">تأكيد الحضور عبر واتساب</a>
+          </div>
+        </section>
+
+        <section class="closing section-wrap" id="closing">
+          <span class="section-heading__ornament" aria-hidden="true">✳</span>
+          <p id="closing-line" data-wording="closing">بمحبتكم تكتمل فرحتنا</p>
+          <div class="closing__actions">
+            <button class="button button--outline" id="share-button" type="button">مشاركة الدعوة <span aria-hidden="true">↗</span></button>
+            <button class="button button--text" id="copy-link" type="button">نسخ الرابط</button>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <p class="site-footer__names"><span data-config="groomArabic">آدم</span><span class="site-footer__join"> &amp; </span><span data-config="brideArabic">جنى</span></p>
+          <p id="footer-date" hidden></p>
+          <span class="site-footer__rule" aria-hidden="true"></span>
+          <p id="footer-closing" data-wording="footer">بكل الحب، ننتظركم</p>
+          <a class="site-footer__order" id="order-link" target="_blank" rel="noopener noreferrer">لطلب دعوة مماثلة عبر واتساب</a>
+        </footer>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+  </body>
+</html>

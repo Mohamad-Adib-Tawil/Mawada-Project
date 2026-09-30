@@ -4,6 +4,7 @@ import AppKit
 
 let root = URL(fileURLWithPath: CommandLine.arguments[1])
 let names = ["محمد", "رزان", "مخملجي", "أديب", "بطايحي", "Mohamad", "Razan", "Nour", "Mokhmalji"]
+let showAll = CommandLine.arguments.contains("--all")
 let fm = FileManager.default
 let enumerator = fm.enumerator(at: root, includingPropertiesForKeys: nil)!
 var scanned = 0
@@ -22,7 +23,7 @@ while let url = enumerator.nextObject() as? URL {
         scanned += 1
         for result in request.results ?? [] {
             guard let text = result.topCandidates(1).first?.string else { continue }
-            if names.contains(where: { text.localizedCaseInsensitiveContains($0) }) {
+            if showAll || names.contains(where: { text.localizedCaseInsensitiveContains($0) }) {
                 print("\(url.path)\t\(text)")
             }
         }

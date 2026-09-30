@@ -1,0 +1,46 @@
+{
+  "occasion": "عيد ميلاد",
+  "nameAr": "ميرا",
+  "nameEn": "",
+  "age": 3,
+  "date": "2026-09-20T17:00:00+03:00",
+  "dateText": "يوم الأحد، ٢٠ أيلول ٢٠٢٦",
+  "monthText": "أيلول ٢٠٢٦",
+  "weekdayText": "الأحد",
+  "dayNumber": "٢٠",
+  "countdownPast": "مرّ موعد الحفل",
+  "timeText": "الساعة الخامسة عصراً",
+  "venue": "قاعة الفرح للمناسبات",
+  "location": "بغداد — المنصور",
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=Baghdad",
+  "invitationText": "بكل فرحٍ وسعادة، يسرّنا دعوتكم لمشاركتنا الاحتفال بعيد الميلاد. حضوركم يكمّل بهجتنا!",
+  "program": [
+    { "time": "٥:٠٠ عصراً", "title": "استقبال الضيوف" },
+    { "time": "٦:٠٠ مساءً", "title": "قصّ الكيكة" },
+    { "time": "٦:٣٠ مساءً", "title": "الألعاب والفقرات" },
+    { "time": "٧:٣٠ مساءً", "title": "العشاء" }
+  ],
+  "notes": ["نتشرّف بحضوركم في وقتها", "أحضروا فرحتكم وابتسامتكم", "هديّة حضوركم تكفينا"],
+  "closingNote": "بوجودكم تكتمل الفرحة",
+  "hashtag": "#عيد_ميلاد_سعيد",
+  "host": "عائلة الزبيدي",
+  "whatsappUrl": "https://wa.me/963992688759",
+  "images": {
+    "share": "assets/share.jpg",
+    "hero": "",
+    "venue": "",
+    "background": ""
+  },
+  "music": {
+    "provider": "YouTube",
+    "videoId": "glRTRNZ7oMg",
+    "startSeconds": 0
+  },
+  "wishes": [
+    { "name": "دانية", "message": "كل عام وأنت بألف خير 🎂 وعقبال ١٠٠ سنة", "color": "#b07d4e" },
+    { "name": "يوسف", "message": "عيد ميلاد سعيد! الله يخليك لأهلك وأحبابك", "color": "#d8a06a" },
+    { "name": "ريم", "message": "سنة جديدة كلها نجاح وفرح إن شاء الله 🎈", "color": "#e7689b" },
+    { "name": "شهد", "message": "كل عام وأنت الأحلى، يومك مميز مثلك 🥳", "color": "#8fae9c" },
+    { "name": "علي", "message": "مبروك، وأحلى الأمنيات بالصحة والسعادة", "color": "#c99a70" }
+  ]
+}

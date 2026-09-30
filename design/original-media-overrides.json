@@ -1,0 +1,234 @@
+[
+  {
+    "source": "templates/wedding-temp-bahira/assets/share.jpg",
+    "target": "templates-original/wedding-temp-bahira/assets/share.jpg"
+  },
+  {
+    "source": "templates/balloons/assets/share.jpg",
+    "target": "templates-original/balloons/assets/share.jpg"
+  },
+  {
+    "source": "templates/wedding-temp-garden/assets/share.jpg",
+    "target": "templates-original/wedding-temp-garden/assets/share.jpg"
+  },
+  {
+    "source": "templates/confetti/assets/share.jpg",
+    "target": "templates-original/confetti/assets/share.jpg"
+  },
+  {
+    "source": "templates/cake/assets/share.jpg",
+    "target": "templates-original/cake/assets/share.jpg"
+  },
+  {
+    "source": "templates/teddy/assets/share.jpg",
+    "target": "templates-original/teddy/assets/share.jpg"
+  },
+  {
+    "source": "assets/templates/teddy-hero.jpg",
+    "target": "assets/templates-original/teddy-hero.jpg"
+  },
+  {
+    "source": "assets/templates/garden-cover.jpg",
+    "target": "assets/templates-original/garden-cover.jpg"
+  },
+  {
+    "source": "assets/templates/wisal-cover.jpg",
+    "target": "assets/templates-original/wisal-cover.jpg"
+  },
+  {
+    "source": "assets/templates/doves-hero.jpg",
+    "target": "assets/templates-original/doves-hero.jpg"
+  },
+  {
+    "source": "assets/templates/classic-hero.jpg",
+    "target": "assets/templates-original/classic-hero.jpg"
+  },
+  {
+    "source": "assets/templates/doves-cover.jpg",
+    "target": "assets/templates-original/doves-cover.jpg"
+  },
+  {
+    "source": "assets/templates/balloons-hero.jpg",
+    "target": "assets/templates-original/balloons-hero.jpg"
+  },
+  {
+    "source": "assets/templates/neon-cover.jpg",
+    "target": "assets/templates-original/neon-cover.jpg"
+  },
+  {
+    "source": "assets/templates/moon-hero.jpg",
+    "target": "assets/templates-original/moon-hero.jpg"
+  },
+  {
+    "source": "assets/templates/clouds-cover.jpg",
+    "target": "assets/templates-original/clouds-cover.jpg"
+  },
+  {
+    "source": "assets/templates/starlit-cover.jpg",
+    "target": "assets/templates-original/starlit-cover.jpg"
+  },
+  {
+    "source": "assets/templates/neon-hero.jpg",
+    "target": "assets/templates-original/neon-hero.jpg"
+  },
+  {
+    "source": "assets/templates/rozana-cover.jpg",
+    "target": "assets/templates-original/rozana-cover.jpg"
+  },
+  {
+    "source": "assets/templates/starlit-hero.jpg",
+    "target": "assets/templates-original/starlit-hero.jpg"
+  },
+  {
+    "source": "assets/templates/vangogh-hero.jpg",
+    "target": "assets/templates-original/vangogh-hero.jpg"
+  },
+  {
+    "source": "assets/templates/cake-cover.jpg",
+    "target": "assets/templates-original/cake-cover.jpg"
+  },
+  {
+    "source": "assets/templates/surprise-hero.jpg",
+    "target": "assets/templates-original/surprise-hero.jpg"
+  },
+  {
+    "source": "assets/templates/ring-hero.jpg",
+    "target": "assets/templates-original/ring-hero.jpg"
+  },
+  {
+    "source": "assets/templates/balloons-cover.jpg",
+    "target": "assets/templates-original/balloons-cover.jpg"
+  },
+  {
+    "source": "assets/templates/royal-hero.jpg",
+    "target": "assets/templates-original/royal-hero.jpg"
+  },
+  {
+    "source": "assets/templates/rozana-hero.jpg",
+    "target": "assets/templates-original/rozana-hero.jpg"
+  },
+  {
+    "source": "assets/templates/blush-hero.jpg",
+    "target": "assets/templates-original/blush-hero.jpg"
+  },
+  {
+    "source": "assets/templates/clouds-hero.jpg",
+    "target": "assets/templates-original/clouds-hero.jpg"
+  },
+  {
+    "source": "assets/templates/rosegold-hero.jpg",
+    "target": "assets/templates-original/rosegold-hero.jpg"
+  },
+  {
+    "source": "assets/templates/rosegold-cover.jpg",
+    "target": "assets/templates-original/rosegold-cover.jpg"
+  },
+  {
+    "source": "assets/templates/bab-hero.jpg",
+    "target": "assets/templates-original/bab-hero.jpg"
+  },
+  {
+    "source": "assets/templates/letter-cover.jpg",
+    "target": "assets/templates-original/letter-cover.jpg"
+  },
+  {
+    "source": "assets/templates/glam-hero.jpg",
+    "target": "assets/templates-original/glam-hero.jpg"
+  },
+  {
+    "source": "assets/templates/reverie-hero.jpg",
+    "target": "assets/templates-original/reverie-hero.jpg"
+  },
+  {
+    "source": "assets/templates/garden-hero.jpg",
+    "target": "assets/templates-original/garden-hero.jpg"
+  },
+  {
+    "source": "assets/templates/royal-cover.jpg",
+    "target": "assets/templates-original/royal-cover.jpg"
+  },
+  {
+    "source": "assets/templates/confetti-cover.jpg",
+    "target": "assets/templates-original/confetti-cover.jpg"
+  },
+  {
+    "source": "assets/templates/blush-cover.jpg",
+    "target": "assets/templates-original/blush-cover.jpg"
+  },
+  {
+    "source": "assets/templates/wisal-hero.jpg",
+    "target": "assets/templates-original/wisal-hero.jpg"
+  },
+  {
+    "source": "assets/templates/laylat-henna-hero.jpg",
+    "target": "assets/templates-original/laylat-henna-hero.jpg"
+  },
+  {
+    "source": "assets/templates/storybook-hero.jpg",
+    "target": "assets/templates-original/storybook-hero.jpg"
+  },
+  {
+    "source": "assets/templates/storybook-cover.jpg",
+    "target": "assets/templates-original/storybook-cover.jpg"
+  },
+  {
+    "source": "assets/templates/laylat-henna-cover.jpg",
+    "target": "assets/templates-original/laylat-henna-cover.jpg"
+  },
+  {
+    "source": "assets/templates/ring-cover.jpg",
+    "target": "assets/templates-original/ring-cover.jpg"
+  },
+  {
+    "source": "assets/templates/letter-hero.jpg",
+    "target": "assets/templates-original/letter-hero.jpg"
+  },
+  {
+    "source": "assets/templates/teddy-cover.jpg",
+    "target": "assets/templates-original/teddy-cover.jpg"
+  },
+  {
+    "source": "assets/templates/confetti-hero.jpg",
+    "target": "assets/templates-original/confetti-hero.jpg"
+  },
+  {
+    "source": "assets/templates/cake-hero.jpg",
+    "target": "assets/templates-original/cake-hero.jpg"
+  },
+  {
+    "source": "assets/templates/ivory-palace-hero.jpg",
+    "target": "assets/templates-original/ivory-palace-hero.jpg"
+  },
+  {
+    "source": "assets/templates/qasr-hero.jpg",
+    "target": "assets/templates-original/qasr-hero.jpg"
+  },
+  {
+    "source": "assets/templates/qabda-hero.jpg",
+    "target": "assets/templates-original/qabda-hero.jpg"
+  },
+  {
+    "source": "templates/wedding-temp-ivory-palace/templates/ivory-palace/assets/share.jpg",
+    "target": "templates-original/wedding-temp-ivory-palace/templates/ivory-palace/assets/screenshot_2026-08-0-373b3843.png"
+  },
+  {
+    "source": "templates/wedding-temp-dovess/share.jpg",
+    "target": "templates-original/wedding-temp-dovess/share.jpg"
+  },
+  {
+    "source": "templates/wedding/assets/images/social-preview.png",
+    "target": "templates-original/wedding/assets/images/social-preview.png"
+  },
+  {
+    "source": "templates/clouds/assets/share.jpg",
+    "target": "templates-original/clouds/assets/share.jpg"
+  },
+  {
+    "source": "assets/templates/vangogh-cover.jpg",
+    "target": "assets/templates-original/vangogh-cover.jpg"
+  },
+  {
+    "source": "assets/templates/reverie-cover.jpg",
+    "target": "assets/templates-original/reverie-cover.jpg"
+  }
+]

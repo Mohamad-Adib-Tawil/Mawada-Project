@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <script src="./mawada-adapter.js?v=4"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#201d40">
+  <meta name="description" content="بشارة مولود جديد ودعاء ومحبة وفرحة عائلية">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="بشارة مولود جديد">
+  <meta property="og:description" content="بشارة مولود جديد">
+  <meta property="og:image" content="https://mohamad-adib-tawil.github.io/moon/assets/share.jpg">
+  <title>بشارة مولود جديد</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link id="fontStylesheet" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css?v=moon-20260929-2">
+  <link rel="icon" href="assets/share.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="extra.css?v=moon-20260929-2">
+  <script src="config.js?v=moon-20260929-2" defer></script>
+  <script src="app.js?v=moon-20260929-2" defer></script>
+</head>
+<body>
+  <div class="cover" id="cover">
+    <div class="cover__stars" id="coverStars" aria-hidden="true"></div>
+    <div class="cover__inner">
+      <div class="cover__moon" aria-hidden="true">
+        <svg class="moonSvg" viewBox="0 0 260 280" role="img" aria-label="هلالٌ لطيف يحتضن النجوم">
+          <defs>
+            <radialGradient id="moonGlowG"><stop offset="0" stop-color="rgba(196,181,253,.55)"/><stop offset="1" stop-color="rgba(196,181,253,0)"/></radialGradient>
+            <radialGradient id="moonBodyG" cx="38%" cy="32%" r="72%"><stop stop-color="#fdfcff"/><stop offset=".55" stop-color="#eee9ff"/><stop offset="1" stop-color="#cfc6f4"/></radialGradient>
+            <radialGradient id="cheekG"><stop stop-color="#ffc6d9"/><stop offset="1" stop-color="rgba(255,198,217,0)"/></radialGradient>
+            <linearGradient id="starBigG"><stop stop-color="#fff6cf"/><stop offset="1" stop-color="#ffd98a"/></linearGradient>
+          </defs>
+          <circle class="moonGlow" cx="130" cy="140" r="124" fill="url(#moonGlowG)"/>
+          <g class="hangStar"><path d="M130 8v62" fill="none" stroke="#b7a8ef" stroke-width="2"/><path d="M130 60l6 13 14 2-10 10 3 14-13-7-13 7 3-14-10-10 14-2z" fill="url(#starBigG)"/></g>
+          <g class="moonBody"><path d="M196 86a78 78 0 1 0 0 140 60 60 0 1 1 0-140z" fill="url(#moonBodyG)"/><circle cx="120" cy="176" r="16" fill="url(#cheekG)"/><path d="M112 138q12 12 26 0M120 158q12 11 24 0" fill="none" stroke="#7c6bb0" stroke-width="4" stroke-linecap="round"/></g>
+          <g fill="#fff3c4"><path class="orbStar" d="M58 92l3 7 7 1-5 5 1 7-7-4-7 4 1-7-5-5 7-1z"/><path class="orbStar" d="M214 168l2.4 6 6 1-4 4 1 6-5.4-3-5.4 3 1-6-4-4 6-1z"/><circle class="orbDot" cx="70" cy="208" r="3.4"/><circle class="orbDot" cx="206" cy="70" r="3"/></g>
+        </svg>
+      </div>
+      <div class="cover__center">
+        <p class="cover__label">بشارة مولود جديد</p>
+        <div class="cover__mono" id="coverMono">بُشرى سارّة</div>
+        <button class="cover__btn" id="openBtn" type="button">افتح البشارة 🌙</button>
+      </div>
+    </div>
+  </div>
+  <main class="invite" id="invite" aria-hidden="true">
+    <div class="floaties" id="floaties" aria-hidden="true"></div><div class="skyStars" id="skyStars" aria-hidden="true"></div>
+    <header class="section hero reveal">
+      <span class="miniStar miniStar--a" aria-hidden="true">✦</span><span class="miniStar miniStar--b" aria-hidden="true">✦</span>
+      <p class="hero__kicker">بشرى سارة</p>
+      <h1 class="celebrant" id="babyName"></h1>
+      <p class="baby-name-en" id="babyNameEnglish" dir="ltr"></p>
+      <p class="hero__greet" id="heroGreet"></p>
+      <p class="hero__date" id="birthDate"></p>
+      <p class="parents-line" id="parentsLine"></p>
+      <div class="hero__scroll" aria-hidden="true"><span class="hero__scroll-text">مرّر للأسفل</span><span class="hero__scroll-arrow">↓</span></div>
+    </header>
+    <section class="section when reveal">
+      <h2 class="section__title">باقٍ على الاستقبال</h2>
+      <div class="countdown" id="countdown" role="timer" aria-label="الوقت المتبقي"><div class="cd__cell"><span class="cd__num" id="cdDays">٠٠</span><span class="cd__lbl">يوم</span></div><div class="cd__cell"><span class="cd__num" id="cdHours">٠٠</span><span class="cd__lbl">ساعة</span></div><div class="cd__cell"><span class="cd__num" id="cdMins">٠٠</span><span class="cd__lbl">دقيقة</span></div><div class="cd__cell"><span class="cd__num" id="cdSecs">٠٠</span><span class="cd__lbl">ثانية</span></div></div>
+      <p class="when__arrived" id="cdArrived" hidden>وصل اليوم 🌙 أهلاً بقمرنا الصغير</p>
+    </section>
+    <section class="section invitation reveal"><h2 class="section__title">بطاقة دعوة</h2><p class="invitation__text" id="invitationText"></p></section>
+    <section class="section program reveal"><h2 class="section__title">برنامج الاستقبال</h2><ul class="timeline" id="timeline"></ul></section>
+    <section class="section notes reveal"><h2 class="section__title">ملاحظات</h2><ul class="notes__list" id="notesList"></ul></section>
+    <section class="section venue reveal">
+      <h2 class="section__title">مكان الاستقبال</h2><div class="venue__art" aria-hidden="true"><svg viewBox="0 0 200 120"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 110V60l80-36 80 36v50M40 110V70m30 40V70m60 40V70m30 40V70M88 110V84h24v26M14 110h172"/><circle cx="100" cy="50" r="6"/></g></svg></div>
+      <p class="when__date" id="venueDate"></p><p class="when__time" id="venueTime"></p><p class="venue__name" id="venueName"></p><p class="venue__addr" id="venueAddr"></p><a class="venue__btn" id="mapBtn" target="_blank" rel="noopener"><span aria-hidden="true">⚲</span> الخريطة</a>
+    </section>
+    <section class="section calendar reveal"><h2 class="section__title">احفظ الموعد 🌙</h2><div class="calendar-card"><p id="calendarMonth"></p><strong id="calendarDay"></strong><p id="calendarTime"></p><div class="calendar-links"><a id="googleCalendar" target="_blank" rel="noopener">تقويم جوجل</a><a id="downloadCalendar" download="invitation.ics">تقويم آيفون</a></div></div><p class="calendar-hint">📲 أضِف الموعد إلى تقويم هاتفك بضغطة</p></section>
+    <footer class="section closing reveal"><div class="divider" aria-hidden="true"><span></span>🌙<span></span></div><p class="closing__note" id="closingNote"></p><p class="closing__hashtag" id="closingHashtag"></p><div class="contact" id="contactBox" hidden><span class="contact__label" id="contactLabel"></span><a class="contact__link" id="contactLink"></a></div><p class="closing__host" id="closingHost"></p><span class="cherry" aria-hidden="true">⭐</span></footer>
+    <section class="section rsvp reveal"><div id="da3wa-form-wrap"><h2 class="section__title">تأكيد الحضور</h2><p class="sub">يسعدنا تأكيد حضوركم</p><form id="rsvpForm"><label for="guestName">الاسم الكريم</label><input id="guestName" name="guest_name" required maxlength="80" placeholder="اسمك"><label>هل ستحضر؟</label><div class="pills" id="attendance"><button type="button" class="pill" data-v="yes" aria-pressed="true">نعم</button><button type="button" class="pill" data-v="no">لا</button><button type="button" class="pill" data-v="maybe">ربما</button></div><label>عدد المرافقين (عدا حضورك — ٠ إن كنت وحدك)</label><div class="step"><button type="button" id="minus" aria-label="تقليل">−</button><span id="guestCount">0</span><button type="button" id="plus" aria-label="زيادة">+</button></div><label for="wishText">تهنئة للعائلة 🍼</label><textarea id="wishText" name="message" rows="2" maxlength="300" placeholder="اكتب تهنئتك للعائلة بالمولود..."></textarea><button class="send" type="submit">إرسال التأكيد</button><p class="err" id="formMessage" role="status"></p></form></div></section>
+    <section class="section wishes reveal"><h2 class="section__title">كلمات المهنّئين 🌙</h2><div class="wish-list" id="wishList"></div></section>
+    <section class="section prayers reveal"><h2 class="section__title">دعاء للمولود</h2><p class="prayer-intro">نسأل الله أن يبارك فيه، وينبته نباتاً حسناً، ويجعله قرة عينٍ لوالديه.</p><div id="prayerList"></div><article class="hadith-card"><h3>من الدعاء النبوي للصغار</h3><blockquote id="hadithText"></blockquote><a id="hadithSource" target="_blank" rel="noopener"></a></article></section>
+  </main>
+</body>
+</html>

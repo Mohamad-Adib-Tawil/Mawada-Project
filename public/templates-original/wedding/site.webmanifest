@@ -1,0 +1,11 @@
+{
+  "name": "محمد أديب ورزان | دعوة زفاف",
+  "short_name": "دعوة محمد ورزان",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e9",
+  "theme_color": "#f4f0e9",
+  "icons": [{ "src": "assets/images/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
