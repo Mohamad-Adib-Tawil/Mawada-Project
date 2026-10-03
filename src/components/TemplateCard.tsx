@@ -7,7 +7,7 @@ const categoryNames: Record<string, string> = {
 
 export function TemplateCard({ template, compact = false }: { template: TemplateDefinition; compact?: boolean }) {
   const previewPath = appPath(template.localPreview);
-  const orderLink = whatsappHref(`مرحبًا، أود طلب خدمة دعوة إلكترونية باستخدام قالب «${template.name}»${template.variant === 'original' ? ' (النسخة الأصلية)' : ' (التصميم الجديد)'}.`);
+  const orderLink = whatsappHref(`مرحبًا، أود طلب خدمة دعوة إلكترونية باستخدام قالب «${template.name}»${template.variant === 'original' ? ' (النسخة السابقة)' : ''}.`);
   return (
     <article className={`template-card ${compact ? 'template-card-compact' : ''}`}>
       <a className="template-image-link" href={previewPath} aria-label={`معاينة قالب ${template.name}`}>
@@ -20,7 +20,7 @@ export function TemplateCard({ template, compact = false }: { template: Template
         <div className="template-title-row">
           <h3>{template.name}</h3>
           <div className="template-badges">
-            <span className={`template-version-badge ${template.variant === 'original' ? 'template-version-original' : 'template-version-new'}`}>{template.variant === 'original' ? 'أصلي' : 'جديد'}</span>
+            {template.variant === 'original' && <span className="template-version-badge template-version-original">نسخة سابقة</span>}
             <span className="template-category">{categoryNames[template.category] ?? 'مناسبة'}</span>
           </div>
         </div>

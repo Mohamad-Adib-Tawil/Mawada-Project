@@ -17,12 +17,17 @@ export interface TemplateDefinition {
   variant?: 'new' | 'original';
 }
 
-const currentTemplates = siteData.templates as TemplateDefinition[];
-const originalVisualTemplates: TemplateDefinition[] = currentTemplates.map((template) => ({
+const sourceTemplates = siteData.templates as TemplateDefinition[];
+const currentTemplates: TemplateDefinition[] = sourceTemplates.map((template) => ({
+  ...template,
+  name: `${template.name} قالب محسن`,
+  variant: 'new',
+}));
+const originalVisualTemplates: TemplateDefinition[] = sourceTemplates.map((template) => ({
   ...template,
   id: `${template.id}-original`,
   name: template.name,
-  description: `التصميم الأصلي قبل تحديث الصور والهوية: ${template.description}`,
+  description: `التصميم السابق قبل تحديث الصور والهوية: ${template.description}`,
   localPreview: template.localPreview.replace('/templates/', '/templates-original/'),
   cover: template.cover.replace('/assets/templates/', '/assets/templates-original/'),
   hero: template.hero.replace('/assets/templates/', '/assets/templates-original/'),
@@ -39,7 +44,7 @@ export const siteConfig = {
   basePath: import.meta.env.BASE_URL.replace(/\/$/, ''),
   templates: currentTemplates,
   catalogTemplates: currentTemplates.flatMap((template, index) => [
-    { ...template, variant: 'new' as const },
+    template,
     originalVisualTemplates[index],
   ]),
   categories: siteData.categories as CatalogCategory[],

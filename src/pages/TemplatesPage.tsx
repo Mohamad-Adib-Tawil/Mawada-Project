@@ -18,13 +18,13 @@ export function TemplatesPage() {
   return <>
     <SiteHeader active="/templates/" />
     <main className="catalog-page">
-      <section className="catalog-hero"><div className="page-container"><span className="eyebrow">معرض مودة</span><h1>شاهدوا القوالب<br /><em>حيّةً قبل الاختيار</em></h1><p>لكل تصميم نسختان مستقلتان: النسخة الأصلية ونسخة مودة الجديدة. افتحوا معاينة أي نسخة أو تواصلوا معنا لطلبها.</p><div className="catalog-count"><span>✳</span> {siteConfig.templates.length} تصميمًا × نسختين = {siteConfig.catalogTemplates.length} قالبًا مستقلًا</div></div></section>
+      <section className="catalog-hero"><div className="page-container"><span className="eyebrow">معرض مودة</span><h1>شاهدوا القوالب<br /><em>حيّةً قبل الاختيار</em></h1><p>لكل تصميم نسختان مستقلتان: نسخة سابقة ونسخة محسنة باسم «قالب محسن». افتحوا معاينة أي نسخة أو تواصلوا معنا لطلبها.</p><div className="catalog-count"><span>✳</span> {siteConfig.templates.length} تصميمًا × نسختين = {siteConfig.catalogTemplates.length} قالبًا مستقلًا</div></div></section>
       <section className="catalog-content page-container">
         <div className="filter-row filter-row-versions" role="group" aria-label="تصفية القوالب حسب النسخة">
           {([
             ['all', `كل النسخ (${versionCounts.all})`],
-            ['new', `نسخ مودة الجديدة (${versionCounts.new})`],
-            ['original', `النسخ الأصلية (${versionCounts.original})`],
+            ['new', `قوالب مودة المحسنة (${versionCounts.new})`],
+            ['original', `النسخ السابقة (${versionCounts.original})`],
           ] as const).map(([id, label]) => <button key={id} className={`filter-chip ${version === id ? 'selected' : ''}`} onClick={() => setVersion(id)} aria-pressed={version === id}>{label}</button>)}
         </div>
         <div className="filter-row" role="group" aria-label="تصفية القوالب حسب المناسبة">

@@ -180,7 +180,7 @@ export function EditorPage() {
         <aside className="editor-preview-pane">
           <div className="preview-pane-heading"><div><span className="eyebrow">معاينة مباشرة</span><h2>{selectedTemplate.name}</h2></div><a href={appPath(selectedTemplate.localPreview)} target="_blank" rel="noreferrer" aria-label="فتح المعاينة بصفحة مستقلة">↗</a></div>
           <div className="editor-iframe-frame"><iframe title={`معاينة قالب ${selectedTemplate.name}`} src={frameUrl} allow="autoplay; fullscreen" loading="lazy" /></div>
-          <p className="preview-caption-note">تُشغّل بعض القوالب الصوت أو الفيديو بعد تفاعل المستخدم. المعاينة تعرض مشاهد القالب الأصلية.</p>
+          <p className="preview-caption-note">تُشغّل بعض القوالب الصوت أو الفيديو بعد تفاعل المستخدم. المعاينة تعرض مشاهد القالب الكاملة.</p>
           {draft.eventDate && <div className="preview-date-note"><span>التاريخ المدخل</span><strong>{formatDateArabic(draft.eventDate)}</strong>{draft.eventTime && <small>الساعة {draft.eventTime}</small>}</div>}
         </aside>
       </div>
