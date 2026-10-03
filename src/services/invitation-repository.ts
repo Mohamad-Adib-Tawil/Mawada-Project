@@ -60,7 +60,7 @@ export async function getPublicInvitation(id: string): Promise<InvitationRecord 
   if (!isSupabaseConfigured) throw new InvitationServiceError('رابط الدعوة لا يعمل حتى تفعيل خدمة الحفظ.');
   const url = new URL(`${invitationFunctionsUrl}/invitation-public`);
   url.searchParams.set('id', id);
-  const response = await fetch(url, { headers: { apikey: supabasePublishableKey } });
+  const response = await fetch(url, { cache: 'force-cache', headers: { apikey: supabasePublishableKey } });
   if (response.status === 404) return null;
   if (!response.ok) throw new InvitationServiceError('تعذر تحميل الدعوة. حاولوا مرة أخرى.', response.status);
   const body: { invitation?: InvitationRecord } = await response.json();

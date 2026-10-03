@@ -32,7 +32,7 @@ export function InvitationPage() {
     return () => { active = false; };
   }, [id]);
 
-  if (state.status === 'loading') return <main className="invitation-status"><span className="loader-dot" /><p>جارٍ تجهيز الدعوة…</p></main>;
+  if (state.status === 'loading') return <main className="guest-invitation-page guest-invitation-fullscreen invitation-loading" aria-busy="true"><span className="invitation-loading-mark" aria-hidden="true">✦</span></main>;
   if (state.status === 'error' || !invitation || !template) return <main className="invitation-status"><a className="brand" href={appPath('/')}><BrandMark />{siteConfig.brand}</a><span className="invite-error-icon">✧</span><h1>تعذر فتح الدعوة</h1><p>{state.status === 'error' ? state.message : 'القالب المرتبط بهذه الدعوة غير متوفر.'}</p><a className="button button-secondary" href={whatsappHref('مرحبًا، أحتاج مساعدة بخصوص رابط دعوة.')}>تواصلوا مع مودة</a></main>;
 
   return <main className="guest-invitation-page guest-invitation-fullscreen">
