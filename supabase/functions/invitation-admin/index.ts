@@ -1,4 +1,5 @@
 import { withSupabase } from 'npm:@supabase/server';
+import { createClient } from 'npm:@supabase/supabase-js@2';
 import { assertAllowedOrigin, jsonResponse, RequestFailure, sanitizeDraft, serializeInvitation } from '../_shared/common.ts';
 
 const rowFields = 'id, template_id, template_version, occasion, data, status, revision, request_id, created_by, created_at, updated_at';
@@ -16,12 +17,21 @@ async function bodyJson(request: Request): Promise<Record<string, unknown>> {
   } catch { throw new RequestFailure('Invalid JSON body.'); }
 }
 
-const handler = withSupabase({ auth: 'user' }, async (request, context) => {
+const handler = withSupabase({ auth: 'none' }, async (request, context) => {
   try {
     assertAllowedOrigin(request);
     if (request.method !== 'POST') return jsonResponse(request, { error: 'Method not allowed.' }, 405, { Allow: 'POST, OPTIONS' });
-    const userId = typeof context.userClaims?.sub === 'string' ? context.userClaims.sub : '';
-    if (!userId) return jsonResponse(request, { error: 'Authentication required.' }, 401);
+    const authorization = request.headers.get('authorization') ?? '';
+    const token = authorization.startsWith('Bearer ') ? authorization.slice(7).trim() : '';
+    if (!token) return jsonResponse(request, { error: 'Authentication required.' }, 401);
+    const userClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      { global: { headers: { Authorization: `Bearer ${token}` } } },
+    );
+    const { data: userData, error: userError } = await userClient.auth.getUser(token);
+    const userId = userData.user?.id ?? '';
+    if (userError || !userId) return jsonResponse(request, { error: 'Authentication required.' }, 401);
 
     const admin = context.supabaseAdmin;
     const { data: member, error: membershipError } = await admin

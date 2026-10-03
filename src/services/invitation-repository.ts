@@ -16,8 +16,12 @@ export class InvitationServiceError extends Error {
 
 export async function checkTeamAccess(): Promise<boolean> {
   if (!supabase) throw new InvitationServiceError('إعداد Supabase غير مكتمل.');
+  const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+  const accessToken = sessionData.session?.access_token;
+  if (sessionError || !accessToken) return false;
   const { data, error } = await supabase.functions.invoke('invitation-admin', {
     body: { action: 'check' },
+    headers: { Authorization: `Bearer ${accessToken}` },
   });
   if (error) {
     if (error instanceof FunctionsHttpError && error.context instanceof Response) {
