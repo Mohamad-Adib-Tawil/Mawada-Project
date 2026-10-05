@@ -7,7 +7,13 @@ const featuredIds = ['wedding-temp-bab', 'wedding-temp-garden', 'wedding-temp-ri
 
 export function HomePage() {
   const featured = useMemo(() => {
-    const byId = new Map(siteConfig.templates.map(template => [template.id, template]));
+    const pool = siteConfig.showEnhancedTemplates
+      ? siteConfig.templates
+      : siteConfig.catalogTemplates;
+    const byId = new Map(pool.map(template => [
+      template.id.replace(/-original$/, ''),
+      template,
+    ]));
     return featuredIds.map(id => byId.get(id)).filter((item) => item !== undefined);
   }, []);
 

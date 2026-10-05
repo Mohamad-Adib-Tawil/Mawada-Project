@@ -17,6 +17,9 @@ export interface TemplateDefinition {
   variant?: 'new' | 'original';
 }
 
+/** مؤقت: أخفِ القوالب المحسّنة من المعرض والرئيسية. أعدها إلى true لإظهارها. */
+export const SHOW_ENHANCED_TEMPLATES = false;
+
 const sourceTemplates = siteData.templates as TemplateDefinition[];
 const currentTemplates: TemplateDefinition[] = sourceTemplates.map((template) => ({
   ...template,
@@ -27,7 +30,9 @@ const originalVisualTemplates: TemplateDefinition[] = sourceTemplates.map((templ
   ...template,
   id: `${template.id}-original`,
   name: template.name,
-  description: `التصميم السابق قبل تحديث الصور والهوية: ${template.description}`,
+  description: SHOW_ENHANCED_TEMPLATES
+    ? `التصميم السابق قبل تحديث الصور والهوية: ${template.description}`
+    : template.description,
   localPreview: template.localPreview.replace('/templates/', '/templates-original/'),
   cover: template.cover.replace('/assets/templates/', '/assets/templates-original/'),
   hero: template.hero.replace('/assets/templates/', '/assets/templates-original/'),
@@ -42,11 +47,15 @@ export interface CatalogCategory {
 export const siteConfig = {
   ...siteData,
   basePath: import.meta.env.BASE_URL.replace(/\/$/, ''),
+  showEnhancedTemplates: SHOW_ENHANCED_TEMPLATES,
+  /** سجل المحرر يبقى على التصاميم الحالية حتى أثناء إخفاء المحسّنة من الواجهة العامة. */
   templates: currentTemplates,
-  catalogTemplates: currentTemplates.flatMap((template, index) => [
-    template,
-    originalVisualTemplates[index],
-  ]),
+  catalogTemplates: SHOW_ENHANCED_TEMPLATES
+    ? currentTemplates.flatMap((template, index) => [
+        template,
+        originalVisualTemplates[index],
+      ])
+    : originalVisualTemplates,
   categories: siteData.categories as CatalogCategory[],
 } as const;
 
